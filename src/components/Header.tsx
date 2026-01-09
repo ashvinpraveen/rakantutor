@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import naicLogo from "@/assets/rakan-tutor-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-coral flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">N</span>
-            </div>
-            <span className="text-xl font-bold text-primary">NAIC</span>
+            <img src={naicLogo} alt="NAIC" className="h-10 object-contain" />
           </a>
 
           {/* Desktop Navigation */}

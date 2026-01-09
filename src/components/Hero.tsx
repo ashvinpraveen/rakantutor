@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroGraphic from "@/assets/hero-graphic.png";
 import sunwayLogo from "@/assets/sunway-logo.png";
+import rakanTutorLogo from "@/assets/rakan-tutor-logo.png";
 
 const Hero = () => {
   return (
@@ -54,12 +55,12 @@ const Hero = () => {
               Organised By
             </p>
             <div className="flex items-center justify-center gap-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-coral flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold">R</span>
-                </div>
-                <span className="text-xl font-semibold text-foreground">Rakan Tutor</span>
-              </div>
+              <img 
+                src={rakanTutorLogo} 
+                alt="Rakan Tutor" 
+                className="h-14 object-contain"
+              />
+              <span className="text-muted-foreground">&</span>
               <span className="text-muted-foreground">&</span>
               <img 
                 src={sunwayLogo} 
