@@ -1,33 +1,65 @@
+import { Link, useLocation } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
+  const location = useLocation();
+  const isV2 = location.pathname === "/v2";
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="bg-background py-20 border-t border-border mt-20 transition-colors duration-300">
-      <div className="container mx-auto px-6">
+    <footer className={cn(
+      "py-20 border-t transition-colors duration-300 relative overflow-hidden",
+      isV2 ? "bg-black border-cyan-500/20" : "bg-background border-border mt-20"
+    )}>
+      {isV2 && <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none" />}
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           {/* Logo and Tagline */}
           <div className="space-y-6 max-w-sm">
             <div className="flex items-center gap-2">
               <img src="/naic_logo_mark.png" alt="NAIC Logo" className="w-10 h-10 object-contain" />
-              <h2 className="text-3xl font-bold tracking-tight text-foreground">NAIC '26</h2>
+              <h2 className={cn(
+                "text-3xl font-bold tracking-tight text-foreground",
+                isV2 && "text-white neon-text-cyan"
+              )}>NAIC '26</h2>
             </div>
-            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+            <p className={cn(
+              "text-lg leading-relaxed font-light",
+              isV2 ? "text-zinc-500" : "text-muted-foreground"
+            )}>
               Empowering students across Malaysia to build the next generation of artificial intelligence.
             </p>
           </div>
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <p className="text-xs font-semibold text-muted-foreground/40 uppercase tracking-[0.3em]">Support</p>
+            <p className={cn(
+              "text-xs font-semibold uppercase tracking-[0.3em]",
+              isV2 ? "text-cyan-500/40" : "text-muted-foreground/40"
+            )}>Support</p>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-lg text-foreground/70 hover:text-foreground transition-colors font-light">FAQ</a>
-              <a href="#" className="text-lg text-foreground/70 hover:text-foreground transition-colors font-light">Contact Us</a>
-              <a href="#" className="text-lg text-foreground/70 hover:text-foreground transition-colors font-light">Privacy</a>
+              <Link to={isV2 ? "/v2#faq" : "/#faq"} className={cn(
+                "text-lg transition-colors font-light",
+                isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
+              )}>FAQ</Link>
+              <a href="mailto:clement@sunway.edu.my" className={cn(
+                "text-lg transition-colors font-light",
+                isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
+              )}>Contact Us</a>
+              <Link to="/privacy" className={cn(
+                "text-lg transition-colors font-light",
+                isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
+              )}>Privacy</Link>
+              <Link to="/terms" className={cn(
+                "text-lg transition-colors font-light",
+                isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
+              )}>Terms</Link>
             </nav>
           </div>
 
@@ -37,20 +69,37 @@ const Footer = () => {
               variant="outline"
               size="icon"
               onClick={scrollToTop}
-              className="w-14 h-14 rounded-full border-2 border-border hover:bg-black/5 hover:scale-110 transition-all"
+              className={cn(
+                "w-14 h-14 rounded-full border-2 transition-all",
+                isV2
+                  ? "border-cyan-500/20 bg-zinc-950 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950"
+                  : "border-border hover:bg-black/5 hover:scale-110"
+              )}
             >
-              <ArrowUp className="h-6 w-6 text-foreground" />
+              <ArrowUp className="h-6 w-6" />
             </Button>
-            <p className="text-sm text-muted-foreground/60 font-medium md:text-right">BACK TO TOP</p>
+            <p className={cn(
+              "text-sm font-medium md:text-right",
+              isV2 ? "text-cyan-500/40 font-mono tracking-widest" : "text-muted-foreground/60"
+            )}>BACK TO TOP</p>
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-base text-muted-foreground/60 font-light">
+        <div className={cn(
+          "mt-20 pt-10 border-t flex flex-col md:flex-row justify-between items-center gap-6",
+          isV2 ? "border-cyan-500/10" : "border-border"
+        )}>
+          <p className={cn(
+            "text-base font-light",
+            isV2 ? "text-zinc-600" : "text-muted-foreground/60"
+          )}>
             © 2026 Rakan Tutor & Sunway University.
           </p>
           <div className="flex items-center gap-8">
-            <span className="text-xs font-semibold text-muted-foreground/30 uppercase tracking-[0.4em]">Organised In Partnership</span>
+            <span className={cn(
+              "text-xs font-semibold uppercase tracking-[0.4em]",
+              isV2 ? "text-zinc-700" : "text-muted-foreground/30"
+            )}>Organised In Partnership</span>
           </div>
         </div>
       </div>

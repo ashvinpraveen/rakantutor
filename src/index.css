@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -94,6 +94,10 @@
     font-family: 'Inter', sans-serif;
   }
 
+  section {
+    scroll-margin-top: 80px;
+  }
+
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
@@ -132,6 +136,45 @@
     background-size: 200% 200%;
   }
 
+  .neon-text-cyan {
+    text-shadow: 0 0 5px theme('colors.cyan.400'), 0 0 10px theme('colors.cyan.500'), 0 0 20px theme('colors.cyan.600');
+  }
+
+  .neon-border-cyan {
+    box-shadow: 0 0 5px theme('colors.cyan.400'), 0 0 10px theme('colors.cyan.500'), inset 0 0 5px theme('colors.cyan.400');
+    border-color: theme('colors.cyan.400');
+  }
+
+  .cyber-grid {
+    background-image: linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .circuit-bg {
+    background-image:
+      radial-gradient(circle at 2px 2px, rgba(6, 182, 212, 0.15) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  @keyframes pulse-neon {
+
+    0%,
+    100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+  }
+
+  .animate-pulse-neon {
+    animation: pulse-neon 2s infinite ease-in-out;
+  }
+
   @keyframes gradient-x {
 
     0%,
@@ -142,5 +185,49 @@
     50% {
       background-position: 100% 50%;
     }
+  }
+
+  @keyframes scanner {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      transform: translate(-2px, -2px);
+    }
+
+    60% {
+      transform: translate(2px, 2px);
+    }
+
+    80% {
+      transform: translate(2px, -2px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .cyber-glitch-hover:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  }
+
+  .tech-label {
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-500/60;
   }
 }

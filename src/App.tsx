@@ -4,28 +4,50 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import HomeV2 from "./pages/HomeV2";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import ScrollToHash from "./components/ScrollToHash";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    const handleSystemTheme = (e: MediaQueryListEvent | MediaQueryList) => {
-      if (e.matches) {
-        document.documentElement.classList.add("dark");
+    const root = window.document.documentElement;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const applyTheme = (theme: 'dark' | 'light') => {
+      if (theme === 'dark') {
+        root.classList.add("dark");
       } else {
-        document.documentElement.classList.remove("dark");
+        root.classList.remove("dark");
       }
     };
 
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    handleSystemTheme(mediaQuery);
+    // Always follow system preference
+    applyTheme(mediaQuery.matches ? 'dark' : 'light');
 
-    mediaQuery.addEventListener("change", handleSystemTheme);
+    const handleThemeChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      applyTheme(e.matches ? 'dark' : 'light');
+    };
 
-    return () => mediaQuery.removeEventListener("change", handleSystemTheme);
+    // Listen for changes
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleThemeChange);
+    } else {
+      mediaQuery.addListener(handleThemeChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleThemeChange);
+      } else {
+        mediaQuery.removeListener(handleThemeChange);
+      }
+    };
   }, []);
 
   return (
@@ -33,10 +55,14 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/v2" element={<HomeV2 />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
