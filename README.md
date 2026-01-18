@@ -100,7 +100,7 @@ The registration system includes automated Google Sheets sync and email notifica
 2. **Link your project**
    ```bash
    supabase login
-   supabase link --project-ref phkkcdimrokfpgxcbbma
+   supabase link --project-ref barsjbjrgzubewjodzdd
    ```
 
 3. **Configure services**

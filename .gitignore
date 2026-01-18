@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Credentials and Secrets
+google-credentials.json
+.env
+.env.local
+*.key
+service-account.json
+.env

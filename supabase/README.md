@@ -89,7 +89,7 @@ brew install supabase/tap/supabase
 supabase login
 
 # Link to your project
-supabase link --project-ref phkkcdimrokfpgxcbbma
+supabase link --project-ref barsjbjrgzubewjodzdd
 ```
 
 ### Step 3: Set Up Google Sheets

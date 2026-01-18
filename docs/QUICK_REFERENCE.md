@@ -61,7 +61,7 @@ brew install supabase/tap/supabase
 supabase login
 
 # 3. Link project
-supabase link --project-ref phkkcdimrokfpgxcbbma
+supabase link --project-ref barsjbjrgzubewjodzdd
 
 # 4. Set secrets
 supabase secrets set RESEND_API_KEY=re_xxxxx

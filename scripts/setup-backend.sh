@@ -44,7 +44,7 @@ echo ""
 # Link project
 echo -e "${BLUE}🔗 Linking to Supabase project...${NC}"
 if [ ! -f "supabase/.temp/project-ref" ]; then
-    supabase link --project-ref phkkcdimrokfpgxcbbma
+    supabase link --project-ref barsjbjrgzubewjodzdd
 fi
 echo -e "${GREEN}✅ Project linked${NC}"
 echo ""
