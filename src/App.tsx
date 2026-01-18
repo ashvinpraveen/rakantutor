@@ -60,8 +60,12 @@ const App = () => {
           <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/v2" element={<HomeV2 />} />
-            <Route path="/v3" element={<HomeV3 />} />
+            {import.meta.env.DEV && (
+              <>
+                <Route path="/v2" element={<HomeV2 />} />
+                <Route path="/v3" element={<HomeV3 />} />
+              </>
+            )}
             <Route path="/register" element={<Register />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
