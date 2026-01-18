@@ -221,7 +221,7 @@ const TracksPage = () => {
                                                 </div>
                                                 <h3 className="text-xl font-bold mb-4">Theme for 2026</h3>
                                                 <p className="text-primary-foreground/80 dark:text-zinc-400 mb-8 leading-relaxed">
-                                                    The specific competition topic will be announced exclusively to registered teams on April 3, 2026.
+                                                    The specific competition topic will be announced exclusively to registered teams on March 19, 2026.
                                                 </p>
                                                 <Button asChild className="w-full bg-background text-foreground hover:bg-background/90 rounded-full py-6 text-lg font-bold uppercase transition-transform hover:scale-[1.02]">
                                                     <Link to="/register">

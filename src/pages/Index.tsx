@@ -114,7 +114,7 @@ const NewHero = () => {
                 </p>
                 <div className="flex justify-center items-center">
                   <div className="text-xl lg:text-2xl font-semibold text-foreground">
-                    Kementerian Pendidikan
+                    Kementerian Pendidikan <br /> Malaysia
                   </div>
                 </div>
               </div>
