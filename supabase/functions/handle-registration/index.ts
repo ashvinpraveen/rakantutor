@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { google } from "https://esm.sh/googleapis@118";
+import { google } from "npm:googleapis@126";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -52,12 +52,23 @@ interface RegistrationData {
 async function syncToGoogleSheets(data: RegistrationData) {
   try {
     // Decode base64 credentials
+    // Decode base64 credentials with robust character handling
     const credentialsBase64 = Deno.env.get("GOOGLE_CREDENTIALS_BASE64");
     if (!credentialsBase64) {
+      console.error("Missing GOOGLE_CREDENTIALS_BASE64 env var");
       throw new Error("Google credentials not found");
     }
 
-    const credentials = JSON.parse(atob(credentialsBase64));
+    let credentials;
+    try {
+      // Remove any whitespace which can break atob in some environments
+      const cleanedBase64 = credentialsBase64.replace(/\s/g, '');
+      const jsonStr = atob(cleanedBase64);
+      credentials = JSON.parse(jsonStr);
+    } catch (parseError: any) {
+      console.error("Failed to parse Google Credentials:", parseError);
+      throw new Error(`Credential parsing failed: ${parseError.message}`);
+    }
     const sheetId = Deno.env.get("GOOGLE_SHEET_ID");
 
     // Authenticate with Google
