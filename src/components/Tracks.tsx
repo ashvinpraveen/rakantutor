@@ -8,35 +8,35 @@ const tracks = [
   {
     emoji: "💻",
     title: "Computing",
-    description: "Architect the next generation of algorithms and high-performance computing frameworks.",
+    description: "AI for Healthcare & Community Safety: Build robust AI models to solve technical problems in healthcare and safety.",
     bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
     href: "/tracks#computing"
   },
   {
     emoji: "⚙️",
     title: "Engineering",
-    description: "Optimize complex systems and automate precision manufacturing with intelligent models.",
+    description: "Smart City Initiatives: Design AI-powered engineering solutions that make cities more efficient and people-friendly.",
     bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
     href: "/tracks#engineering"
   },
   {
     emoji: "💡",
     title: "Innovation",
-    description: "Create disruptive solutions that challenge the boundaries of current technology.",
+    description: "Sustainable Development Goals: Design disruptive AI solutions that tackle major societal and urban challenges.",
     bgColor: "bg-[#F0F4E8] dark:bg-emerald-950/20",
     href: "/tracks#innovation"
   },
   {
     emoji: "🎨",
     title: "Generated Art",
-    description: "Explore the intersection of human creativity and machine-generated aesthetics.",
+    description: "Biodiversity & Heritage: Use generative tools to create visual narratives of Malaysia's nature and culture.",
     bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
     href: "/tracks#art"
   },
   {
     emoji: "🏛️",
     title: "Architecture",
-    description: "Reimagine sustainable urban spaces and parametric structures using AI-driven design.",
+    description: "Future Learning Spaces: Reimagine the classroom as an inclusive and sustainable space for future learning.",
     bgColor: "bg-[#FBE9E9] dark:bg-rose-950/20",
     href: "/tracks#architecture"
   },

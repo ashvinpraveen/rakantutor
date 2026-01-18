@@ -15,17 +15,18 @@ const tracksData = [
         color: "from-cyan-500 to-blue-500",
         bgColor: "bg-cyan-500/10",
         borderColor: "border-cyan-500/20",
-        overview: "Architect the next generation of algorithms and high-performance computing frameworks. This track focuses on the core technical development of AI systems.",
-        whoIsThisFor: "Students with coding experience who are passionate about AI development and algorithm design.",
-        deliverables: "Deliverables include a complete codebase showcasing the AI model, along with a technical writeup explaining the methodology and key insights.",
+        overview: "Architect the next generation of algorithms that solve critical technical problems. This track focuses on the deep technical development and optimization of AI models.",
+        theme: "AI for Healthcare & Community Safety",
+        whoIsThisFor: "Students with strong coding experience who want to build and fine-tune actual AI architectures.",
+        deliverables: "A complete codebase (GitHub/Zip), a technical report explaining your methodology, and a short video demo.",
         examples: [
             "CNN for Detecting Correct Postures in Stroke Rehabilitation",
-            "Object Detection of Safety Helmets at Construction Sites"
+            "Real-time Hazard Detection for Emergency Response"
         ],
         judging: [
-            { title: "Performance", description: "Accuracy and effectiveness on unseen test data." },
-            { title: "Model Design", description: "Appropriateness of AI implementation." },
-            { title: "Data Strategy", description: "Thoughtfulness in data collection and preparation." }
+            { title: "Performance", description: "Accuracy and robustness on unseen test data." },
+            { title: "Model Design", description: "Appropriateness and depth of AI implementation." },
+            { title: "Data Strategy", description: "Quality of data collection and preparation." }
         ]
     },
     {
@@ -35,17 +36,18 @@ const tracksData = [
         color: "from-blue-500 to-indigo-500",
         bgColor: "bg-blue-500/10",
         borderColor: "border-blue-500/20",
-        overview: "Optimize complex systems and automate precision manufacturing with intelligent models. Focus on the physical and industrial application of AI technology.",
-        whoIsThisFor: "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI.",
-        deliverables: "Deliverables include a system design report, simulation results or hardware demonstrations, and a video showcasing the industrial impact.",
+        overview: "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges.",
+        theme: "Smart City Initiatives",
+        whoIsThisFor: "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI for urban living.",
+        deliverables: "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
         examples: [
-            "AI-optimized Thermal Cooling for Server Rooms",
-            "Predictive Maintenance for Industrial Robotic Arms"
+            "AI-predictive Traffic Management System",
+            "Smart Waste-sorting Sensors for Residential Areas"
         ],
         judging: [
-            { title: "System Efficiency", description: "Observable improvement in system performance." },
-            { title: "Practicality", description: "Feasibility of the solution in real-world environments." },
-            { title: "Technical Depth", description: "Complexity and robustness of the engineering design." }
+            { title: "Problem Understanding", description: "Clarity of the defined problem and its relevance." },
+            { title: "AI-Enabled Solution", description: "Quality of solution and effectiveness of AI integration." },
+            { title: "Prototype & Impact", description: "Demonstration of core idea and potential impact." }
         ]
     },
     {
@@ -55,17 +57,18 @@ const tracksData = [
         color: "from-amber-500 to-orange-500",
         bgColor: "bg-amber-500/10",
         borderColor: "border-amber-500/20",
-        overview: "Create disruptive solutions that challenge the boundaries of current technology. Design an AI solution tackling real-world challenges with measurable social impact.",
-        whoIsThisFor: "For visionaries passionate about impactful, scalable AI-driven social change. No technical build required.",
-        deliverables: "Deliverables include a writeup on the problem, the AI solution, its social impact, and a prototype such as an app mockup or model images.",
+        overview: "Design disruptive AI solutions targeting the UN Sustainable Development Goals. Focus on conceptual design, scalability, and measurable social impact.",
+        theme: "AI-driven Solutions for Sustainable Cities & Communities (SDG 11)",
+        whoIsThisFor: "Visionaries and problem-solvers interested in the social impact of AI. No technical build or coding required.",
+        deliverables: "An innovation proposal (slide deck/report), product mockups or wireframes, and an impact roadmap.",
         examples: [
-            "MVP of AI-driven Traffic App to Solve City Congestion",
-            "MVP of Hydrogen Fuel Plant Sketch to Solve Food Waste Problem"
+            "AI-driven App to Reduce Urban Food Desert effects",
+            "Community Safety Platform using AI-enhanced Predictive Mapping"
         ],
         judging: [
-            { title: "Problem Statement", description: "Clarity and social impact." },
-            { title: "Feasibility", description: "Solution practicality." },
-            { title: "Innovation", description: "Creative application of AI." }
+            { title: "Problem Statement", description: "Depth of understanding and importance of the challenge." },
+            { title: "Feasibility", description: "Practicality and scalability of the proposed solution." },
+            { title: "Innovation", description: "Uniqueness and creative application of AI technology." }
         ]
     },
     {
@@ -75,17 +78,18 @@ const tracksData = [
         color: "from-pink-500 to-rose-500",
         bgColor: "bg-pink-500/10",
         borderColor: "border-pink-500/20",
-        overview: "Explore the intersection of human creativity and machine-generated aesthetics. Unleash your creativity by using AI to craft innovative and meaningful artwork.",
-        whoIsThisFor: "Students passionate about art and exploring new creative possibilities with AI tools.",
-        deliverables: "Deliverables include the final artwork, a writeup on how it reflects the theme, and a summary of the creative process including prompts used.",
+        overview: "Use AI as a creative partner to explore the intersection of human imagination and machine-generated beauty within the Malaysian context.",
+        theme: "Visualising Malaysia's Biodiversity & Cultural Heritage",
+        whoIsThisFor: "Artists and creative thinkers looking to push the boundaries of visual storytelling with generative AI tools.",
+        deliverables: "A portfolio of 3-5 high-resolution AI artworks, a process document including prompts, and an artist statement.",
         examples: [
-            "Biodiversity in Malaysia Through AI",
-            "Impact of Climate Change on Southeast Asian Landscapes"
+            "Digital Tapestry of Malaysia's Endangered Rainforest Species",
+            "Reimagining Traditional Architecture through a Cyberpunk Lens"
         ],
         judging: [
-            { title: "Creativity", description: "Innovative and unique ideas." },
-            { title: "Design Process", description: "Thoughtful and refined execution." },
-            { title: "Storytelling", description: "Strong storytelling and theme connection." }
+            { title: "Creativity", description: "Originality of concept and visual impact of the work." },
+            { title: "Design Process", description: "Depth of exploration and prompt refinement." },
+            { title: "Storytelling", description: "Connection to theme and clarity of artistic narrative." }
         ]
     },
     {
@@ -95,17 +99,18 @@ const tracksData = [
         color: "from-emerald-500 to-teal-500",
         bgColor: "bg-emerald-500/10",
         borderColor: "border-emerald-500/20",
-        overview: "Reimagine sustainable urban spaces and parametric structures using AI-driven design. Use AI to shape the future of our physical environment.",
-        whoIsThisFor: "Visionaries interested in architecture, urban planning, and sustainable design using generative tools.",
-        deliverables: "Deliverables include design portfolios with site analysis, AI-generated architectural renders, and sustainability impact reports.",
+        overview: "Reimagine the classroom as a space for future learning, informed by pedagogy, flexibility, technology, and human comfort.",
+        theme: "Re-Designing the Classroom: Spaces for Future Learning",
+        whoIsThisFor: "Visionaries interested in architecture, spatial design, and sustainable environments using AI tools.",
+        deliverables: "One A1 design board (PDF) including visuals, spatial diagrams (plan/section), and a design story.",
         examples: [
-            "Generative Design of an Eco-friendly Community Hub",
-            "AI-driven Spacial Optimization of High-density Complexes"
+            "Inclusivity-focused Classroom for Diverse Learning Styles",
+            "Biophilic Classroom Design for Student Well-being"
         ],
         judging: [
-            { title: "Design Innovation", description: "Creative use of generative tools in space planning." },
-            { title: "Sustainability", description: "Environmental impact and resource efficiency." },
-            { title: "Aesthetic & Function", description: "Balance between visual appeal and practical usability." }
+            { title: "Design Process", description: "AI prompts, sketches, and clarity of design thinking." },
+            { title: "Creativity & Innovation", description: "Originality and response to sustainability/inclusivity." },
+            { title: "Storytelling", description: "Clarity of purpose and connection to the theme." }
         ]
     }
 ];
@@ -219,10 +224,18 @@ const TracksPage = () => {
                                                 <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-30 transition-opacity">
                                                     {track.icon}
                                                 </div>
-                                                <h3 className="text-xl font-bold mb-4">Theme for 2026</h3>
-                                                <p className="text-primary-foreground/80 dark:text-zinc-400 mb-8 leading-relaxed">
-                                                    The specific competition topic will be announced exclusively to registered teams on March 19, 2026.
-                                                </p>
+                                                <h3 className="text-xl font-bold mb-4">{track.theme ? "Track Theme" : "Theme for 2026"}</h3>
+                                                <div className="text-primary-foreground/80 dark:text-zinc-400 mb-8 leading-relaxed">
+                                                    {track.theme ? (
+                                                        <p className="text-2xl font-bold italic text-white animate-in fade-in slide-in-from-bottom-2 duration-700">
+                                                            "{track.theme}"
+                                                        </p>
+                                                    ) : (
+                                                        <p>
+                                                            The specific competition topic will be announced exclusively to registered teams on March 19, 2026.
+                                                        </p>
+                                                    )}
+                                                </div>
                                                 <Button asChild className="w-full bg-background text-foreground hover:bg-background/90 rounded-full py-6 text-lg font-bold uppercase transition-transform hover:scale-[1.02]">
                                                     <Link to="/register">
                                                         Register now <ArrowRight className="ml-2 w-5 h-5" />

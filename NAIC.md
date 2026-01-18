@@ -16,11 +16,11 @@
 - **Registration Path:** `/register`
 
 ## Competition Tracks
-1. **AI ARCHITECTURE**
-2. **AI ENGINEERING**
-3. **AI GENERATED ART**
-4. **AI INNOVATION**
-5. **AI COMPUTING**
+1. [**AI ARCHITECTURE**](./docs/tracks/architecture.md)
+2. [**AI ENGINEERING**](./docs/tracks/engineering.md)
+3. [**AI GENERATED ART**](./docs/tracks/art.md)
+4. [**AI INNOVATION**](./docs/tracks/innovation.md)
+5. [**AI COMPUTING**](./docs/tracks/computing.md)
 
 ## How to Register
 1. **Form a team of 4 students:**
