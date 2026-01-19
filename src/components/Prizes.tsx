@@ -46,7 +46,7 @@ const prizes = [
   },
   {
     icon: Star,
-    position: "4TH - 10TH PLACE",
+    position: "4TH - 6TH PLACE",
     amount: "RM 5,000",
     color: "text-primary",
     amountColor: "text-primary",
@@ -68,11 +68,11 @@ const Prizes = () => {
             Prizes & awards
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
-            Big prizes for standout teams.
+            Over <span className="text-foreground font-semibold">RM 2 Million</span> worth of bursaries to be won.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
           {prizes.map((prize, index) => (
             <BlurFade key={prize.position} delay={BLUR_FADE_DELAY * index} inView>
               <div
@@ -111,6 +111,24 @@ const Prizes = () => {
             </BlurFade>
           ))}
         </div>
+
+        <BlurFade delay={BLUR_FADE_DELAY * 4} inView>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="p-8 rounded-3xl bg-secondary/10 border border-border/50 text-center space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase mb-2">
+                <Star className="w-4 h-4" /> Participation Reward
+              </div>
+              <h4 className="text-2xl font-bold font-display">Certificate of Participation</h4>
+              <p className="text-muted-foreground">
+                All participants will be given a certificate of participation when successfully submitting your proposal before the deadline.
+              </p>
+            </div>
+
+            <p className="text-center text-muted-foreground font-medium italic">
+              ... and more prizes to be announced soon!
+            </p>
+          </div>
+        </BlurFade>
 
       </div>
     </section>

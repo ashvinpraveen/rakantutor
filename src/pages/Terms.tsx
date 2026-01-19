@@ -15,7 +15,7 @@ export default function Terms() {
     const tableOfContents = [
         { id: "eligibility", title: "Eligibility" },
         { id: "participation", title: "Participation" },
-        { id: "top-60", title: "Top 60 Winners" },
+        { id: "top-30", title: "Top 30 Winners" },
         { id: "originality", title: "Originality & Rights" },
         { id: "liability", title: "Liability & Conduct" },
         { id: "bursary", title: "Bursary Conditions" },
@@ -127,12 +127,12 @@ export default function Terms() {
 
                                 {/* Top 60 Winners */}
                                 <BlurFade inView delay={0.1}>
-                                    <section id="top-60" className="space-y-8 text-base font-light text-muted-foreground leading-relaxed">
-                                        <h2 className="text-3xl font-bold font-display tracking-tight text-foreground">Conditions for Top 60 Winners</h2>
+                                    <section id="top-30" className="space-y-8 text-base font-light text-muted-foreground leading-relaxed">
+                                        <h2 className="text-3xl font-bold font-display tracking-tight text-foreground">Conditions for Top 30 Winners</h2>
                                         <ul className="space-y-6">
                                             <li className="flex gap-4">
                                                 <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2.5 shrink-0" />
-                                                <p>The Organisers will make every reasonable effort to notify the Top 60 winners via email to attend the prize-giving ceremony, which will be held on <span className="text-foreground font-medium">13 June 2026, Saturday</span> at Sunway University, Bandar Sunway.</p>
+                                                <p>The Organisers will make every reasonable effort to notify the Top 30 winners via email to attend the prize-giving ceremony, which will be held on <span className="text-foreground font-medium">13 June 2026, Saturday</span> at Sunway University, Bandar Sunway.</p>
                                             </li>
                                             <li className="flex gap-4">
                                                 <div className="h-2 w-2 rounded-full bg-cyan-500 mt-2.5 shrink-0" />

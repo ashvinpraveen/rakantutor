@@ -50,7 +50,7 @@ const faqData = [
             },
             {
                 question: "How many teams will be selected for the final?",
-                answer: "A total of 60 teams will be shortlisted for the final round at Sunway University. This consist of the Top 10 teams from each of the five tracks."
+                answer: "A total of 30 teams will be shortlisted for the final round at Sunway University. This consist of the Top 6 teams from each of the five tracks."
             },
             {
                 question: "How do we shortlist teams for the final?",
@@ -165,7 +165,7 @@ const faqData = [
         items: [
             {
                 question: "Do all participants get a certificate of participation?",
-                answer: "Yes, all participants will receive an e-Certificate of Participation."
+                answer: "Yes, all participants will be given a certificate of participation when successfully submitting your proposal before the deadline."
             },
             {
                 question: "What do winners get?",

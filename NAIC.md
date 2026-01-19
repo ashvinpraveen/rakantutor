@@ -9,8 +9,8 @@
 ## Overview
 - **Prizes:** MORE THAN RM 2 Million bursaries and prizes (T&C apply)
 - **Top 1-3:** Trophies, Cash, and Bursaries
-- **Top 4-10 (Consolation):** Cash and Bursaries
-- **Winning Structure:** 10 winning teams per track (60 total teams selected for finals)
+- **Top 4-6 (Consolation):** Cash and Bursaries
+- **Winning Structure:** 6 winning teams per track (30 total teams selected for finals)
 - **Registration Deadline:** 16 MARCH 2026
 - **Hosting URL:** [naic.rakantutor.org](https://naic.rakantutor.org)
 - **Registration Path:** `/register`

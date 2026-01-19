@@ -27,7 +27,7 @@ const timelineEvents = [
   {
     date: "May 15, 2026",
     event: "Announcement of Finalists",
-    description: "The top 60 teams will be announced and invited to the grand finals at Sunway University."
+    description: "The top 30 teams will be announced and invited to the grand finals at Sunway University."
   },
   {
     date: "13 June 2026",
