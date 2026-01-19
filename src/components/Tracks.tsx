@@ -8,7 +8,7 @@ const tracks = [
   {
     emoji: "💻",
     title: "Computing",
-    description: "AI for Healthcare & Community Safety: Build robust AI models to solve technical problems in healthcare and safety.",
+    description: "Smart City Healthcare: Build AI for Diabetic Retinopathy (DR) Screening leveraging retinal fundus images.",
     bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
     href: "/tracks#computing"
   },

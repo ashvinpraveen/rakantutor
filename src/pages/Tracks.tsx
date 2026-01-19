@@ -15,18 +15,19 @@ const tracksData = [
         color: "from-cyan-500 to-blue-500",
         bgColor: "bg-cyan-500/10",
         borderColor: "border-cyan-500/20",
-        overview: "Architect the next generation of algorithms that solve critical technical problems. This track focuses on the deep technical development and optimization of AI models.",
-        theme: "AI for Healthcare & Community Safety",
-        whoIsThisFor: "Students with strong coding experience who want to build and fine-tune actual AI architectures.",
-        deliverables: "A complete codebase (GitHub/Zip), a technical report explaining your methodology, and a short video demo.",
+        overview: "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.",
+        theme: "Smart City Healthcare - Diabetic Retinopathy (DR) Screening",
+        whoIsThisFor: "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
+        deliverables: "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
         examples: [
-            "CNN for Detecting Correct Postures in Stroke Rehabilitation",
-            "Real-time Hazard Detection for Emergency Response"
+            "Inference script that outputs required CSV and confusion matrix",
+            "Model weights with architecture details and preprocessing config"
         ],
         judging: [
-            { title: "Performance", description: "Accuracy and robustness on unseen test data." },
-            { title: "Model Design", description: "Appropriateness and depth of AI implementation." },
-            { title: "Data Strategy", description: "Quality of data collection and preparation." }
+            { title: "Performance (55%)", description: "Accuracy, F1 Score, Precision, Recall, Confusion Matrix performance." },
+            { title: "Model Design (20%)", description: "Architecture choice, handling imbalance, and generalization methods." },
+            { title: "Data Strategy (15%)", description: "Pipeline quality, preprocessing, and validation split strategy." },
+            { title: "Additional Features (10%)", description: "Working demo/dashboard/app showing inference and outputs." }
         ]
     },
     {

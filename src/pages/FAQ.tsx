@@ -38,7 +38,7 @@ const faqData = [
             },
             {
                 question: "How many tracks are there?",
-                answer: "There are five tracks:\n- Computing: Architect the next generation of algorithms.\n- Engineering: Optimize complex systems and industrial applications.\n- Innovation: Design AI solutions for social impact.\n- Generated Art: Explore human creativity and machine-generated aesthetics.\n- Architecture: Reimagine sustainable urban spaces.\nRefer to the Track page to learn more."
+                answer: "There are five tracks:\n- Computing: Build AI for Diabetic Retinopathy (DR) Screening using retinal fundus images.\n- Engineering: Optimize complex systems and industrial applications.\n- Innovation: Design AI solutions for social impact.\n- Generated Art: Explore human creativity and machine-generated aesthetics.\n- Architecture: Reimagine sustainable urban spaces.\nRefer to the Track page to learn more."
             },
             {
                 question: "Where and when will the final be held?",
@@ -50,7 +50,7 @@ const faqData = [
             },
             {
                 question: "How many teams will be selected for the final?",
-                answer: "A total of 30 teams will be shortlisted for the final round at Sunway University. This consist of the Top 6 teams from each of the five tracks."
+                answer: "A total of 60 teams will be shortlisted for the final round at Sunway University. The exact distribution of teams per track will be determined based on participation and evaluation criteria."
             },
             {
                 question: "How do we shortlist teams for the final?",
