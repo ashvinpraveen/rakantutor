@@ -456,6 +456,13 @@ const RegistrationForm = () => {
     }} animate={{
       opacity: 1
     }} className="fixed inset-0 flex items-center justify-center z-50 bg-background/95">
+      <Confetti
+        width={window.innerWidth}
+        height={window.innerHeight}
+        recycle={false}
+        numberOfPieces={500}
+        gravity={0.3}
+      />
       <motion.div initial={{
         scale: 0.8,
         opacity: 0
