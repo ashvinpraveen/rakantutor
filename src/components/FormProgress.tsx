@@ -5,9 +5,10 @@ interface FormProgressProps {
   totalSteps: number;
   steps: string[];
   onStepClick?: (step: number) => void;
+  completedSteps?: Set<number>;
 }
 
-export function FormProgress({ currentStep, totalSteps, steps, onStepClick }: FormProgressProps) {
+export function FormProgress({ currentStep, totalSteps, steps, onStepClick, completedSteps = new Set() }: FormProgressProps) {
   // Calculate progress based on steps (0 to 100%)
   const progress = (currentStep / (totalSteps - 1)) * 100;
 
@@ -28,9 +29,9 @@ export function FormProgress({ currentStep, totalSteps, steps, onStepClick }: Fo
         {/* Step Markers (Dots) */}
         <div className="relative flex justify-between items-center w-full">
           {steps.map((step, index) => {
-            const isCompleted = index < currentStep;
+            const isCompleted = completedSteps.has(index);
             const isActive = index === currentStep;
-            const isClickable = onStepClick && index <= currentStep; // Allow going back to previous steps
+            const isClickable = onStepClick; // Allow clicking any step
 
             return (
               <div key={index} className="relative flex flex-col items-center">
@@ -39,17 +40,17 @@ export function FormProgress({ currentStep, totalSteps, steps, onStepClick }: Fo
                   disabled={!isClickable}
                   className={`
                     relative z-10 w-3 h-3 rounded-full transition-all duration-300
-                    ${isCompleted || isActive ? "bg-foreground" : "bg-muted border-2 border-border"}
-                    ${isActive ? "ring-4 ring-background scale-125" : ""}
+                    ${isCompleted ? "bg-foreground" : "bg-background border-2 border-foreground"}
+                    ${isActive ? "ring-4 ring-foreground/20 scale-125" : ""}
                     ${isClickable ? "cursor-pointer hover:scale-110" : "cursor-default"}
                   `}
                   title={step}
                 >
                   {/* Inner dot for active state */}
-                  {isActive && (
+                  {isActive && !isCompleted && (
                     <motion.div
                       layoutId="active-dot"
-                      className="absolute inset-0 bg-foreground rounded-full"
+                      className="absolute inset-0 bg-foreground rounded-full scale-50"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const stats = [
   { value: 2300, suffix: "+", label: "participants in 2025" },
   { value: 25, suffix: "+", label: "industry mentors" },
-  { value: 6, label: "winning teams per track" },
+  { value: 6, label: "winning teams per track per category" },
 ];
 
 const CountUp = ({ value, suffix }: { value: number; suffix?: string }) => {

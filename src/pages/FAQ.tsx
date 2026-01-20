@@ -63,7 +63,7 @@ const faqData = [
         items: [
             {
                 question: "Who can participate?",
-                answer: "Teams of 4 students from upper-secondary to pre-university (or equivalent) stage enrolled in Malaysian-based institutions."
+                answer: "Teams of 4 students from upper-secondary to pre-university (or equivalent) stage. Non-Malaysians are welcome to participate."
             },
             {
                 question: "How do I join?",
@@ -169,7 +169,7 @@ const faqData = [
             },
             {
                 question: "What do winners get?",
-                answer: "Winners will receive trophies, cash prizes, and Sunway Bursaries (tuition fee waivers) for eligible programmes at Sunway University or Sunway College KL. Detailed bursary conditions can be found in our Terms & Conditions."
+                answer: "Winners will receive trophies, cash prizes, and Sunway Bursaries (tuition fee waivers) for eligible programmes at Sunway University or Sunway College KL. Detailed bursary conditions can be found in our Terms & Conditions (available at the footer of the website)."
             }
         ]
     },
@@ -179,6 +179,10 @@ const faqData = [
             {
                 question: "What is the method of communication?",
                 answer: "We will use a WhatsApp community group for team leaders and teacher advisors to share important updates. Additionally, we will send emails directly to participants. Please ensure you regularly check your email inbox (and spam / junk folder) to avoid missing any communications from us."
+            },
+            {
+                question: "Where can I find the Terms and Conditions?",
+                answer: "You can find the full Terms and Conditions at the footer of our website. Click on 'Terms' at the bottom of any page to view all competition rules, eligibility requirements, and bursary conditions. You can also visit naic.rakantutor.org/terms directly."
             },
             {
                 question: "What if I have further inquiries?",

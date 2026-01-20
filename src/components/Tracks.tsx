@@ -6,20 +6,6 @@ const pixelPlaceholder = "/Users/ashvin/.gemini/antigravity/brain/ee42de6e-04ab-
 
 const tracks = [
   {
-    emoji: "💻",
-    title: "Computing",
-    description: "Smart City Healthcare: Build AI for Diabetic Retinopathy (DR) Screening leveraging retinal fundus images.",
-    bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
-    href: "/tracks#computing"
-  },
-  {
-    emoji: "⚙️",
-    title: "Engineering",
-    description: "Smart City Initiatives: Design AI-powered engineering solutions that make cities more efficient and people-friendly.",
-    bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
-    href: "/tracks#engineering"
-  },
-  {
     emoji: "💡",
     title: "Innovation",
     description: "Sustainable Development Goals: Design disruptive AI solutions that tackle major societal and urban challenges.",
@@ -32,6 +18,20 @@ const tracks = [
     description: "Biodiversity & Heritage: Use generative tools to create visual narratives of Malaysia's nature and culture.",
     bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
     href: "/tracks#art"
+  },
+  {
+    emoji: "💻",
+    title: "Computing",
+    description: "Smart City Healthcare: Build AI for Diabetic Retinopathy (DR) Screening leveraging retinal fundus images.",
+    bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
+    href: "/tracks#computing"
+  },
+  {
+    emoji: "⚙️",
+    title: "Engineering",
+    description: "Smart City Initiatives: Design AI-powered engineering solutions that make cities more efficient and people-friendly.",
+    bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
+    href: "/tracks#engineering"
   },
   {
     emoji: "🏛️",

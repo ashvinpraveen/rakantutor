@@ -117,8 +117,8 @@ const Prizes = () => {
             <p className="text-muted-foreground text-sm font-light italic">
               * All participants will receive a certificate of participation upon successful project submission.
             </p>
-            <p className="text-muted-foreground/50 font-medium tracking-widest text-[10px] uppercase">
-              More prizes to be announced soon
+            <p className="text-foreground font-bold tracking-widest text-base uppercase">
+              More Prizes to be announced soon
             </p>
           </div>
         </BlurFade>

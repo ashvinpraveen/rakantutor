@@ -9,49 +9,6 @@ const BLUR_FADE_DELAY = 0.05;
 
 const tracksData = [
     {
-        id: "computing",
-        title: "Computing",
-        icon: <Monitor className="w-8 h-8" />,
-        color: "from-cyan-500 to-blue-500",
-        bgColor: "bg-cyan-500/10",
-        borderColor: "border-cyan-500/20",
-        overview: "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.",
-        theme: "Smart City Healthcare - Diabetic Retinopathy (DR) Screening",
-        whoIsThisFor: "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
-        deliverables: "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
-        examples: [
-            "Inference script that outputs required CSV and confusion matrix",
-            "Model weights with architecture details and preprocessing config"
-        ],
-        judging: [
-            { title: "Performance (55%)", description: "Accuracy, F1 Score, Precision, Recall, Confusion Matrix performance." },
-            { title: "Model Design (20%)", description: "Architecture choice, handling imbalance, and generalization methods." },
-            { title: "Data Strategy (15%)", description: "Pipeline quality, preprocessing, and validation split strategy." },
-            { title: "Additional Features (10%)", description: "Working demo/dashboard/app showing inference and outputs." }
-        ]
-    },
-    {
-        id: "engineering",
-        title: "Engineering",
-        icon: <Settings className="w-8 h-8" />,
-        color: "from-blue-500 to-indigo-500",
-        bgColor: "bg-blue-500/10",
-        borderColor: "border-blue-500/20",
-        overview: "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges.",
-        theme: "Smart City Initiatives",
-        whoIsThisFor: "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI for urban living.",
-        deliverables: "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
-        examples: [
-            "AI-predictive Traffic Management System",
-            "Smart Waste-sorting Sensors for Residential Areas"
-        ],
-        judging: [
-            { title: "Problem Understanding", description: "Clarity of the defined problem and its relevance." },
-            { title: "AI-Enabled Solution", description: "Quality of solution and effectiveness of AI integration." },
-            { title: "Prototype & Impact", description: "Demonstration of core idea and potential impact." }
-        ]
-    },
-    {
         id: "innovation",
         title: "Innovation",
         icon: <Lightbulb className="w-8 h-8" />,
@@ -91,6 +48,48 @@ const tracksData = [
             { title: "Creativity", description: "Originality of concept and visual impact of the work." },
             { title: "Design Process", description: "Depth of exploration and prompt refinement." },
             { title: "Storytelling", description: "Connection to theme and clarity of artistic narrative." }
+        ]
+    },
+    {
+        id: "computing",
+        title: "Computing",
+        icon: <Monitor className="w-8 h-8" />,
+        color: "from-cyan-500 to-blue-500",
+        bgColor: "bg-cyan-500/10",
+        borderColor: "border-cyan-500/20",
+        overview: "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.",
+        theme: "Smart City Healthcare - Diabetic Retinopathy (DR) Screening",
+        whoIsThisFor: "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
+        deliverables: "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
+        examples: [
+            "Inference script that outputs required CSV and confusion matrix",
+            "Model weights with architecture details and preprocessing config"
+        ],
+        judging: [
+            { title: "Performance", description: "Accuracy, F1 Score, Precision, Recall, and Confusion Matrix performance." },
+            { title: "Model Design", description: "Architecture choice, handling imbalance, and generalization methods." },
+            { title: "Pipeline Quality", description: "Data preprocessing, validation strategy, and reproducibility." }
+        ]
+    },
+    {
+        id: "engineering",
+        title: "Engineering",
+        icon: <Settings className="w-8 h-8" />,
+        color: "from-blue-500 to-indigo-500",
+        bgColor: "bg-blue-500/10",
+        borderColor: "border-blue-500/20",
+        overview: "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges.",
+        theme: "Smart City Initiatives",
+        whoIsThisFor: "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI for urban living.",
+        deliverables: "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
+        examples: [
+            "AI-predictive Traffic Management System",
+            "Smart Waste-sorting Sensors for Residential Areas"
+        ],
+        judging: [
+            { title: "Problem Understanding", description: "Clarity of the defined problem and its relevance." },
+            { title: "AI-Enabled Solution", description: "Quality of solution and effectiveness of AI integration." },
+            { title: "Prototype & Impact", description: "Demonstration of core idea and potential impact." }
         ]
     },
     {

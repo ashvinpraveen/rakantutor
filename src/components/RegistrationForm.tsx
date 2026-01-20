@@ -18,7 +18,7 @@ import { useFormAutoSave } from "@/hooks/useFormAutoSave";
 import { ArrowLeft, ArrowRight, CheckCircle2, X } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-const trackOptions = ["Computing", "Engineering", "Innovation", "Generated Art", "Architecture"] as const;
+const trackOptions = ["Innovation", "Generated Art", "Computing", "Engineering", "Architecture"] as const;
 const categoryOptions = ["Category A (Year 10/Year 11/Form 4/Form 5 [SPM]/Senior Middle 1/Senior Middle 2)", "Category B (Form 6 [STPM]/Senior Middle 3 [UEC]/Pre University/ Diploma)"] as const;
 const heardAboutOptions = ["School Counsellor/Teacher", "Social Media (Instagram/Facebook/LinkedIn)", "Newspaper/E-Newspaper", "Friends/Family", "Other"] as const;
 const qualificationOptions = ["Year 11", "Year 10", "Form 5", "Form 4", "Senior Middle 2", "Senior Middle 1"] as const;
@@ -91,6 +91,7 @@ const registrationSchema = z.object({
   advisorRelationship: z.enum(advisorRelationshipOptions, {
     required_error: "Select a relationship."
   }),
+  advisorRelationshipOther: z.string().optional(),
   advisorContactNumber: z.string().min(1, "Advisor contact number is required.").regex(/^[0-9]+$/, "Use digits only."),
   advisorEmail: z.string().email("Enter a valid advisor email."),
   termsAccepted: z.literal(true, {
@@ -98,6 +99,14 @@ const registrationSchema = z.object({
       message: "You must agree to the Terms and Conditions."
     })
   })
+}).refine((data) => {
+  if (data.advisorRelationship === "Other" && !data.advisorRelationshipOther?.trim()) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Please specify the relationship.",
+  path: ["advisorRelationshipOther"]
 });
 type RegistrationValues = z.infer<typeof registrationSchema>;
 const STEPS = ["Start", "Team Info", "Team Members", "Advisor", "Review"];
@@ -106,6 +115,8 @@ const RegistrationForm = () => {
   const toSafeId = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
+  const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set([0])); // Track completed steps, welcome is always complete
+  const isMac = typeof navigator !== 'undefined' && navigator.platform.toUpperCase().indexOf('MAC') >= 0;
   const defaultValues = useMemo<RegistrationValues>(() => ({
     heardAbout: "School Counsellor/Teacher",
     teamName: "",
@@ -141,6 +152,7 @@ const RegistrationForm = () => {
     member4GraduationDate: "",
     advisorFullName: "",
     advisorRelationship: "Teacher Advisor",
+    advisorRelationshipOther: "",
     advisorContactNumber: "",
     advisorEmail: "",
     termsAccepted: true
@@ -195,7 +207,7 @@ const RegistrationForm = () => {
         ];
         break;
       case 3:
-        fieldsToValidate = ["advisorFullName", "advisorRelationship", "advisorContactNumber", "advisorEmail"];
+        fieldsToValidate = ["advisorFullName", "advisorRelationship", "advisorRelationshipOther", "advisorContactNumber", "advisorEmail"];
         break;
       case 4:
         fieldsToValidate = ["termsAccepted"];
@@ -209,10 +221,19 @@ const RegistrationForm = () => {
   const handleNext = async () => {
     const isValid = await validateStep();
     if (isValid) {
+      // Mark current step as completed
+      setCompletedSteps(prev => new Set(prev).add(currentStep));
       next();
     } else {
-      toast("Please fix the errors before continuing", {
-        description: "Some required fields are missing or invalid."
+      // Allow skipping but show warning
+      toast("Step incomplete", {
+        description: "You can continue but please complete this section before submitting.",
+        action: {
+          label: "Continue Anyway",
+          onClick: () => {
+            next();
+          }
+        }
       });
     }
   };
@@ -256,6 +277,7 @@ const RegistrationForm = () => {
         member4_graduation_date: values.member4GraduationDate,
         advisor_full_name: values.advisorFullName,
         advisor_relationship: values.advisorRelationship,
+        advisor_relationship_other: values.advisorRelationshipOther || null,
         advisor_contact_number: values.advisorContactNumber,
         advisor_email: values.advisorEmail,
       };
@@ -343,7 +365,7 @@ const RegistrationForm = () => {
     <div className="h-full overflow-y-auto pb-24">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl py-12">
         {currentStep > 0 && <div className="mb-8">
-          <FormProgress currentStep={currentStep} totalSteps={STEPS.length} steps={STEPS} onStepClick={goTo} />
+          <FormProgress currentStep={currentStep} totalSteps={STEPS.length} steps={STEPS} onStepClick={goTo} completedSteps={completedSteps} />
         </div>}
 
         <Form {...form}>
@@ -381,7 +403,7 @@ const RegistrationForm = () => {
           <div className="flex items-center gap-3">
             {/* Keyboard shortcut hint */}
             {currentStep > 0 && <span className="text-xs text-muted-foreground hidden sm:block">
-              Press <kbd className="px-1.5 py-0.5 bg-secondary rounded text-xs">Enter</kbd> to continue
+              Press <kbd className="px-1.5 py-0.5 bg-secondary rounded text-xs">{isMac ? '⌘' : 'Ctrl'}</kbd> + <kbd className="px-1.5 py-0.5 bg-secondary rounded text-xs">Enter</kbd> to continue
             </span>}
 
             {currentStep === 0 ? <Button type="button" onClick={next} size="lg" className="gap-2">
@@ -492,6 +514,37 @@ function WelcomeStep({
           </svg>
           <span>Auto-saved as you go</span>
         </div>
+      </div>
+
+      <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20 space-y-3">
+        <p className="text-sm text-foreground">
+          For competition details, visit our{" "}
+          <Link to="/" target="_blank" className="text-primary hover:underline font-medium">
+            homepage
+          </Link>
+          {" "}and{" "}
+          <Link to="/tracks" target="_blank" className="text-primary hover:underline font-medium">
+            tracks page
+          </Link>
+          .
+        </p>
+        <p className="text-sm text-foreground">
+          By proceeding, you agree to our{" "}
+          <Link to="/terms" target="_blank" className="text-primary hover:underline font-medium">
+            Terms and Conditions
+          </Link>
+          {" "}and{" "}
+          <Link to="/privacy" target="_blank" className="text-primary hover:underline font-medium">
+            Privacy Policy
+          </Link>
+          .
+        </p>
+        <p className="text-sm text-muted-foreground">
+          For enquiries, contact{" "}
+          <a href="mailto:naic@rakantutor.org" className="text-primary hover:underline font-medium">
+            naic@rakantutor.org
+          </a>
+        </p>
       </div>
     </motion.div>
   </div>;
@@ -729,6 +782,18 @@ function AdvisorStep({
         <FormMessage />
       </FormItem>} />
 
+    {form.watch("advisorRelationship") === "Other" && (
+      <FormField control={form.control} name="advisorRelationshipOther" render={({
+        field
+      }) => <FormItem className="space-y-4">
+          <FormLabel className="text-xl font-medium">Please specify relationship</FormLabel>
+          <FormControl>
+            <Input placeholder="e.g., School Counselor, Mentor, Coach..." {...field} className="text-lg border-0 border-b-2 border-border rounded-none focus-visible:ring-0 focus-visible:border-foreground px-0" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>} />
+    )}
+
     <FormField control={form.control} name="advisorContactNumber" render={({
       field
     }) => <FormItem className="space-y-4">
@@ -804,6 +869,7 @@ function ReviewStep({
           <Link to="/privacy" target="_blank" className="underline hover:text-foreground">
             privacy policy
           </Link>
+          .
         </p>
       </div>
       <FormField control={form.control} name="termsAccepted" render={({
@@ -814,7 +880,7 @@ function ReviewStep({
           </FormControl>
           <div className="space-y-1">
             <FormLabel className="text-base font-normal cursor-pointer">
-              I agree to the Terms and Conditions
+              I acknowledge that I have read and agree to the Terms and Conditions, and understand that the competition organizers reserve the right to modify any terms and conditions as necessary.
             </FormLabel>
             <FormMessage />
           </div>

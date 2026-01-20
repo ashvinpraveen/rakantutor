@@ -1,9 +1,9 @@
-# AI Technical Sub-Tracks (2026): Computing
+# Computing Track (2026)
 
 ## Theme: Smart City Healthcare - Diabetic Retinopathy (DR) Screening
 
 ### Overview
-The technical track is designed for participants who are enthusiastic about getting hands-on with real-world data and pushing the limits of AI technologies. This year, we challenge you to prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.
+The Computing track is designed for participants who are enthusiastic about getting hands-on with real-world data and pushing the limits of AI technologies. This year, we challenge you to prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.
 
 Unlike “clean” classroom datasets, healthcare imaging problems require you to think beyond accuracy alone. You will need to build a solution that can generalise to unseen images, explain your design choices clearly, and ensure your workflow is reproducible. You are encouraged to iterate from a simple baseline to stronger models by improving preprocessing, augmentation, hyperparameters, and training strategies.
 
@@ -13,7 +13,7 @@ Unlike “clean” classroom datasets, healthcare imaging problems require you t
 NAIC will provide the official dataset(s) and a standardised evaluation criterion, so every team competes on the same foundation. **You are not allowed to add more training data/images to your model.** Your task is to push performance further by designing a solution that achieves the best accuracy with the smartest efficiency with strong predictions, fast inference, and lightweight deployment.
 
 ### What we want you to build
-By the end of the technical track, your team should be able to demonstrate:
+By the end of the Computing track, your team should be able to demonstrate:
 - A clean, reproducible training pipeline
 - A trained model that performs well and generalises to unseen test images
 - A working testing script that runs inference and produces the required submission output

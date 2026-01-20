@@ -13,17 +13,16 @@ const steps = [
     title: "Check Your Eligibility",
     items: [
       "Form a team of 4 students. Category A: Form 4 - Form 5, Year 10 - Year 11, SM1 - SM2. Category B: STPM, Pre-U, UEC, Diploma.",
-      "All members must be studying in government, private or international schools in Malaysia",
+      "All members must be studying in government, private, or international schools, colleges, or universities.",
     ],
   },
   {
     icon: UserPlus,
     title: "Register Your Team",
     items: [
-      "Log on to naic.rakantutor.org and fill up your team's details",
-      "Registration deadline: 16 March 2026",
-      'You can also register using the "Register Now" button below',
-      "Registered teams will be given a Competition Booklet with more details",
+      "Registration Deadline: 16 March 2026",
+      'Register using the "Register Now" button below',
+      "Registered teams will be given a Competition Booklet with more details on 19 March 2026.",
     ],
   },
   {
