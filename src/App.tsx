@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import FAQ from "./pages/FAQ";
+import Contacts from "./pages/Contact";
 import Tracks from "./pages/Tracks";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
@@ -65,6 +66,7 @@ const App = () => {
             <Route path="/tracks" element={<Tracks />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/contact" element={<Contacts />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

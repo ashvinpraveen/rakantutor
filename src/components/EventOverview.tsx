@@ -1,10 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 2300, suffix: "+", label: "participants in 2025" },
-  { value: 25, suffix: "+", label: "industry mentors" },
-  { value: 6, label: "winning teams per track per category" },
-];
+import { useTranslation } from "react-i18next";
 
 const CountUp = ({ value, suffix }: { value: number; suffix?: string }) => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -49,17 +44,24 @@ const CountUp = ({ value, suffix }: { value: number; suffix?: string }) => {
 };
 
 const EventOverview = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: 2300, suffix: "+", label: t("overview.stats.participants") },
+    { value: 25, suffix: "+", label: t("overview.stats.mentors") },
+    { value: 6, label: t("overview.stats.winners") },
+  ];
+
   return (
     <section className="relative py-20 bg-background px-4 md:px-8">
       <div className="container mx-auto">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
             <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
-              Overview
+              {t("overview.title")}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed font-light">
-              A nationwide AI challenge for student teams to design, build, and present practical solutions.
-              Expect hands-on problem solving, expert feedback, and workshops that sharpen your approach.
+              {t("overview.description")}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
               {stats.map((stat) => (

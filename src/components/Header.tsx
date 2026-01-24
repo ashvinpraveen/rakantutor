@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -18,12 +20,16 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "ms" : "en");
+  };
+
   const navLinks = [
-    { label: "Tracks", href: "/tracks" },
-    { label: "Prizes", href: isV2 ? "/v2#prizes" : "/#prizes" },
-    { label: "Timeline", href: isV2 ? "/v2#timeline" : "/#timeline" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Register", href: "/register" },
+    { label: t("nav.tracks"), href: "/tracks" },
+    { label: t("nav.prizes"), href: isV2 ? "/v2#prizes" : "/#prizes" },
+    { label: t("nav.timeline"), href: isV2 ? "/v2#timeline" : "/#timeline" },
+    { label: t("nav.faq"), href: "/faq" },
+    { label: t("nav.contact"), href: "/contact" },
   ];
 
   return (
@@ -70,6 +76,20 @@ const Header = () => {
 
           {/* Right: Actions Container */}
           <div className="flex-1 flex justify-end gap-6 items-center">
+            {/* Language Switcher */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className={cn(
+                "hidden md:flex items-center gap-2 font-display font-bold text-xs uppercase tracking-widest",
+                isV2 ? "text-cyan-400 hover:text-cyan-300 hover:bg-cyan-950/50" : "text-foreground/60 hover:text-foreground"
+              )}
+            >
+              <Globe className="h-4 w-4" />
+              {i18n.language.startsWith("en") ? "EN" : "BM"}
+            </Button>
+
             <div className="hidden md:block">
               <Button
                 asChild
@@ -77,15 +97,26 @@ const Header = () => {
                   "h-10 rounded-full px-6 text-base font-semibold shadow-md transition-all hover:scale-105",
                   isV2
                     ? "bg-black border border-cyan-500 text-cyan-400 rounded-none italic font-black uppercase tracking-tighter hover:bg-cyan-950 shadow-[0_0_15px_rgba(6,182,212,0.3)]"
-                    : "bg-cyan-500 text-white border-none hover:bg-cyan-600 shadow-cyan-500/20"
+                    : "bg-cyan-500 text-white border-none hover:bg-cyan-600"
                 )}
               >
-                <Link to="/register">Register Now</Link>
+                <Link to="/register">{t("nav.registerNow")}</Link>
               </Button>
             </div>
 
             {/* Mobile Menu Button - now integrated into the right container */}
             <div className="flex items-center gap-4 md:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className={cn(
+                  "flex items-center gap-2 font-display font-bold text-[10px] uppercase tracking-widest",
+                  isV2 ? "text-cyan-400" : "text-foreground/60"
+                )}
+              >
+                {i18n.language.startsWith("en") ? "EN" : "BM"}
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
@@ -131,7 +162,7 @@ const Header = () => {
               )}
             >
               <Link to="/register" onClick={() => setIsMenuOpen(false)}>
-                Register Now
+                {t("nav.registerNow")}
               </Link>
             </Button>
           </nav>

@@ -72,7 +72,7 @@ const Hero = () => {
             <BlurFade delay={BLUR_FADE_DELAY * (titleWords.length + 4)}>
               <Button
                 asChild
-                className="h-16 px-12 rounded-full text-xl font-semibold bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all duration-300 shadow-xl shadow-cyan-500/20"
+                className="h-16 px-12 rounded-full text-xl font-semibold bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all duration-300 shadow-xl"
               >
                 <Link to="/register">Register Now</Link>
               </Button>

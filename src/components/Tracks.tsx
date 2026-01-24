@@ -1,68 +1,67 @@
 import { Building2, Cpu, Lightbulb, Monitor, Palette, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-// Note: Using the same pixel art placeholder due to generation limits, but structure is ready for unique assets
-const pixelPlaceholder = "/Users/ashvin/.gemini/antigravity/brain/ee42de6e-04ab-4d7c-b1ae-2a6b7c92cc1e/pixel_architecture_1767989119118.png";
-
-const tracks = [
-  {
-    emoji: "💡",
-    title: "Innovation",
-    description: "Sustainable Development Goals: Design disruptive AI solutions that tackle major societal and urban challenges.",
-    bgColor: "bg-[#F0F4E8] dark:bg-emerald-950/20",
-    href: "/tracks#innovation"
-  },
-  {
-    emoji: "🎨",
-    title: "Generated Art",
-    description: "Biodiversity & Heritage: Use generative tools to create visual narratives of Malaysia's nature and culture.",
-    bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
-    href: "/tracks#art"
-  },
-  {
-    emoji: "💻",
-    title: "Computing",
-    description: "Smart City Healthcare: Build AI for Diabetic Retinopathy (DR) Screening leveraging retinal fundus images.",
-    bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
-    href: "/tracks#computing"
-  },
-  {
-    emoji: "⚙️",
-    title: "Engineering",
-    description: "Smart City Initiatives: Design AI-powered engineering solutions that make cities more efficient and people-friendly.",
-    bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
-    href: "/tracks#engineering"
-  },
-  {
-    emoji: "🏛️",
-    title: "Architecture",
-    description: "Future Learning Spaces: Reimagine the classroom as an inclusive and sustainable space for future learning.",
-    bgColor: "bg-[#FBE9E9] dark:bg-rose-950/20",
-    href: "/tracks#architecture"
-  },
-];
-
 import { Link } from "react-router-dom";
 import BlurFade from "@/components/ui/blur-fade";
+import { useTranslation } from "react-i18next";
 
 const BLUR_FADE_DELAY = 0.04;
 
 const Tracks = () => {
+  const { t } = useTranslation();
+
+  const tracks = [
+    {
+      emoji: "🎬",
+      title: t("tracks.genai.title"),
+      description: t("tracks.genai.description"),
+      bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
+      href: "/tracks#genai"
+    },
+    {
+      emoji: "💡",
+      title: t("tracks.innovation.title"),
+      description: t("tracks.innovation.description"),
+      bgColor: "bg-[#F0F4E8] dark:bg-emerald-950/20",
+      href: "/tracks#innovation"
+    },
+    {
+      emoji: "💻",
+      title: t("tracks.computing.title"),
+      description: t("tracks.computing.description"),
+      bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
+      href: "/tracks#computing"
+    },
+    {
+      emoji: "⚙️",
+      title: t("tracks.engineering.title"),
+      description: t("tracks.engineering.description"),
+      bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
+      href: "/tracks#engineering"
+    },
+    {
+      emoji: "🏛️",
+      title: t("tracks.architecture.title"),
+      description: t("tracks.architecture.description"),
+      bgColor: "bg-[#FBE9E9] dark:bg-rose-950/20",
+      href: "/tracks#architecture"
+    },
+  ];
+
   return (
     <section id="tracks" className="relative py-32 bg-background px-4 md:px-8">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="space-y-4 text-left">
             <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
-              2026 Competition Tracks
+              {t("tracks.title")}
             </h2>
             <p className="text-xl text-muted-foreground max-w-xl leading-relaxed font-light">
-              Explore our five distinct paths. Each designed to challenge different skills and passions.
+              {t("tracks.subtitle")}
             </p>
           </div>
           <Button asChild variant="outline" className="rounded-full px-8 py-6 group">
             <Link to="/tracks">
-              View All Track Details
+              {t("tracks.cta")}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

@@ -3,119 +3,122 @@ import Footer from "@/components/Footer";
 import BlurFade from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Paintbrush, Lightbulb, Monitor, Settings, Building2, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Paintbrush, Lightbulb, Monitor, Settings, Building2, ArrowRight, CheckCircle2, Video } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const BLUR_FADE_DELAY = 0.05;
 
-const tracksData = [
-    {
-        id: "innovation",
-        title: "Innovation",
-        icon: <Lightbulb className="w-8 h-8" />,
-        color: "from-amber-500 to-orange-500",
-        bgColor: "bg-amber-500/10",
-        borderColor: "border-amber-500/20",
-        overview: "Design disruptive AI solutions targeting the UN Sustainable Development Goals. Focus on conceptual design, scalability, and measurable social impact.",
-        theme: "AI-driven Solutions for Sustainable Cities & Communities (SDG 11)",
-        whoIsThisFor: "Visionaries and problem-solvers interested in the social impact of AI. No technical build or coding required.",
-        deliverables: "An innovation proposal (slide deck/report), product mockups or wireframes, and an impact roadmap.",
-        examples: [
-            "AI-driven App to Reduce Urban Food Desert effects",
-            "Community Safety Platform using AI-enhanced Predictive Mapping"
-        ],
-        judging: [
-            { title: "Problem Statement", description: "Depth of understanding and importance of the challenge." },
-            { title: "Feasibility", description: "Practicality and scalability of the proposed solution." },
-            { title: "Innovation", description: "Uniqueness and creative application of AI technology." }
-        ]
-    },
-    {
-        id: "art",
-        title: "Generated Art",
-        icon: <Paintbrush className="w-8 h-8" />,
-        color: "from-pink-500 to-rose-500",
-        bgColor: "bg-pink-500/10",
-        borderColor: "border-pink-500/20",
-        overview: "Use AI as a creative partner to explore the intersection of human imagination and machine-generated beauty within the Malaysian context.",
-        theme: "Visualising Malaysia's Biodiversity & Cultural Heritage",
-        whoIsThisFor: "Artists and creative thinkers looking to push the boundaries of visual storytelling with generative AI tools.",
-        deliverables: "A portfolio of 3-5 high-resolution AI artworks, a process document including prompts, and an artist statement.",
-        examples: [
-            "Digital Tapestry of Malaysia's Endangered Rainforest Species",
-            "Reimagining Traditional Architecture through a Cyberpunk Lens"
-        ],
-        judging: [
-            { title: "Creativity", description: "Originality of concept and visual impact of the work." },
-            { title: "Design Process", description: "Depth of exploration and prompt refinement." },
-            { title: "Storytelling", description: "Connection to theme and clarity of artistic narrative." }
-        ]
-    },
-    {
-        id: "computing",
-        title: "Computing",
-        icon: <Monitor className="w-8 h-8" />,
-        color: "from-cyan-500 to-blue-500",
-        bgColor: "bg-cyan-500/10",
-        borderColor: "border-cyan-500/20",
-        overview: "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.",
-        theme: "Smart City Healthcare - Diabetic Retinopathy (DR) Screening",
-        whoIsThisFor: "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
-        deliverables: "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
-        examples: [
-            "Inference script that outputs required CSV and confusion matrix",
-            "Model weights with architecture details and preprocessing config"
-        ],
-        judging: [
-            { title: "Performance", description: "Accuracy, F1 Score, Precision, Recall, and Confusion Matrix performance." },
-            { title: "Model Design", description: "Architecture choice, handling imbalance, and generalization methods." },
-            { title: "Pipeline Quality", description: "Data preprocessing, validation strategy, and reproducibility." }
-        ]
-    },
-    {
-        id: "engineering",
-        title: "Engineering",
-        icon: <Settings className="w-8 h-8" />,
-        color: "from-blue-500 to-indigo-500",
-        bgColor: "bg-blue-500/10",
-        borderColor: "border-blue-500/20",
-        overview: "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges.",
-        theme: "Smart City Initiatives",
-        whoIsThisFor: "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI for urban living.",
-        deliverables: "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
-        examples: [
-            "AI-predictive Traffic Management System",
-            "Smart Waste-sorting Sensors for Residential Areas"
-        ],
-        judging: [
-            { title: "Problem Understanding", description: "Clarity of the defined problem and its relevance." },
-            { title: "AI-Enabled Solution", description: "Quality of solution and effectiveness of AI integration." },
-            { title: "Prototype & Impact", description: "Demonstration of core idea and potential impact." }
-        ]
-    },
-    {
-        id: "architecture",
-        title: "Architecture",
-        icon: <Building2 className="w-8 h-8" />,
-        color: "from-emerald-500 to-teal-500",
-        bgColor: "bg-emerald-500/10",
-        borderColor: "border-emerald-500/20",
-        overview: "Reimagine the classroom as a space for future learning, informed by pedagogy, flexibility, technology, and human comfort.",
-        theme: "Re-Designing the Classroom: Spaces for Future Learning",
-        whoIsThisFor: "Visionaries interested in architecture, spatial design, and sustainable environments using AI tools.",
-        deliverables: "One A1 design board (PDF) including visuals, spatial diagrams (plan/section), and a design story.",
-        examples: [
-            "Inclusivity-focused Classroom for Diverse Learning Styles",
-            "Biophilic Classroom Design for Student Well-being"
-        ],
-        judging: [
-            { title: "Design Process", description: "AI prompts, sketches, and clarity of design thinking." },
-            { title: "Creativity & Innovation", description: "Originality and response to sustainability/inclusivity." },
-            { title: "Storytelling", description: "Clarity of purpose and connection to the theme." }
-        ]
-    }
-];
-
 const TracksPage = () => {
+    const { t } = useTranslation();
+
+    const tracksData = [
+        {
+            id: "genai",
+            title: t("tracksDetail.genai.title"),
+            icon: <Video className="w-8 h-8" />,
+            color: "from-pink-500 to-rose-500",
+            bgColor: "bg-pink-500/10",
+            borderColor: "border-pink-500/20",
+            overview: t("tracksDetail.genai.overview"),
+            theme: t("tracksDetail.genai.theme"),
+            whoIsThisFor: t("tracksDetail.genai.whoIsThisFor"),
+            deliverables: t("tracksDetail.genai.deliverables"),
+            examples: [
+                t("tracksDetail.genai.example1"),
+                t("tracksDetail.genai.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.genai.judging1.title"), description: t("tracksDetail.genai.judging1.desc") },
+                { title: t("tracksDetail.genai.judging2.title"), description: t("tracksDetail.genai.judging2.desc") },
+                { title: t("tracksDetail.genai.judging3.title"), description: t("tracksDetail.genai.judging3.desc") }
+            ]
+        },
+        {
+            id: "innovation",
+            title: t("tracksDetail.innovation.title"),
+            icon: <Lightbulb className="w-8 h-8" />,
+            color: "from-amber-500 to-orange-500",
+            bgColor: "bg-amber-500/10",
+            borderColor: "border-amber-500/20",
+            overview: t("tracksDetail.innovation.overview"),
+            theme: t("tracksDetail.innovation.theme"),
+            whoIsThisFor: t("tracksDetail.innovation.whoIsThisFor"),
+            deliverables: t("tracksDetail.innovation.deliverables"),
+            examples: [
+                t("tracksDetail.innovation.example1"),
+                t("tracksDetail.innovation.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.innovation.judging1.title"), description: t("tracksDetail.innovation.judging1.desc") },
+                { title: t("tracksDetail.innovation.judging2.title"), description: t("tracksDetail.innovation.judging2.desc") },
+                { title: t("tracksDetail.innovation.judging3.title"), description: t("tracksDetail.innovation.judging3.desc") }
+            ]
+        },
+        {
+            id: "computing",
+            title: t("tracksDetail.computing.title"),
+            icon: <Monitor className="w-8 h-8" />,
+            color: "from-cyan-500 to-blue-500",
+            bgColor: "bg-cyan-500/10",
+            borderColor: "border-cyan-500/20",
+            overview: t("tracksDetail.computing.overview"),
+            theme: t("tracksDetail.computing.theme"),
+            whoIsThisFor: t("tracksDetail.computing.whoIsThisFor"),
+            deliverables: t("tracksDetail.computing.deliverables"),
+            examples: [
+                t("tracksDetail.computing.example1"),
+                t("tracksDetail.computing.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.computing.judging1.title"), description: t("tracksDetail.computing.judging1.desc") },
+                { title: t("tracksDetail.computing.judging2.title"), description: t("tracksDetail.computing.judging2.desc") },
+                { title: t("tracksDetail.computing.judging3.title"), description: t("tracksDetail.computing.judging3.desc") }
+            ]
+        },
+        {
+            id: "engineering",
+            title: t("tracksDetail.engineering.title"),
+            icon: <Settings className="w-8 h-8" />,
+            color: "from-blue-500 to-indigo-500",
+            bgColor: "bg-blue-500/10",
+            borderColor: "border-blue-500/20",
+            overview: t("tracksDetail.engineering.overview"),
+            theme: t("tracksDetail.engineering.theme"),
+            whoIsThisFor: t("tracksDetail.engineering.whoIsThisFor"),
+            deliverables: t("tracksDetail.engineering.deliverables"),
+            examples: [
+                t("tracksDetail.engineering.example1"),
+                t("tracksDetail.engineering.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.engineering.judging1.title"), description: t("tracksDetail.engineering.judging1.desc") },
+                { title: t("tracksDetail.engineering.judging2.title"), description: t("tracksDetail.engineering.judging2.desc") },
+                { title: t("tracksDetail.engineering.judging3.title"), description: t("tracksDetail.engineering.judging3.desc") }
+            ]
+        },
+        {
+            id: "architecture",
+            title: t("tracksDetail.architecture.title"),
+            icon: <Building2 className="w-8 h-8" />,
+            color: "from-emerald-500 to-teal-500",
+            bgColor: "bg-emerald-500/10",
+            borderColor: "border-emerald-500/20",
+            overview: t("tracksDetail.architecture.overview"),
+            theme: t("tracksDetail.architecture.theme"),
+            whoIsThisFor: t("tracksDetail.architecture.whoIsThisFor"),
+            deliverables: t("tracksDetail.architecture.deliverables"),
+            examples: [
+                t("tracksDetail.architecture.example1"),
+                t("tracksDetail.architecture.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.architecture.judging1.title"), description: t("tracksDetail.architecture.judging1.desc") },
+                { title: t("tracksDetail.architecture.judging2.title"), description: t("tracksDetail.architecture.judging2.desc") },
+                { title: t("tracksDetail.architecture.judging3.title"), description: t("tracksDetail.architecture.judging3.desc") }
+            ]
+        }
+    ];
+
     return (
         <div className="min-h-screen bg-background text-foreground">
             <Header />
@@ -125,14 +128,14 @@ const TracksPage = () => {
                     {/* Hero Section */}
                     <BlurFade delay={BLUR_FADE_DELAY}>
                         <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">
-                                National AI Competition 2026
+                            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4 text-center">
+                                {t("tracksDetail.hero.subtitle")}
                             </h2>
-                            <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6">
-                                Tracks <span className="text-primary">Overview</span>
+                            <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6 text-center">
+                                {t("tracksDetail.hero.title")} <span className="text-primary">{t("tracksDetail.hero.titleHighlight")}</span>
                             </h1>
-                            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-                                Explore our five distinct competition tracks for 2026. Find the path that best matches your passion and skills.
+                            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto text-center">
+                                {t("tracksDetail.hero.desc")}
                             </p>
                         </div>
                     </BlurFade>
@@ -157,7 +160,7 @@ const TracksPage = () => {
                         {tracksData.map((track, index) => (
                             <section id={track.id} key={track.id} className="scroll-mt-32">
                                 <BlurFade delay={BLUR_FADE_DELAY * (index + 3)}>
-                                    <div className="grid lg:grid-cols-2 gap-12 items-start">
+                                    <div className="grid lg:grid-cols-2 gap-12 items-start text-left">
                                         <div className="space-y-8">
                                             <div className="inline-flex items-center gap-4 p-3 rounded-2xl bg-primary/10 text-primary mb-2">
                                                 {track.icon}
@@ -166,22 +169,22 @@ const TracksPage = () => {
 
                                             <div className="space-y-6">
                                                 <div>
-                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3">Challenge Overview</h3>
-                                                    <p className="text-xl leading-relaxed text-foreground/90">
+                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3 text-left">{t("tracksDetail.headers.challengeOverview")}</h3>
+                                                    <p className="text-xl leading-relaxed text-foreground/90 text-left">
                                                         {track.overview}
                                                     </p>
                                                 </div>
 
                                                 <div>
-                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3">Who is this for</h3>
-                                                    <p className="text-lg text-muted-foreground">
+                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3 text-left">{t("tracksDetail.headers.whoIsThisFor")}</h3>
+                                                    <p className="text-lg text-muted-foreground text-left">
                                                         {track.whoIsThisFor}
                                                     </p>
                                                 </div>
 
                                                 <div>
-                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3">Key Deliverables</h3>
-                                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                                    <h3 className="text-lg font-bold uppercase tracking-wider text-muted-foreground mb-3 text-left">{t("tracksDetail.headers.keyDeliverables")}</h3>
+                                                    <p className="text-lg text-muted-foreground leading-relaxed text-left">
                                                         {track.deliverables}
                                                     </p>
                                                 </div>
@@ -190,55 +193,55 @@ const TracksPage = () => {
 
                                         <div className="space-y-8">
                                             <div className={`p-8 rounded-3xl border ${track.borderColor} ${track.bgColor} backdrop-blur-sm`}>
-                                                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                                    Example Submission
+                                                <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-left">
+                                                    {t("tracksDetail.headers.exampleSubmission")}
                                                 </h3>
                                                 <div className="grid gap-4">
                                                     {track.examples.map((example, i) => (
-                                                        <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-background/50 border border-border/50">
+                                                        <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-background/50 border border-border/50 text-left">
                                                             <div className="mt-1">
                                                                 <CheckCircle2 className="w-5 h-5 text-primary" />
                                                             </div>
-                                                            <p className="font-medium">{example}</p>
+                                                            <p className="font-medium text-left">{example}</p>
                                                         </div>
                                                     ))}
                                                 </div>
 
-                                                <h3 className="text-xl font-bold mt-10 mb-6">Judging Criteria</h3>
+                                                <h3 className="text-xl font-bold mt-10 mb-6 text-left">{t("tracksDetail.headers.judgingCriteria")}</h3>
                                                 <div className="grid gap-6">
                                                     {track.judging.map((criterion, i) => (
-                                                        <div key={i} className="flex gap-4">
+                                                        <div key={i} className="flex gap-4 text-left">
                                                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
                                                                 {i + 1}
                                                             </div>
-                                                            <div>
-                                                                <h4 className="font-bold">{criterion.title}</h4>
-                                                                <p className="text-sm text-muted-foreground">{criterion.description}</p>
+                                                            <div className="text-left">
+                                                                <h4 className="font-bold text-left">{criterion.title}</h4>
+                                                                <p className="text-sm text-muted-foreground text-left">{criterion.description}</p>
                                                             </div>
                                                         </div>
                                                     ))}
                                                 </div>
                                             </div>
 
-                                            <div className="p-8 rounded-3xl bg-primary dark:bg-zinc-950 border border-primary/20 dark:border-zinc-800 text-primary-foreground dark:text-white shadow-2xl overflow-hidden relative group">
+                                            <div className="p-8 rounded-3xl bg-primary dark:bg-zinc-950 border border-primary/20 dark:border-zinc-800 text-primary-foreground dark:text-white shadow-2xl overflow-hidden relative group text-left">
                                                 <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-30 transition-opacity">
                                                     {track.icon}
                                                 </div>
-                                                <h3 className="text-xl font-bold mb-4">{track.theme ? "Track Theme" : "Theme for 2026"}</h3>
-                                                <div className="text-primary-foreground/80 dark:text-zinc-400 mb-8 leading-relaxed">
+                                                <h3 className="text-xl font-bold mb-4 text-left">{track.theme ? t("tracksDetail.headers.trackTheme") : t("tracksDetail.headers.defaultTheme")}</h3>
+                                                <div className="text-primary-foreground/80 dark:text-zinc-400 mb-8 leading-relaxed text-left">
                                                     {track.theme ? (
-                                                        <p className="text-2xl font-bold italic text-white animate-in fade-in slide-in-from-bottom-2 duration-700">
+                                                        <p className="text-2xl font-bold italic text-white animate-in fade-in slide-in-from-bottom-2 duration-700 text-left">
                                                             "{track.theme}"
                                                         </p>
                                                     ) : (
-                                                        <p>
-                                                            The specific competition topic will be announced exclusively to registered teams on March 19, 2026.
+                                                        <p className="text-left">
+                                                            {t("tracksDetail.headers.exclusiveAnnouncement")}
                                                         </p>
                                                     )}
                                                 </div>
                                                 <Button asChild className="w-full bg-background text-foreground hover:bg-background/90 rounded-full py-6 text-lg font-bold uppercase transition-transform hover:scale-[1.02]">
                                                     <Link to="/register">
-                                                        Register now <ArrowRight className="ml-2 w-5 h-5" />
+                                                        {t("nav.registerNow")} <ArrowRight className="ml-2 w-5 h-5" />
                                                     </Link>
                                                 </Button>
                                             </div>
@@ -255,12 +258,12 @@ const TracksPage = () => {
                     {/* Bottom CTA */}
                     <BlurFade delay={BLUR_FADE_DELAY * 8}>
                         <div className="mt-40 text-center p-12 md:p-20 rounded-[3rem] bg-gradient-to-b from-primary/10 to-transparent border border-primary/20">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">Ready to make your mark?</h2>
-                            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
-                                Join hundreds of students across Malaysia in the largest student AI competition.
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 italic text-center">{t("tracksDetail.cta.ready")}</h2>
+                            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 text-center">
+                                {t("tracksDetail.cta.join")}
                             </p>
                             <Button asChild size="lg" className="rounded-full px-12 py-8 text-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-                                <Link to="/register">Register Your Team</Link>
+                                <Link to="/register">{t("tracksDetail.cta.registerTeam")}</Link>
                             </Button>
                         </div>
                     </BlurFade>

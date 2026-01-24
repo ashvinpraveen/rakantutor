@@ -1,61 +1,64 @@
 import { Trophy, Medal, Award, Star, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BlurFade from "@/components/ui/blur-fade";
+import { useTranslation } from "react-i18next";
 
 const BLUR_FADE_DELAY = 0.04;
 
-const prizes = [
-  {
-    icon: Trophy,
-    position: "1ST PLACE",
-    amount: "RM 16,000",
-    color: "text-amber-500 dark:text-yellow-400",
-    amountColor: "text-amber-600 dark:text-yellow-400",
-    glow: "shadow-yellow-500/20",
-    gradient: "from-yellow-500/10 to-transparent",
-    benefits: [
-      "Cert of Commendation (Per Person)",
-    ],
-  },
-  {
-    icon: Medal,
-    position: "2ND PLACE",
-    amount: "RM 12,000",
-    color: "text-slate-600 dark:text-slate-300",
-    amountColor: "text-slate-700 dark:text-slate-300",
-    glow: "shadow-slate-400/20",
-    gradient: "from-slate-400/10 to-transparent",
-    benefits: [
-      "Cert of Commendation (Per Person)",
-    ],
-  },
-  {
-    icon: Award,
-    position: "3RD PLACE",
-    amount: "RM 8,000",
-    color: "text-amber-700 dark:text-amber-600",
-    amountColor: "text-amber-800 dark:text-amber-600",
-    glow: "shadow-amber-900/20",
-    gradient: "from-amber-700/10 to-transparent",
-    benefits: [
-      "Cert of Commendation (Per Person)",
-    ],
-  },
-  {
-    icon: Star,
-    position: "4TH - 6TH PLACE",
-    amount: "RM 5,000",
-    color: "text-primary",
-    amountColor: "text-primary",
-    glow: "shadow-primary/20",
-    gradient: "from-primary/10 to-transparent",
-    benefits: [
-      "Cert of Commendation (Per Person)"
-    ],
-  },
-];
-
 const Prizes = () => {
+  const { t } = useTranslation();
+
+  const prizes = [
+    {
+      icon: Trophy,
+      position: t("prizes.pos1"),
+      amount: "RM 16,000",
+      color: "text-amber-500 dark:text-yellow-400",
+      amountColor: "text-amber-600 dark:text-yellow-400",
+      glow: "shadow-yellow-500/20",
+      gradient: "from-yellow-500/10 to-transparent",
+      benefits: [
+        t("prizes.benefitCert"),
+      ],
+    },
+    {
+      icon: Medal,
+      position: t("prizes.pos2"),
+      amount: "RM 12,000",
+      color: "text-slate-600 dark:text-slate-300",
+      amountColor: "text-slate-700 dark:text-slate-300",
+      glow: "shadow-slate-400/20",
+      gradient: "from-slate-400/10 to-transparent",
+      benefits: [
+        t("prizes.benefitCert"),
+      ],
+    },
+    {
+      icon: Award,
+      position: t("prizes.pos3"),
+      amount: "RM 8,000",
+      color: "text-amber-700 dark:text-amber-600",
+      amountColor: "text-amber-800 dark:text-amber-600",
+      glow: "shadow-amber-900/20",
+      gradient: "from-amber-700/10 to-transparent",
+      benefits: [
+        t("prizes.benefitCert"),
+      ],
+    },
+    {
+      icon: Star,
+      position: t("prizes.posOther"),
+      amount: "RM 5,000",
+      color: "text-primary",
+      amountColor: "text-primary",
+      glow: "shadow-primary/20",
+      gradient: "from-primary/10 to-transparent",
+      benefits: [
+        t("prizes.benefitCert")
+      ],
+    },
+  ];
+
   return (
     <section id="prizes" className="py-24 lg:py-32 relative px-4 md:px-8">
       {/* Background Glow */}
@@ -64,10 +67,10 @@ const Prizes = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-foreground">
-            Prizes & awards
+            {t("prizes.title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
-            Over <span className="text-foreground font-semibold">RM 2 Million</span> worth of bursaries to be won.
+            {t("prizes.subtitle", { amount: "RM 2 Million" })}
           </p>
         </div>
 
@@ -94,10 +97,10 @@ const Prizes = () => {
                     {prize.amount}
                   </div>
                   <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground/80 mb-8">
-                    Sunway Bursary
+                    {t("prizes.bursaryLabel")}
                   </div>
 
-                  <div className="mt-auto space-y-3 text-left pl-2 border-l border-black/10 dark:border-white/10">
+                  <div className="mt-auto space-y-3 text-left">
                     {prize.benefits.map((benefit) => (
                       <div
                         key={benefit}
@@ -117,10 +120,10 @@ const Prizes = () => {
         <BlurFade delay={BLUR_FADE_DELAY * 4} inView>
           <div className="mt-20 flex flex-col items-center gap-4 text-center">
             <p className="text-muted-foreground text-sm font-light italic">
-              * All participants will receive certificate of participation upon successful submissions for Preliminary round.
+              {t("prizes.certNote")}
             </p>
             <p className="text-foreground font-bold tracking-widest text-base uppercase">
-              More Prizes to be announced soon
+              {t("prizes.morePrizes")}
             </p>
           </div>
         </BlurFade>

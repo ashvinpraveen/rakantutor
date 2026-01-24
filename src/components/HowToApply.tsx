@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, UserPlus, GraduationCap, Send } from "lucide-react";
+import { ArrowRight, UserPlus, GraduationCap, Send } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,38 +9,30 @@ const BLUR_FADE_DELAY = 0.04;
 
 const steps = [
   {
-    icon: CheckCircle,
-    title: "Check Your Eligibility",
-    items: [
-      "Form a team of 4 students. Category A: Form 4 - Form 5, Year 10 - Year 11, SM1 - SM2. Category B: STPM, Pre-U, UEC, Diploma.",
-      "All members must be studying in government, private, or international schools, colleges, or universities.",
-    ],
-  },
-  {
     icon: UserPlus,
-    title: "Register Your Team",
+    title: "Register Team",
     items: [
-      "Registration Deadline: 16 March 2026",
-      'Register using the "Register Now" button below',
-      "Registered teams will be given a Competition Booklet with more details on 19 March 2026.",
+      "Form a team of 4 (Category A: Secondary | Category B: Pre-U/Uni)",
+      "Sign up at naic.rakantutor.org",
+      "Deadline: 16 March 2026",
     ],
   },
   {
     icon: GraduationCap,
-    title: "Participate in the Online Masterclass",
+    title: "Learn & Build",
     items: [
-      "Participants are encouraged to attend the online Masterclass to better prepare for the competition:",
-      "31 March - 2 April 2026 (by category)",
-      "Online Masterclasses are Free of Charge (normal price: RM250/class)",
+      "Attend Online Masterclass (31 Mar – 2 Apr)",
+      "Complimentary training for all registered teams",
+      "Refine your project with expert advice",
     ],
   },
   {
     icon: Send,
-    title: "Submit Your Project",
+    title: "Submit & Pitch",
     items: [
-      "Proposal submission deadline: 4 May 2026 (Monday)",
-      "Announcement of finalists: 15 May 2026, 4:00 PM (Friday)",
-      "Grand Finals: 13 June 2026, 8:30 AM - 2:00 PM at Sunway University",
+      "Submit project proposal by 4 May 2026",
+      "Grand Finals at Sunway University on 13 June",
+      "Pitch your AI solution to the judges",
     ],
   },
 ];
@@ -50,37 +42,37 @@ const HowToApply = () => {
     <section id="apply" className="bg-secondary/50 py-20 lg:py-32 px-4 md:px-8">
       <div className="container mx-auto">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground text-glow">
             How to Apply
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Follow these simple steps to start your journey in the National AI Competition.
+            Get started in three simple steps.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => (
             <BlurFade key={step.title} delay={BLUR_FADE_DELAY * index} inView>
               <Card
-                className="group relative border-border/50 bg-background/50 hover:bg-background hover:shadow-md transition-all duration-300 h-full"
+                className="group relative border-border/50 bg-background/50 hover:bg-background hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 h-full border-2 hover:border-primary/20"
               >
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                      <step.icon className="w-6 h-6 text-primary" />
+                  <div className="flex flex-col items-center text-center gap-6">
+                    <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-500">
+                      <step.icon className="w-8 h-8 text-primary" />
                     </div>
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-foreground">
+                    <div className="space-y-4 w-full">
+                      <h3 className="text-2xl font-bold text-foreground">
                         {step.title}
                       </h3>
-                      <ul className="space-y-3">
+                      <ul className="space-y-3 text-left">
                         {step.items.map((item, idx) => (
                           <li
                             key={idx}
                             className="text-muted-foreground leading-relaxed flex items-start gap-3"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2 shrink-0" />
-                            <span>{item}</span>
+                            <span className="text-sm md:text-base">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -96,11 +88,11 @@ const HowToApply = () => {
           <Button
             asChild
             size="lg"
-            className="h-12 px-8 rounded-full text-base font-medium bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-lg hover:shadow-primary/25"
+            className="h-14 px-10 rounded-full text-lg font-semibold bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all duration-300 shadow-xl"
           >
             <Link to="/register">
               Register Now
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

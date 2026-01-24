@@ -15,9 +15,11 @@ import { ArrowRight } from "lucide-react";
 import heroGraphic from "@/assets/hero-graphic.png";
 import sunwayLogo from "@/assets/sunway-logo.png";
 import rakanTutorLogo from "@/assets/rakan-tutor-logo.png";
+import { useTranslation } from "react-i18next";
 
 const NewHero = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center py-20 px-4 md:px-8 bg-background overflow-hidden">
@@ -40,14 +42,12 @@ const NewHero = () => {
             <div className="space-y-4 lg:space-y-6">
               <BlurFade delay={0.2}>
                 <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-                  National AI
-                  <br />
-                  Competition 2026
+                  {t("hero.title")}
                 </h1>
               </BlurFade>
               <BlurFade delay={0.3}>
                 <p className="text-lg lg:text-2xl text-muted-foreground max-w-md">
-                  The Largest AI Competition for Youth in Malaysia
+                  {t("hero.subtitle")}
                 </p>
               </BlurFade>
             </div>
@@ -60,13 +60,13 @@ const NewHero = () => {
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg rounded-full group transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
-                  Register Now
+                  {t("hero.cta")}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <p className="text-sm text-muted-foreground">
-                  By registering, you agree to our{" "}
+                  {t("hero.termsText")}
                   <a href="/terms" className="underline hover:text-foreground transition-colors">
-                    terms and conditions
+                    {t("hero.termsLink")}
                   </a>
                 </p>
               </div>
@@ -92,7 +92,7 @@ const NewHero = () => {
               {/* Organised By */}
               <div className="text-center space-y-6">
                 <p className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-[0.4em]">
-                  Organised By
+                  {t("hero.organizedBy")}
                 </p>
                 <div className="flex justify-center items-center gap-8 flex-wrap">
                   <a
@@ -119,7 +119,7 @@ const NewHero = () => {
               {/* With Approval From */}
               <div className="text-center space-y-6">
                 <p className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-[0.4em]">
-                  With Approval From
+                  {t("hero.approvalFrom")}
                 </p>
                 <div className="flex justify-center items-center">
                   <div className="text-xl lg:text-2xl font-semibold text-foreground text-center">

@@ -5,39 +5,41 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import BlurFade from "@/components/ui/blur-fade";
+import { useTranslation } from "react-i18next";
 
 const BLUR_FADE_DELAY = 0.04;
 
-const faqs = [
-  {
-    question: "Is there a registration fee?",
-    answer: "No, participation is free.",
-  },
-  {
-    question: "Are students from private and international schools eligible?",
-    answer: "Yes, we welcome students from all backgrounds.",
-  },
-  {
-    question: "Is the AI Masterclass free?",
-    answer: "Yes, the AI masterclass is free.",
-  },
-  {
-    question: "How many tracks are there?",
-    answer: "Five tracks: Computing, Engineering, Innovation, Art, and Architecture.",
-  },
-  {
-    question: "When do I know the competition topic?",
-    answer:
-      "Competition topics and materials will be shared with all registered teams on March 19, 2026.",
-  },
-];
-
 const FAQ = () => {
+  const { t } = useTranslation();
+
+  const faqs = [
+    {
+      question: t("faq.q1.question"),
+      answer: t("faq.q1.answer"),
+    },
+    {
+      question: t("faq.q2.question"),
+      answer: t("faq.q2.answer"),
+    },
+    {
+      question: t("faq.q3.question"),
+      answer: t("faq.q3.answer"),
+    },
+    {
+      question: t("faq.q4.question"),
+      answer: t("faq.q4.answer"),
+    },
+    {
+      question: t("faq.q5.question"),
+      answer: t("faq.q5.answer"),
+    },
+  ];
+
   return (
     <section id="faq" className="bg-background py-20 px-4 md:px-8">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-          Frequently Asked Questions
+          {t("faq.title")}
         </h2>
 
         <div className="max-w-2xl mx-auto">
@@ -48,7 +50,7 @@ const FAQ = () => {
                   value={`item-${index}`}
                   className="bg-card border border-border rounded-xl px-6 shadow-sm"
                 >
-                  <AccordionTrigger className="text-foreground font-medium hover:no-underline py-5">
+                  <AccordionTrigger className="text-foreground font-medium hover:no-underline py-5 text-left">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-5">
@@ -66,7 +68,7 @@ const FAQ = () => {
               href="/faq"
               className="inline-flex items-center text-primary font-medium hover:underline gap-2"
             >
-              View all FAQs
+              {t("faq.viewAll")}
               <svg
                 className="w-4 h-4"
                 fill="none"

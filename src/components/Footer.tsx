@@ -2,8 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const isV2 = location.pathname === "/v2";
 
@@ -33,7 +35,7 @@ const Footer = () => {
               "text-lg leading-relaxed font-light",
               isV2 ? "text-zinc-500" : "text-muted-foreground"
             )}>
-              Empowering students across Malaysia to build the next generation of artificial intelligence.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -42,28 +44,28 @@ const Footer = () => {
             <p className={cn(
               "text-xs font-semibold uppercase tracking-[0.3em]",
               isV2 ? "text-cyan-500/40" : "text-muted-foreground/40"
-            )}>Support</p>
+            )}>{t("footer.support")}</p>
             <nav className="flex flex-col gap-3">
               <Link to="/tracks" className={cn(
                 "text-lg transition-colors font-light",
                 isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
-              )}>Tracks</Link>
+              )}>{t("nav.tracks")}</Link>
               <Link to="/faq" className={cn(
                 "text-lg transition-colors font-light",
                 isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
-              )}>FAQ</Link>
-              <a href="mailto:clement@sunway.edu.my" className={cn(
+              )}>{t("nav.faq")}</Link>
+              <Link to="/contact" className={cn(
                 "text-lg transition-colors font-light",
                 isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
-              )}>Contact Us</a>
+              )}>{t("footer.contactUs")}</Link>
               <Link to="/privacy" className={cn(
                 "text-lg transition-colors font-light",
                 isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
-              )}>Privacy</Link>
+              )}>{t("footer.privacy")}</Link>
               <Link to="/terms" className={cn(
                 "text-lg transition-colors font-light",
                 isV2 ? "text-zinc-500 hover:text-cyan-400" : "text-foreground/70 hover:text-foreground"
-              )}>Terms</Link>
+              )}>{t("footer.terms")}</Link>
             </nav>
           </div>
 
@@ -85,7 +87,7 @@ const Footer = () => {
             <p className={cn(
               "text-sm font-medium md:text-right",
               isV2 ? "text-cyan-500/40 font-mono tracking-widest" : "text-muted-foreground/60"
-            )}>BACK TO TOP</p>
+            )}>{t("footer.backToTop")}</p>
           </div>
         </div>
 
@@ -103,7 +105,7 @@ const Footer = () => {
             <span className={cn(
               "text-xs font-semibold uppercase tracking-[0.4em]",
               isV2 ? "text-zinc-700" : "text-muted-foreground/30"
-            )}>Organised In Partnership</span>
+            )}>{t("footer.partnership")}</span>
           </div>
         </div>
       </div>

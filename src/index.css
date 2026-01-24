@@ -235,4 +235,8 @@
   .tech-label {
     @apply font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-500/60;
   }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(var(--primary), 0.2);
+  }
 }

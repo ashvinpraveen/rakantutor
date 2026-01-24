@@ -19,7 +19,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, X } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Confetti from "react-confetti";
-const trackOptions = ["Innovation", "Generated Art", "Computing", "Engineering", "Architecture"] as const;
+const trackOptions = ["Innovation", "Computing", "Engineering", "Generated Art", "Architecture"] as const;
 const categoryOptions = ["Category A (Year 10/Year 11/Form 4/Form 5 [SPM]/Senior Middle 1/Senior Middle 2)", "Category B (Form 6 [STPM]/Senior Middle 3 [UEC]/Pre University/ Diploma)"] as const;
 const heardAboutOptions = ["School Counsellor/Teacher", "Social Media (Instagram/Facebook/LinkedIn)", "Newspaper/E-Newspaper", "Friends/Family", "Other"] as const;
 const qualificationOptions = ["Year 11", "Year 10", "Form 5", "Form 4", "Senior Middle 2", "Senior Middle 1"] as const;
@@ -547,10 +547,7 @@ function WelcomeStep({
           .
         </p>
         <p className="text-sm text-muted-foreground">
-          For enquiries, contact{" "}
-          <a href="mailto:naic@rakantutor.org" className="text-primary hover:underline font-medium">
-            naic@rakantutor.org
-          </a>
+          If you have any further questions, please email <a href="mailto:mingjackt@sunway.edu.my" className="text-primary hover:underline font-medium">mingjackt@sunway.edu.my (Jack)</a> / <a href="mailto:clement@sunway.edu.my" className="text-primary hover:underline font-medium">clement@sunway.edu.my (Clement)</a> or <a href="https://wa.me/60192004268" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">WhatsApp Jack at (019-200 4268)</a>.
         </p>
       </div>
     </motion.div>
