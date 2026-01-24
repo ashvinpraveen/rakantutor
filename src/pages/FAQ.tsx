@@ -165,7 +165,7 @@ const faqData = [
         items: [
             {
                 question: "Do all participants get a certificate of participation?",
-                answer: "Yes, all participants will be given a certificate of participation when successfully submitting your proposal before the deadline."
+                answer: "Yes, all participants will be given a certificate of participation when successfully submitting your proposal for the Preliminary round before the deadline."
             },
             {
                 question: "What do winners get?",

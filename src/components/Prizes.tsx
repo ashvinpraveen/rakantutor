@@ -14,8 +14,7 @@ const prizes = [
     glow: "shadow-yellow-500/20",
     gradient: "from-yellow-500/10 to-transparent",
     benefits: [
-      "Sunway Bursary",
-      "Cert of Commendation",
+      "Cert of Commendation (Per Person)",
     ],
   },
   {
@@ -27,8 +26,7 @@ const prizes = [
     glow: "shadow-slate-400/20",
     gradient: "from-slate-400/10 to-transparent",
     benefits: [
-      "Sunway Bursary",
-      "Cert of Commendation",
+      "Cert of Commendation (Per Person)",
     ],
   },
   {
@@ -40,8 +38,7 @@ const prizes = [
     glow: "shadow-amber-900/20",
     gradient: "from-amber-700/10 to-transparent",
     benefits: [
-      "Sunway Bursary",
-      "Cert of Commendation",
+      "Cert of Commendation (Per Person)",
     ],
   },
   {
@@ -52,7 +49,9 @@ const prizes = [
     amountColor: "text-primary",
     glow: "shadow-primary/20",
     gradient: "from-primary/10 to-transparent",
-    benefits: ["Sunway Bursary", "Cert of Commendation"],
+    benefits: [
+      "Cert of Commendation (Per Person)"
+    ],
   },
 ];
 
@@ -91,8 +90,11 @@ const Prizes = () => {
                   <h3 className="text-lg font-bold font-display text-muted-foreground mb-2 tracking-widest">
                     {prize.position}
                   </h3>
-                  <div className={`text-3xl md:text-4xl font-bold font-display mb-8 ${prize.amountColor || prize.color} drop-shadow-sm`}>
+                  <div className={`text-3xl md:text-4xl font-bold font-display ${prize.amountColor || prize.color} drop-shadow-sm`}>
                     {prize.amount}
+                  </div>
+                  <div className="text-sm font-bold uppercase tracking-widest text-muted-foreground/80 mb-8">
+                    Sunway Bursary
                   </div>
 
                   <div className="mt-auto space-y-3 text-left pl-2 border-l border-black/10 dark:border-white/10">
@@ -115,7 +117,7 @@ const Prizes = () => {
         <BlurFade delay={BLUR_FADE_DELAY * 4} inView>
           <div className="mt-20 flex flex-col items-center gap-4 text-center">
             <p className="text-muted-foreground text-sm font-light italic">
-              * All participants will receive a certificate of participation upon successful project submission.
+              * All participants will receive certificate of participation upon successful submissions for Preliminary round.
             </p>
             <p className="text-foreground font-bold tracking-widest text-base uppercase">
               More Prizes to be announced soon

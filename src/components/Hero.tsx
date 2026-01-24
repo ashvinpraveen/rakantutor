@@ -96,7 +96,7 @@ const Hero = () => {
                   <img src={rakanTutorLogo} alt="Rakan Tutor" className="h-20 md:h-24 w-auto object-contain" />
                 </a>
                 <a
-                  href="https://sunway.edu.my"
+                  href="https://sunwayuniversity.edu.my/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Sunway University website"
