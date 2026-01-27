@@ -13,27 +13,6 @@ const TracksPage = () => {
 
     const tracksData = [
         {
-            id: "genai",
-            title: t("tracksDetail.genai.title"),
-            icon: <Video className="w-8 h-8" />,
-            color: "from-pink-500 to-rose-500",
-            bgColor: "bg-pink-500/10",
-            borderColor: "border-pink-500/20",
-            overview: t("tracksDetail.genai.overview"),
-            theme: t("tracksDetail.genai.theme"),
-            whoIsThisFor: t("tracksDetail.genai.whoIsThisFor"),
-            deliverables: t("tracksDetail.genai.deliverables"),
-            examples: [
-                t("tracksDetail.genai.example1"),
-                t("tracksDetail.genai.example2")
-            ],
-            judging: [
-                { title: t("tracksDetail.genai.judging1.title"), description: t("tracksDetail.genai.judging1.desc") },
-                { title: t("tracksDetail.genai.judging2.title"), description: t("tracksDetail.genai.judging2.desc") },
-                { title: t("tracksDetail.genai.judging3.title"), description: t("tracksDetail.genai.judging3.desc") }
-            ]
-        },
-        {
             id: "innovation",
             title: t("tracksDetail.innovation.title"),
             icon: <Lightbulb className="w-8 h-8" />,
@@ -55,27 +34,6 @@ const TracksPage = () => {
             ]
         },
         {
-            id: "computing",
-            title: t("tracksDetail.computing.title"),
-            icon: <Monitor className="w-8 h-8" />,
-            color: "from-cyan-500 to-blue-500",
-            bgColor: "bg-cyan-500/10",
-            borderColor: "border-cyan-500/20",
-            overview: t("tracksDetail.computing.overview"),
-            theme: t("tracksDetail.computing.theme"),
-            whoIsThisFor: t("tracksDetail.computing.whoIsThisFor"),
-            deliverables: t("tracksDetail.computing.deliverables"),
-            examples: [
-                t("tracksDetail.computing.example1"),
-                t("tracksDetail.computing.example2")
-            ],
-            judging: [
-                { title: t("tracksDetail.computing.judging1.title"), description: t("tracksDetail.computing.judging1.desc") },
-                { title: t("tracksDetail.computing.judging2.title"), description: t("tracksDetail.computing.judging2.desc") },
-                { title: t("tracksDetail.computing.judging3.title"), description: t("tracksDetail.computing.judging3.desc") }
-            ]
-        },
-        {
             id: "engineering",
             title: t("tracksDetail.engineering.title"),
             icon: <Settings className="w-8 h-8" />,
@@ -94,6 +52,48 @@ const TracksPage = () => {
                 { title: t("tracksDetail.engineering.judging1.title"), description: t("tracksDetail.engineering.judging1.desc") },
                 { title: t("tracksDetail.engineering.judging2.title"), description: t("tracksDetail.engineering.judging2.desc") },
                 { title: t("tracksDetail.engineering.judging3.title"), description: t("tracksDetail.engineering.judging3.desc") }
+            ]
+        },
+        {
+            id: "genai",
+            title: t("tracksDetail.genai.title"),
+            icon: <Video className="w-8 h-8" />,
+            color: "from-pink-500 to-rose-500",
+            bgColor: "bg-pink-500/10",
+            borderColor: "border-pink-500/20",
+            overview: t("tracksDetail.genai.overview"),
+            theme: t("tracksDetail.genai.theme"),
+            whoIsThisFor: t("tracksDetail.genai.whoIsThisFor"),
+            deliverables: t("tracksDetail.genai.deliverables"),
+            examples: [
+                t("tracksDetail.genai.example1"),
+                t("tracksDetail.genai.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.genai.judging1.title"), description: t("tracksDetail.genai.judging1.desc") },
+                { title: t("tracksDetail.genai.judging2.title"), description: t("tracksDetail.genai.judging2.desc") },
+                { title: t("tracksDetail.genai.judging3.title"), description: t("tracksDetail.genai.judging3.desc") }
+            ]
+        },
+        {
+            id: "computing",
+            title: t("tracksDetail.computing.title"),
+            icon: <Monitor className="w-8 h-8" />,
+            color: "from-cyan-500 to-blue-500",
+            bgColor: "bg-cyan-500/10",
+            borderColor: "border-cyan-500/20",
+            overview: t("tracksDetail.computing.overview"),
+            theme: t("tracksDetail.computing.theme"),
+            whoIsThisFor: t("tracksDetail.computing.whoIsThisFor"),
+            deliverables: t("tracksDetail.computing.deliverables"),
+            examples: [
+                t("tracksDetail.computing.example1"),
+                t("tracksDetail.computing.example2")
+            ],
+            judging: [
+                { title: t("tracksDetail.computing.judging1.title"), description: t("tracksDetail.computing.judging1.desc") },
+                { title: t("tracksDetail.computing.judging2.title"), description: t("tracksDetail.computing.judging2.desc") },
+                { title: t("tracksDetail.computing.judging3.title"), description: t("tracksDetail.computing.judging3.desc") }
             ]
         },
         {

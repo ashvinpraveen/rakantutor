@@ -231,7 +231,7 @@
         },
         "q4": {
             "question": "How many tracks are there?",
-            "answer": "Five tracks: Innovation, Computing, Engineering, GenAI, and Architecture."
+            "answer": "Five tracks: Innovation, Engineering, Generative Art, Computing, and Architecture."
         },
         "q5": {
             "question": "When do I know the competition topic?",
@@ -270,7 +270,7 @@
                     },
                     {
                         "question": "How many tracks are there?",
-                        "answer": "There are five tracks:\n- Innovation: Build AI-driven EdTech solutions.\n- Computing: Develop an AI model for medical screening.\n- Engineering: Design AI-powered solutions for smart cities.\n- GenAI: Create AI-generated video narratives for Visit Malaysia 2026.\n- Architecture: Re-Designing the Classroom: Spaces for Future Learning\nRefer to the Track page to learn more"
+                        "answer": "There are five tracks:\n- Innovation: Build AI-driven EdTech solutions.\n- Engineering: Design AI-powered solutions for smart cities.\n- Generative Art: Create AI-generated video narratives for Visit Malaysia 2026.\n- Computing: Develop an AI model for medical screening.\n- Architecture: Re-Designing the Classroom: Spaces for Future Learning\nRefer to the Track page to learn more"
                     },
                     {
                         "question": "Where and when will the final be held?",
@@ -347,7 +347,7 @@
                     },
                     {
                         "question": "Do I need coding experience for the competition?",
-                        "answer": "It depends on the track you choose:\n- Computing: Coding or technical experience is highly encouraged.\n- GenAI, Engineering, Innovation, and Architecture Tracks: Coding experience is not required. We focus on design, creativity, and problem-solving."
+                        "answer": "It depends on the track you choose:\n- Computing: Coding or technical experience is highly encouraged.\n- Innovation, Engineering, Generative Art, and Architecture Tracks: Coding experience is not required. We focus on design, creativity, and problem-solving."
                     }
                 ]
             },

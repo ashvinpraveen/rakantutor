@@ -11,13 +11,6 @@ const Tracks = () => {
 
   const tracks = [
     {
-      emoji: "🎬",
-      title: t("tracks.genai.title"),
-      description: t("tracks.genai.description"),
-      bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
-      href: "/tracks#genai"
-    },
-    {
       emoji: "💡",
       title: t("tracks.innovation.title"),
       description: t("tracks.innovation.description"),
@@ -25,18 +18,25 @@ const Tracks = () => {
       href: "/tracks#innovation"
     },
     {
-      emoji: "💻",
-      title: t("tracks.computing.title"),
-      description: t("tracks.computing.description"),
-      bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
-      href: "/tracks#computing"
-    },
-    {
       emoji: "⚙️",
       title: t("tracks.engineering.title"),
       description: t("tracks.engineering.description"),
       bgColor: "bg-[#FDF6E3] dark:bg-amber-950/20",
       href: "/tracks#engineering"
+    },
+    {
+      emoji: "🎬",
+      title: t("tracks.genai.title"),
+      description: t("tracks.genai.description"),
+      bgColor: "bg-[#F5F0F9] dark:bg-purple-950/20",
+      href: "/tracks#genai"
+    },
+    {
+      emoji: "💻",
+      title: t("tracks.computing.title"),
+      description: t("tracks.computing.description"),
+      bgColor: "bg-[#E6F4F1] dark:bg-cyan-950/20",
+      href: "/tracks#computing"
     },
     {
       emoji: "🏛️",
