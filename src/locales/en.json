@@ -91,7 +91,7 @@
             "subtitle": "National AI Competition 2026",
             "title": "Tracks",
             "titleHighlight": "Overview",
-            "desc": "Explore our five distinct competition tracks for 2026. Find the path that best matches your passion and skills."
+            "desc": "Explore our five distinct competition tracks for 2026. Find the path that best matches your passion and skills. Specific competition topics will be announced to registered teams on March 19, 2026."
         },
         "headers": {
             "challengeOverview": "Challenge Overview",
@@ -110,7 +110,7 @@
         },
         "innovation": {
             "title": "Innovation",
-            "overview": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas.",
+            "overview": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas. Specific SDG areas and detailed requirements will be announced on March 19, 2026.",
             "theme": "UN Sustainable Development Goals",
             "whoIsThisFor": "Students passionate about using AI to solve real-world problems aligned with UN Sustainable Development Goals.",
             "deliverables": "A functional app or solution, a project proposal, and a presentation pitch.",
@@ -131,7 +131,7 @@
         },
         "computing": {
             "title": "Computing",
-            "overview": "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common.",
+            "overview": "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from thousands of retinal fundus images with a realistic setting where lighting, blurring, camera differences, and class imbalance are common. Dataset details and technical specifications will be announced on March 19, 2026.",
             "theme": "Smart City Healthcare - Diabetic Retinopathy (DR) Screening",
             "whoIsThisFor": "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
             "deliverables": "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
@@ -152,7 +152,7 @@
         },
         "engineering": {
             "title": "Engineering",
-            "overview": "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges.",
+            "overview": "Design AI-powered engineering solutions that make cities more efficient, sustainable, and people-friendly. Use technology to solve real Malaysian urban challenges. Specific challenge details will be announced on March 19, 2026.",
             "theme": "Smart City Initiatives",
             "whoIsThisFor": "Problem-solvers interested in robotics, automation, and the hardware-software interface of AI for urban living.",
             "deliverables": "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
@@ -173,7 +173,7 @@
         },
         "genai": {
             "title": "GenAI Art",
-            "overview": "Create a compelling 60 second video leveraging AI images to tell a local story in a meaningful way.",
+            "overview": "Create a compelling 60 second video leveraging AI images to tell a local story in a meaningful way. Specific story themes and submission guidelines will be announced on March 19, 2026.",
             "theme": "Local Storytelling with AI",
             "whoIsThisFor": "Creative storytellers and AI enthusiasts looking to master short-form video content and AI-assisted visualization.",
             "deliverables": "A 45-60 second TikTok-style video, a prompt log for AI visuals, and a creative story statement.",
@@ -194,7 +194,7 @@
         },
         "architecture": {
             "title": "Architecture",
-            "overview": "Reimagine the classroom as a space for future learning, informed by pedagogy, flexibility, technology, and human comfort.",
+            "overview": "Reimagine the classroom as a space for future learning, informed by pedagogy, flexibility, technology, and human comfort. Detailed design briefs and requirements will be announced on March 19, 2026.",
             "theme": "Re-Designing the Classroom: Spaces for Future Learning",
             "whoIsThisFor": "Visionaries interested in architecture, spatial design, and sustainable environments using AI tools.",
             "deliverables": "One A1 design board (PDF) including visuals, spatial diagrams (plan/section), and a design story.",
