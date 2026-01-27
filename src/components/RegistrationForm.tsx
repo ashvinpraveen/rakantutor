@@ -19,7 +19,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, X } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Confetti from "react-confetti";
-const trackOptions = ["Innovation", "Engineering", "Generative Art", "Computing", "Architecture"] as const;
+const trackOptions = ["Innovation", "Engineering", "GenAI Art", "Computing", "Architecture"] as const;
 const categoryOptions = ["Category A (Year 10/Year 11/Form 4/Form 5 [SPM]/Senior Middle 1/Senior Middle 2)", "Category B (Form 6 [STPM]/Senior Middle 3 [UEC]/Pre University/ Diploma)"] as const;
 const heardAboutOptions = ["School Counsellor/Teacher", "Social Media (Instagram/Facebook/LinkedIn)", "Newspaper/E-Newspaper", "Friends/Family", "Other"] as const;
 const qualificationOptions = ["Pre-University", "Diploma", "Form 6 / STPM", "Form 5", "Form 4", "Year 11", "Year 10", "Senior Middle 3/ UEC", "Senior Middle 2", "Senior Middle 1"] as const;

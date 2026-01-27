@@ -33,7 +33,7 @@
         "cta": "View All Track Details",
         "innovation": {
             "title": "Innovation",
-            "description": "Build the next viral AI-native EdTech startup."
+            "description": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas."
         },
         "computing": {
             "title": "Computing",
@@ -45,7 +45,7 @@
         },
         "genai": {
             "title": "GenAI",
-            "description": "Create AI-generated video narratives for Visit Malaysia 2026."
+            "description": "Create a compelling 60 second video leveraging AI images to tell a local story in a meaningful way."
         },
         "architecture": {
             "title": "Architecture",
@@ -231,7 +231,7 @@
         },
         "q4": {
             "question": "How many tracks are there?",
-            "answer": "Five tracks: Innovation, Engineering, Generative Art, Computing, and Architecture."
+            "answer": "Five tracks: Innovation, Engineering, GenAI Art, Computing, and Architecture."
         },
         "q5": {
             "question": "When do I know the competition topic?",
@@ -270,7 +270,7 @@
                     },
                     {
                         "question": "How many tracks are there?",
-                        "answer": "There are five tracks:\n- Innovation: Build AI-driven EdTech solutions.\n- Engineering: Design AI-powered solutions for smart cities.\n- Generative Art: Create AI-generated video narratives for Visit Malaysia 2026.\n- Computing: Develop an AI model for medical screening.\n- Architecture: Re-Designing the Classroom: Spaces for Future Learning\nRefer to the Track page to learn more"
+                        "answer": "There are five tracks:\n- Innovation: Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas.\n- Engineering: Design AI-powered solutions for smart cities.\n- GenAI Art: Create a compelling 60 second video leveraging AI images to tell a local story in a meaningful way.\n- Computing: Develop an AI model for medical screening.\n- Architecture: Re-Designing the Classroom: Spaces for Future Learning\nRefer to the Track page to learn more"
                     },
                     {
                         "question": "Where and when will the final be held?",
@@ -347,7 +347,7 @@
                     },
                     {
                         "question": "Do I need coding experience for the competition?",
-                        "answer": "It depends on the track you choose:\n- Computing: Coding or technical experience is highly encouraged.\n- Innovation, Engineering, Generative Art, and Architecture Tracks: Coding experience is not required. We focus on design, creativity, and problem-solving."
+                        "answer": "It depends on the track you choose:\n- Computing: Coding or technical experience is highly encouraged.\n- Innovation, Engineering, GenAI Art, and Architecture Tracks: Coding experience is not required. We focus on design, creativity, and problem-solving."
                     }
                 ]
             },
