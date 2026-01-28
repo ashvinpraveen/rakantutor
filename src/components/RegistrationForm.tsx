@@ -19,13 +19,13 @@ import { ArrowLeft, ArrowRight, CheckCircle2, X } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Confetti from "react-confetti";
-const trackOptions = ["Innovation", "Engineering", "GenAI Art", "Computing", "Architecture"] as const;
+const trackOptions = ["Innovation", "Engineering", "Gen Art", "Computing", "Architecture"] as const;
 const categoryOptions = ["Category A (Year 10/Year 11/Form 4/Form 5 [SPM]/Senior Middle 1/Senior Middle 2)", "Category B (Form 6 [STPM]/Senior Middle 3 [UEC]/Pre University/ Diploma)"] as const;
 const heardAboutOptions = ["School Counsellor/Teacher", "Social Media (Instagram/Facebook/LinkedIn)", "Newspaper/E-Newspaper", "Friends/Family", "Other"] as const;
 
 // Category-specific qualification options
 const categoryAQualifications = ["Year 10", "Year 11", "Form 4", "Form 5", "Senior Middle 1", "Senior Middle 2"] as const;
-const categoryBQualifications = ["Form 6 / STPM", "Senior Middle 3/ UEC", "Pre-University", "Diploma"] as const;
+const categoryBQualifications = ["Form 4", "Form 5", "Year 10", "Year 11", "Senior Middle 1", "Senior Middle 2", "Form 6 / STPM", "Senior Middle 3/ UEC", "Pre-University", "Diploma"] as const;
 
 // Helper function to get qualifications based on category
 const getQualificationOptions = (category: string) => {
@@ -191,8 +191,8 @@ const RegistrationForm = () => {
     advisorRelationshipDetails: "",
     advisorContactNumber: "",
     advisorEmail: "",
-    termsAccepted: false,
-    parentalConsentConfirmed: false
+    termsAccepted: false as any,
+    parentalConsentConfirmed: false as any
   }), []);
   const form = useForm<RegistrationValues>({
     resolver: zodResolver(registrationSchema),
@@ -225,7 +225,7 @@ const RegistrationForm = () => {
         if (value !== undefined && value !== null && value !== "") {
           // Skip qualifications that don't match the saved category
           if (key.endsWith("Qualification")) {
-            if (!validQualifications.includes(value as any)) {
+            if (!(validQualifications as readonly string[]).includes(value as string)) {
               return; // Don't restore invalid qualification
             }
           }
