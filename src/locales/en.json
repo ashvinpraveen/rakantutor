@@ -295,7 +295,7 @@
                 "items": [
                     {
                         "question": "Who can participate?",
-                        "answer": "Participants must be an active students from [Form 4 – Form 5, Year 10 – Year 11, Senior Middle 1 – Senior Middle 2] are eligible to join Category A; Participants from [STPM, UEC, Pre-University programmes and Diploma] are eligible to join Category B."
+                        "answer": "Participants must be an active students from [Form 4 – Form 5, Year 10 – Year 11, Senior Middle 1 – Senior Middle 2] are eligible to join Category A; Participants from [STPM, UEC, Pre-University programmes and Diploma] are eligible to join Category B. Note: American Degree Program students are not eligible as they are considered university students."
                     },
                     {
                         "question": "How do I join?",
@@ -319,11 +319,11 @@
                     },
                     {
                         "question": "Can I form a team with friends from other schools?",
-                        "answer": "Yes, you can form a team with friends from other schools. If any of the member falls under Category B: STPM, Pre-U, UEC, Diploma, the team will be competing under Category B."
+                        "answer": "Yes, you can form a team with friends from other schools. If any of the member falls under Category B: STPM, Pre-U, UEC, Diploma, the team will be competing under Category B. Note: American Degree Program students are not eligible."
                     },
                     {
                         "question": "Can a team have students from different category?",
-                        "answer": "Yes, a team can have students from different school levels. However, If any of the member falls under Category B: STPM, Pre-U, UEC, Diploma, the team will be competing under Category B."
+                        "answer": "Yes, a team can have students from different school levels. However, If any of the member falls under Category B: STPM, Pre-U, UEC, Diploma, the team will be competing under Category B. Note: American Degree Program students are not eligible."
                     },
                     {
                         "question": "Are students from private and international schools allowed?",
@@ -532,6 +532,7 @@
                     "Pre-Universities students from MQA-accredited institutions",
                     "Diploma students from MQA-accredited institutions"
                 ],
+                "catBNote": "Note: American Degree Program students are not eligible as they are considered university students.",
                 "dateCondition": "Only those whose graduation date falls after 13 June 2026 are eligible to participate in the Competition.",
                 "statusCondition": "This condition is set to ensure that all participants maintain active student status throughout the competition period.",
                 "consentCondition": "For participants under the age of 18, participation is subject to the consent of a parent or legal guardian. By submitting an entry, the participant represents that such consent has been obtained.",

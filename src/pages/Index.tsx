@@ -56,7 +56,7 @@ const NewHero = () => {
             <BlurFade delay={0.4}>
               <div className="space-y-3">
                 <Button
-                  onClick={() => navigate("/register")}
+                  onClick={() => navigate("/naic/register")}
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-6 text-lg rounded-full group transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >

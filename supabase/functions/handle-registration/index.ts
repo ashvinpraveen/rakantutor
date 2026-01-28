@@ -11,6 +11,7 @@ interface RegistrationData {
   id: string;
   created_at: string;
   heard_about: string;
+  heard_about_other: string | null;
   team_name: string;
   track: string;
   category: string;
@@ -18,6 +19,8 @@ interface RegistrationData {
   member1_contact_number: string;
   member1_ic_number: string;
   member1_email: string;
+  member1_nationality: string;
+  member1_country_of_residence: string;
   member1_school: string;
   member1_qualification: string;
   member1_graduation_date: string;
@@ -25,6 +28,8 @@ interface RegistrationData {
   member2_contact_number: string;
   member2_ic_number: string;
   member2_email: string;
+  member2_nationality: string;
+  member2_country_of_residence: string;
   member2_school: string;
   member2_qualification: string;
   member2_graduation_date: string;
@@ -32,6 +37,8 @@ interface RegistrationData {
   member3_contact_number: string;
   member3_ic_number: string;
   member3_email: string;
+  member3_nationality: string;
+  member3_country_of_residence: string;
   member3_school: string;
   member3_qualification: string;
   member3_graduation_date: string;
@@ -39,6 +46,8 @@ interface RegistrationData {
   member4_contact_number: string;
   member4_ic_number: string;
   member4_email: string;
+  member4_nationality: string;
+  member4_country_of_residence: string;
   member4_school: string;
   member4_qualification: string;
   member4_graduation_date: string;
@@ -88,9 +97,12 @@ async function syncToGoogleSheets(data: RegistrationData) {
       data.track,
       data.category,
       data.heard_about,
+      data.heard_about_other,
       // Member 1
       data.member1_full_name,
       data.member1_email,
+      data.member1_nationality,
+      data.member1_country_of_residence,
       data.member1_contact_number,
       data.member1_ic_number,
       data.member1_school,
@@ -99,6 +111,8 @@ async function syncToGoogleSheets(data: RegistrationData) {
       // Member 2
       data.member2_full_name,
       data.member2_email,
+      data.member2_nationality,
+      data.member2_country_of_residence,
       data.member2_contact_number,
       data.member2_ic_number,
       data.member2_school,
@@ -107,6 +121,8 @@ async function syncToGoogleSheets(data: RegistrationData) {
       // Member 3
       data.member3_full_name,
       data.member3_email,
+      data.member3_nationality,
+      data.member3_country_of_residence,
       data.member3_contact_number,
       data.member3_ic_number,
       data.member3_school,
@@ -115,6 +131,8 @@ async function syncToGoogleSheets(data: RegistrationData) {
       // Member 4
       data.member4_full_name,
       data.member4_email,
+      data.member4_nationality,
+      data.member4_country_of_residence,
       data.member4_contact_number,
       data.member4_ic_number,
       data.member4_school,
@@ -132,7 +150,7 @@ async function syncToGoogleSheets(data: RegistrationData) {
     // Append to sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
-      range: "Registrations!A:AM", // Adjust range as needed
+      range: "Registrations!A:AV", // Adjust range as needed
       valueInputOption: "RAW",
       requestBody: {
         values: [rowData],

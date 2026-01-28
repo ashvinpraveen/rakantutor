@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import rakanTutorIcon from "/rakantutor_icon_only.png";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -19,12 +20,21 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: t("nav.tracks"), href: "/tracks" },
-    { label: t("nav.prizes"), href: isV2 ? "/v2#prizes" : "/#prizes" },
-    { label: t("nav.timeline"), href: isV2 ? "/v2#timeline" : "/#timeline" },
-    { label: t("nav.faq"), href: "/faq" },
-    { label: t("nav.contact"), href: "/contact" },
+  const isNaicPage = location.pathname.startsWith("/naic");
+
+  const navLinks = isNaicPage ? [
+    { label: t("nav.tracks"), href: "/naic/tracks" },
+    { label: t("nav.prizes"), href: isV2 ? "/v2#prizes" : "/naic#prizes" },
+    { label: t("nav.timeline"), href: isV2 ? "/v2#timeline" : "/naic#timeline" },
+    { label: t("nav.faq"), href: "/naic/faq" },
+    { label: t("nav.contact"), href: "/naic/contact" },
+  ] : [
+    { label: "About", href: "/about" },
+    { label: "History", href: "/history" },
+    { label: "Impact", href: "/impact" },
+    { label: "News & Media", href: "/news" },
+    { label: "NAIC 2025", href: "/naic" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -35,19 +45,23 @@ const Header = () => {
           scrolled
             ? isV2
               ? "bg-black/80 backdrop-blur-md border-cyan-500/20 py-2"
-              : "bg-transparent backdrop-blur-md border-border/10 shadow-sm py-2"
+              : "bg-transparent backdrop-blur-md border-border/10 py-2"
             : "bg-transparent border-transparent py-4"
         )}
       >
         <div className="max-w-[1400px] mx-auto flex items-center">
           {/* Left: Logo Container */}
           <div className="flex-1 flex justify-start">
-            <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <img src="/naic_logo_mark.png" alt="NAIC Logo" className="w-8 h-8 object-contain" />
+            <Link to={isNaicPage ? "/naic" : "/"} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img
+                src={isNaicPage ? "/naic_logo_mark.png" : rakanTutorIcon}
+                alt={isNaicPage ? "NAIC Logo" : "Rakan Tutor Logo"}
+                className="w-8 h-8 object-contain"
+              />
               <span className={cn(
                 "font-display font-bold text-xl tracking-tight text-foreground",
                 isV2 && "text-white neon-text-cyan"
-              )}>NAIC '26</span>
+              )}>{isNaicPage ? "NAIC '26" : "Rakan Tutor"}</span>
             </Link>
           </div>
 
@@ -95,7 +109,7 @@ const Header = () => {
                     : "bg-cyan-500 text-white border-none hover:bg-cyan-600"
                 )}
               >
-                <Link to="/register">{t("nav.registerNow")}</Link>
+                <Link to={isNaicPage ? "/naic/register" : "/naic"}>{isNaicPage ? t("nav.registerNow") : "NAIC 2025"}</Link>
               </Button>
             </div>
 
@@ -157,8 +171,8 @@ const Header = () => {
                   : "rounded-full bg-cyan-500 hover:bg-cyan-600 text-white"
               )}
             >
-              <Link to="/register" onClick={() => setIsMenuOpen(false)}>
-                {t("nav.registerNow")}
+              <Link to={isNaicPage ? "/naic/register" : "/naic"} onClick={() => setIsMenuOpen(false)}>
+                {isNaicPage ? t("nav.registerNow") : "NAIC 2025"}
               </Link>
             </Button>
           </nav>

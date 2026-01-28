@@ -65,7 +65,7 @@ const FAQ = () => {
         <div className="mt-12 text-center">
           <BlurFade delay={BLUR_FADE_DELAY * faqs.length} inView>
             <a
-              href="/faq"
+              href="/naic/faq"
               className="inline-flex items-center text-primary font-medium hover:underline gap-2"
             >
               {t("faq.viewAll")}

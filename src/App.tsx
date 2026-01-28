@@ -10,7 +10,13 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import FAQ from "./pages/FAQ";
 import Contacts from "./pages/Contact";
+import RakanTutorContact from "./pages/RakanTutorContact";
 import Tracks from "./pages/Tracks";
+import RakanTutor from "./pages/RakanTutor";
+import RakanTutorAbout from "./pages/RakanTutorAbout";
+import RakanTutorHistory from "./pages/RakanTutorHistory";
+import RakanTutorImpact from "./pages/RakanTutorImpact";
+import RakanTutorNews from "./pages/RakanTutorNews";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 
@@ -60,13 +66,19 @@ const App = () => {
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <ScrollToHash />
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/tracks" element={<Tracks />} />
+            <Route path="/" element={<RakanTutor />} />
+            <Route path="/about" element={<RakanTutorAbout />} />
+            <Route path="/history" element={<RakanTutorHistory />} />
+            <Route path="/impact" element={<RakanTutorImpact />} />
+            <Route path="/news" element={<RakanTutorNews />} />
+            <Route path="/contact" element={<RakanTutorContact />} />
+            <Route path="/naic" element={<Index />} />
+            <Route path="/naic/register" element={<Register />} />
+            <Route path="/naic/faq" element={<FAQ />} />
+            <Route path="/naic/tracks" element={<Tracks />} />
+            <Route path="/naic/contact" element={<Contacts />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/contact" element={<Contacts />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -103,7 +103,7 @@ const HowToApply = () => {
             size="lg"
             className="h-14 px-10 rounded-full text-lg font-semibold bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all duration-300 shadow-xl"
           >
-            <Link to="/register">
+            <Link to="/naic/register">
               {t("howToApply.registerNow")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

@@ -61,14 +61,14 @@ const Tracks = () => {
               </p>
             </div>
             <Button asChild size="lg" className="rounded-full">
-              <Link to="/register">
+              <Link to="/naic/register">
                 Register Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
           <Button asChild variant="outline" className="rounded-full px-8 py-6 group">
-            <Link to="/tracks">
+            <Link to="/naic/tracks">
               {t("tracks.cta")}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>

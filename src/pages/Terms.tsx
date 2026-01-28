@@ -98,6 +98,9 @@ export default function Terms() {
                                                         <li key={i}>• {item}</li>
                                                     ))}
                                                 </ul>
+                                                <p className="mt-4 text-sm font-medium text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
+                                                    {t("terms.sections.eligibility.catBNote")}
+                                                </p>
                                             </div>
                                         </div>
 

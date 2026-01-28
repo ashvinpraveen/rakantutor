@@ -24,8 +24,8 @@ const categoryOptions = ["Category A (Year 10/Year 11/Form 4/Form 5 [SPM]/Senior
 const heardAboutOptions = ["School Counsellor/Teacher", "Social Media (Instagram/Facebook/LinkedIn)", "Newspaper/E-Newspaper", "Friends/Family", "Other"] as const;
 
 // Category-specific qualification options
-const categoryAQualifications = ["Year 10", "Year 11", "Form 4", "Form 5", "Senior Middle 1", "Senior Middle 2"] as const;
-const categoryBQualifications = ["Form 4", "Form 5", "Year 10", "Year 11", "Senior Middle 1", "Senior Middle 2", "Form 6 / STPM", "Senior Middle 3/ UEC", "Pre-University", "Diploma"] as const;
+const categoryAQualifications = ["Year 9 (IB / Australian)", "Year 10 (British)", "Year 10 (IB / Australian)", "Year 11 (British)", "Form 4", "Form 5", "Senior Middle 1", "Senior Middle 2", "Others"] as const;
+const categoryBQualifications = ["Year 9 (IB / Australian)", "Year 10 (British)", "Year 10 (IB / Australian)", "Year 11 (British)", "Form 4", "Form 5", "Senior Middle 1", "Senior Middle 2", "Form 6 / STPM", "Senior Middle 3 / UEC", "Pre-University (A-levels, AUSMAT, IB or equivalent)", "Diploma", "Others"] as const;
 
 // Helper function to get qualifications based on category
 const getQualificationOptions = (category: string) => {
@@ -75,38 +75,46 @@ const registrationSchema = z.object({
   member1ContactNumber: z.string().min(1, "Contact number is required.").regex(/^[0-9]+$/, "Use digits only."),
   member1IcNumber: z.string().min(1, "IC/Passport number is required.").max(13, "Enter at most 13 characters."),
   member1Email: z.string().email("Enter a valid email."),
+  member1Nationality: z.string().min(1, "Nationality is required."),
+  member1CountryOfResidence: z.string().min(1, "Country of residence is required."),
   member1School: z.string().min(1, "School or institution is required."),
   member1Qualification: z.enum(allQualificationOptions, {
     required_error: "Select a qualification."
   }),
-  member1GraduationDate: z.string().min(1, "Graduation date is required."),
+  member1GraduationDate: z.string().min(1, "Expected graduation date is required."),
   member2FullName: z.string().min(1, "Full name is required."),
   member2ContactNumber: z.string().min(1, "Contact number is required.").regex(/^[0-9]+$/, "Use digits only."),
   member2IcNumber: z.string().min(1, "IC/Passport number is required.").max(13, "Enter at most 13 characters."),
   member2Email: z.string().email("Enter a valid email."),
+  member2Nationality: z.string().min(1, "Nationality is required."),
+  member2CountryOfResidence: z.string().min(1, "Country of residence is required."),
   member2School: z.string().min(1, "School or institution is required."),
   member2Qualification: z.enum(allQualificationOptions, {
     required_error: "Select a qualification."
   }),
-  member2GraduationDate: z.string().min(1, "Graduation date is required."),
+  member2GraduationDate: z.string().min(1, "Expected graduation date is required."),
   member3FullName: z.string().min(1, "Full name is required."),
   member3ContactNumber: z.string().min(1, "Contact number is required.").regex(/^[0-9]+$/, "Use digits only."),
   member3IcNumber: z.string().min(1, "IC/Passport number is required.").max(13, "Enter at most 13 characters."),
   member3Email: z.string().email("Enter a valid email."),
+  member3Nationality: z.string().min(1, "Nationality is required."),
+  member3CountryOfResidence: z.string().min(1, "Country of residence is required."),
   member3School: z.string().min(1, "School or institution is required."),
   member3Qualification: z.enum(allQualificationOptions, {
     required_error: "Select a qualification."
   }),
-  member3GraduationDate: z.string().min(1, "Graduation date is required."),
+  member3GraduationDate: z.string().min(1, "Expected graduation date is required."),
   member4FullName: z.string().min(1, "Full name is required."),
   member4ContactNumber: z.string().min(1, "Contact number is required.").regex(/^[0-9]+$/, "Use digits only."),
   member4IcNumber: z.string().min(1, "IC/Passport number is required.").max(13, "Enter at most 13 characters."),
   member4Email: z.string().email("Enter a valid email."),
+  member4Nationality: z.string().min(1, "Nationality is required."),
+  member4CountryOfResidence: z.string().min(1, "Country of residence is required."),
   member4School: z.string().min(1, "School or institution is required."),
   member4Qualification: z.enum(allQualificationOptions, {
     required_error: "Select a qualification."
   }),
-  member4GraduationDate: z.string().min(1, "Graduation date is required."),
+  member4GraduationDate: z.string().min(1, "Expected graduation date is required."),
   advisorFullName: z.string().min(1, "Advisor name is required."),
   advisorRelationship: z.enum(advisorRelationshipOptions, {
     required_error: "Select a relationship."
@@ -269,10 +277,10 @@ const RegistrationForm = () => {
         break;
       case 2:
         fieldsToValidate = [
-          "member1FullName", "member1ContactNumber", "member1IcNumber", "member1Email", "member1School", "member1Qualification", "member1GraduationDate",
-          "member2FullName", "member2ContactNumber", "member2IcNumber", "member2Email", "member2School", "member2Qualification", "member2GraduationDate",
-          "member3FullName", "member3ContactNumber", "member3IcNumber", "member3Email", "member3School", "member3Qualification", "member3GraduationDate",
-          "member4FullName", "member4ContactNumber", "member4IcNumber", "member4Email", "member4School", "member4Qualification", "member4GraduationDate"
+          "member1FullName", "member1ContactNumber", "member1IcNumber", "member1Email", "member1Nationality", "member1CountryOfResidence", "member1School", "member1Qualification", "member1GraduationDate",
+          "member2FullName", "member2ContactNumber", "member2IcNumber", "member2Email", "member2Nationality", "member2CountryOfResidence", "member2School", "member2Qualification", "member2GraduationDate",
+          "member3FullName", "member3ContactNumber", "member3IcNumber", "member3Email", "member3Nationality", "member3CountryOfResidence", "member3School", "member3Qualification", "member3GraduationDate",
+          "member4FullName", "member4ContactNumber", "member4IcNumber", "member4Email", "member4Nationality", "member4CountryOfResidence", "member4School", "member4Qualification", "member4GraduationDate"
         ];
         break;
       case 3:
@@ -321,6 +329,8 @@ const RegistrationForm = () => {
         member1_contact_number: values.member1ContactNumber,
         member1_ic_number: values.member1IcNumber,
         member1_email: values.member1Email,
+        member1_nationality: values.member1Nationality,
+        member1_country_of_residence: values.member1CountryOfResidence,
         member1_school: values.member1School,
         member1_qualification: values.member1Qualification,
         member1_graduation_date: values.member1GraduationDate,
@@ -328,6 +338,8 @@ const RegistrationForm = () => {
         member2_contact_number: values.member2ContactNumber,
         member2_ic_number: values.member2IcNumber,
         member2_email: values.member2Email,
+        member2_nationality: values.member2Nationality,
+        member2_country_of_residence: values.member2CountryOfResidence,
         member2_school: values.member2School,
         member2_qualification: values.member2Qualification,
         member2_graduation_date: values.member2GraduationDate,
@@ -335,6 +347,8 @@ const RegistrationForm = () => {
         member3_contact_number: values.member3ContactNumber,
         member3_ic_number: values.member3IcNumber,
         member3_email: values.member3Email,
+        member3_nationality: values.member3Nationality,
+        member3_country_of_residence: values.member3CountryOfResidence,
         member3_school: values.member3School,
         member3_qualification: values.member3Qualification,
         member3_graduation_date: values.member3GraduationDate,
@@ -342,6 +356,8 @@ const RegistrationForm = () => {
         member4_contact_number: values.member4ContactNumber,
         member4_ic_number: values.member4IcNumber,
         member4_email: values.member4Email,
+        member4_nationality: values.member4Nationality,
+        member4_country_of_residence: values.member4CountryOfResidence,
         member4_school: values.member4School,
         member4_qualification: values.member4Qualification,
         member4_graduation_date: values.member4GraduationDate,
@@ -594,11 +610,11 @@ function WelcomeStep({
       <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20 space-y-3">
         <p className="text-sm text-foreground">
           For competition details, visit our{" "}
-          <Link to="/" target="_blank" className="text-primary hover:underline font-medium">
+          <Link to="/naic" target="_blank" className="text-primary hover:underline font-medium">
             homepage
           </Link>
           {" "}and{" "}
-          <Link to="/tracks" target="_blank" className="text-primary hover:underline font-medium">
+          <Link to="/naic/tracks" target="_blank" className="text-primary hover:underline font-medium">
             tracks page
           </Link>
           .
@@ -674,7 +690,7 @@ function TeamInfoStep({
         <div className="flex flex-col gap-1">
           <FormLabel className="text-2xl font-semibold">Choose your Track</FormLabel>
           <FormDescription>
-            <Link to="/tracks" target="_blank" className="text-cyan-500 hover:underline inline-flex items-center gap-1">
+            <Link to="/naic/tracks" target="_blank" className="text-cyan-500 hover:underline inline-flex items-center gap-1">
               Learn more about the tracks
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -699,7 +715,7 @@ function TeamInfoStep({
         <FormLabel className="text-2xl font-semibold">Choose your Category</FormLabel>
         <FormDescription className="text-sm text-muted-foreground">
           If any ONE of the members falls under (Form 6 [STPM]/Senior Middle 3 [UEC]/Pre University/
-          Diploma), the team will be required to join Category B.
+          Diploma), the team will be required to join Category B. <strong>Note:</strong> American Degree Program students are not eligible as they are considered university students.
         </FormDescription>
         <FormControl>
           <RadioGroup onValueChange={field.onChange} value={field.value} className="space-y-3">
@@ -725,7 +741,7 @@ function TeamMembersStep({
 
   const isMemberComplete = (memberKey: string) => {
     const values = form.getValues();
-    return values[`${memberKey}FullName`] && values[`${memberKey}ContactNumber`] && values[`${memberKey}IcNumber`] && values[`${memberKey}Email`] && values[`${memberKey}School`] && values[`${memberKey}Qualification`] && values[`${memberKey}GraduationDate`];
+    return values[`${memberKey}FullName`] && values[`${memberKey}ContactNumber`] && values[`${memberKey}IcNumber`] && values[`${memberKey}Email`] && values[`${memberKey}Nationality`] && values[`${memberKey}CountryOfResidence`] && values[`${memberKey}School`] && values[`${memberKey}Qualification`] && values[`${memberKey}GraduationDate`];
   };
   return <div className="space-y-8 py-8">
     <div className="space-y-2">
@@ -786,6 +802,26 @@ function TeamMembersStep({
                 <FormMessage />
               </FormItem>} />
 
+            <FormField control={form.control} name={`${member.key}Nationality`} render={({
+              field
+            }) => <FormItem className="space-y-3">
+                <FormLabel className="text-base font-medium">Nationality</FormLabel>
+                <FormControl>
+                  <Input placeholder="e.g., Malaysian, Singaporean, Indonesian..." {...field} className="border-0 border-b-2 border-border rounded-none focus-visible:ring-0 focus-visible:border-foreground px-0" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>} />
+
+            <FormField control={form.control} name={`${member.key}CountryOfResidence`} render={({
+              field
+            }) => <FormItem className="space-y-3">
+                <FormLabel className="text-base font-medium">Country of Residence</FormLabel>
+                <FormControl>
+                  <Input placeholder="e.g., Malaysia, Singapore, Indonesia..." {...field} className="border-0 border-b-2 border-border rounded-none focus-visible:ring-0 focus-visible:border-foreground px-0" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>} />
+
             <FormField control={form.control} name={`${member.key}School`} render={({
               field
             }) => <FormItem className="space-y-3">
@@ -799,7 +835,7 @@ function TeamMembersStep({
             <FormField control={form.control} name={`${member.key}Qualification`} render={({
               field
             }) => <FormItem className="space-y-3">
-                <FormLabel className="text-base font-medium">Highest Qualification</FormLabel>
+                <FormLabel className="text-base font-medium">Current Education Level</FormLabel>
                 <FormControl>
                   <RadioGroup onValueChange={field.onChange} value={field.value} className="space-y-2">
                     {qualificationOptions.map((option: string) => <div key={option} className="flex items-center space-x-3">
@@ -816,11 +852,14 @@ function TeamMembersStep({
             <FormField control={form.control} name={`${member.key}GraduationDate`} render={({
               field
             }) => <FormItem className="space-y-3">
-                <FormLabel className="text-base font-medium">Graduation Date</FormLabel>
+                <FormLabel className="text-base font-medium">Expected Graduation Date</FormLabel>
                 <FormControl>
                   <Input type="month" {...field} className="border-0 border-b-2 border-border rounded-none focus-visible:ring-0 focus-visible:border-foreground px-0 max-w-xs" />
                 </FormControl>
                 <FormMessage />
+                <p className="text-xs text-muted-foreground mt-2">
+                  Need help? <Link to="/naic/contact" target="_blank" className="text-primary hover:underline">Contact us</Link> if you have questions about your education level or graduation date.
+                </p>
               </FormItem>} />
           </AccordionContent>
         </AccordionItem>;

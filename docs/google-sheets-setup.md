@@ -47,38 +47,49 @@ B1: Team Name
 C1: Track
 D1: Category
 E1: Heard About
-F1: Member 1 - Name
-G1: Member 1 - Email
-H1: Member 1 - Phone
-I1: Member 1 - IC Number
-J1: Member 1 - School
-K1: Member 1 - Qualification
-L1: Member 1 - Graduation Date
-M1: Member 2 - Name
-N1: Member 2 - Email
-O1: Member 2 - Phone
-P1: Member 2 - IC Number
-Q1: Member 2 - School
-R1: Member 2 - Qualification
-S1: Member 2 - Graduation Date
-T1: Member 3 - Name
-U1: Member 3 - Email
-V1: Member 3 - Phone
-W1: Member 3 - IC Number
-X1: Member 3 - School
-Y1: Member 3 - Qualification
-Z1: Member 3 - Graduation Date
-AA1: Member 4 - Name
-AB1: Member 4 - Email
-AC1: Member 4 - Phone
-AD1: Member 4 - IC Number
-AE1: Member 4 - School
-AF1: Member 4 - Qualification
-AG1: Member 4 - Graduation Date
-AH1: Advisor - Name
-AI1: Advisor - Email
-AJ1: Advisor - Phone
-AK1: Advisor - Relationship
+F1: Heard About (Other)
+G1: Member 1 - Name
+H1: Member 1 - Email
+I1: Member 1 - Nationality
+J1: Member 1 - Country of Residence
+K1: Member 1 - Phone
+L1: Member 1 - IC Number
+M1: Member 1 - School
+N1: Member 1 - Qualification
+O1: Member 1 - Graduation Date
+P1: Member 2 - Name
+Q1: Member 2 - Email
+R1: Member 2 - Nationality
+S1: Member 2 - Country of Residence
+T1: Member 2 - Phone
+U1: Member 2 - IC Number
+V1: Member 2 - School
+W1: Member 2 - Qualification
+X1: Member 2 - Graduation Date
+Y1: Member 3 - Name
+Z1: Member 3 - Email
+AA1: Member 3 - Nationality
+AB1: Member 3 - Country of Residence
+AC1: Member 3 - Phone
+AD1: Member 3 - IC Number
+AE1: Member 3 - School
+AF1: Member 3 - Qualification
+AG1: Member 3 - Graduation Date
+AH1: Member 4 - Name
+AI1: Member 4 - Email
+AJ1: Member 4 - Nationality
+AK1: Member 4 - Country of Residence
+AL1: Member 4 - Phone
+AM1: Member 4 - IC Number
+AN1: Member 4 - School
+AO1: Member 4 - Qualification
+AP1: Member 4 - Graduation Date
+AQ1: Advisor - Name
+AR1: Advisor - Email
+AS1: Advisor - Phone
+AT1: Advisor - Relationship
+AU1: Advisor - Relationship (Other)
+AV1: Advisor - Relationship Details
 ```
 
 ## 6. Share Sheet with Service Account
