@@ -30,6 +30,39 @@ The database trigger was trying to access configuration settings (`app.settings.
    - ✅ Google Sheets has the new registration
    - ✅ Email received by advisor and team members
 
+## Common Issue: 401 Unauthorized Error
+
+If you see a **401 error** in the Edge Function invocations (Supabase Dashboard → Edge Functions → handle-registration → Invocations), it means:
+
+- ✅ The trigger is firing correctly
+- ✅ The trigger is calling the Edge Function
+- ❌ **The call is being rejected because of missing authentication**
+
+### Fix for 401 Error:
+
+You need to configure the service role key in the database settings:
+
+1. **Get your service role key:**
+   - Go to Supabase Dashboard → Settings → API
+   - Find "service_role" (marked as secret)
+   - Copy the key (starts with `eyJ...`)
+
+2. **Set it in the database:**
+   - Go to Supabase Dashboard → SQL Editor
+   - Run this SQL (replace with your actual key):
+   ```sql
+   ALTER DATABASE postgres SET app.settings.service_role_key = 'eyJxxxYOUR_ACTUAL_KEYxxxxx';
+   ```
+
+3. **Test again:**
+   - Submit a new registration
+   - The 401 error should be gone
+   - Google Sheets and emails should work!
+
+**Automated Setup:** Run `./setup-trigger-auth.sh` for step-by-step instructions.
+
+---
+
 ## Debugging Steps (If It Still Doesn't Work)
 
 ### 1. Check Edge Function Logs
