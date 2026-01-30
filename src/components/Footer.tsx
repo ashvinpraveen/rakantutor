@@ -54,8 +54,8 @@ const Footer = () => {
                   <Link to="/naic" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
                     NAIC 2026
                   </Link>
-                  <Link to="/#mission" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
-                    About Us
+                  <Link to="/about" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
+                    About
                   </Link>
                   <Link to="/contact" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
                     Contact

@@ -19,6 +19,11 @@ import RakanTutorImpact from "./pages/RakanTutorImpact";
 import RakanTutorNews from "./pages/RakanTutorNews";
 import RakanTutorTerms from "./pages/RakanTutorTerms";
 import RakanTutorPrivacy from "./pages/RakanTutorPrivacy";
+import MeetTheTeam from "./pages/MeetTheTeam";
+import MeetTheTeam2024 from "./pages/MeetTheTeam2024";
+import MeetTheTeam2023 from "./pages/MeetTheTeam2023";
+import MeetTheTeam2022 from "./pages/MeetTheTeam2022";
+import MeetTheTeam2021 from "./pages/MeetTheTeam2021";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 import Seo from "./components/Seo";
@@ -100,6 +105,11 @@ const App = () => {
             <Route path="/contact" element={<RakanTutorContact />} />
             <Route path="/terms" element={<RakanTutorTerms />} />
             <Route path="/privacy" element={<RakanTutorPrivacy />} />
+            <Route path="/meet-the-team" element={<MeetTheTeam />} />
+            <Route path="/meet-the-team-2024-2025" element={<MeetTheTeam2024 />} />
+            <Route path="/meet-the-team-2023-2024" element={<MeetTheTeam2023 />} />
+            <Route path="/meet-the-team-2022-2023" element={<MeetTheTeam2022 />} />
+            <Route path="/meet-the-team-2021-2022" element={<MeetTheTeam2021 />} />
             <Route path="/naic" element={<Index />} />
             <Route path="/naic/register" element={<Register />} />
             <Route path="/naic/faq" element={<FAQ />} />

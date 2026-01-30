@@ -14,7 +14,7 @@ const AboutHero = () => {
       <div className="container relative z-10 max-w-5xl mx-auto text-center">
         <BlurFade delay={0.1}>
           <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-            About Us
+            About
           </h1>
         </BlurFade>
         <BlurFade delay={0.2}>

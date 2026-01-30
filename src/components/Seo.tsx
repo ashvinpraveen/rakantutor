@@ -78,6 +78,31 @@ const ROUTE_OVERRIDES: Record<string, Partial<SeoConfig>> = {
     description:
       "Learn how Rakan Tutor collects, uses, and protects your personal information.",
   },
+  "/meet-the-team": {
+    title: "Meet the Team | Rakan Tutor",
+    description:
+      "Meet the team (2025-2026). Students and professionals driving education impact.",
+  },
+  "/meet-the-team-2024-2025": {
+    title: "Meet the Team (2024-2025) | Rakan Tutor",
+    description:
+      "Meet the team (2024-2025). Students and professionals driving education impact.",
+  },
+  "/meet-the-team-2023-2024": {
+    title: "Meet the Team (2023-2024) | Rakan Tutor",
+    description:
+      "Meet the team (2023-2024). Students and professionals driving education impact.",
+  },
+  "/meet-the-team-2022-2023": {
+    title: "Meet the Team (2022-2023) | Rakan Tutor",
+    description:
+      "Meet the team (2022-2023). Students and professionals driving education impact.",
+  },
+  "/meet-the-team-2021-2022": {
+    title: "Meet the Team (2021-2022) | Rakan Tutor",
+    description:
+      "Meet the team (2021-2022). Students and professionals driving education impact. Kai Song. Co-Founder. Kaveen. Co-Founder. Wen Wen Teh. Program Director.",
+  },
   "/naic": {
     title: "NAIC '26 | National AI Competition 2026",
     description:
