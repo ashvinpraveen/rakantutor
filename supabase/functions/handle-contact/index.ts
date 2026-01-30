@@ -34,9 +34,14 @@ serve(async (req) => {
         const requestData = await req.json();
         const source = requestData.source || "naic";
 
-        // Initialize Supabase client
-        const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-        const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+        // Initialize Supabase client with service role key
+        const supabaseUrl = Deno.env.get("SUPABASE_URL");
+        const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+        if (!supabaseUrl || !supabaseServiceKey) {
+            throw new Error("Missing Supabase credentials");
+        }
+
         const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
         const resendApiKey = Deno.env.get("RESEND_API_KEY");
@@ -79,7 +84,7 @@ serve(async (req) => {
                 other: "Other Enquiries",
             };
 
-            emailRecipients = ["team@rakantutor.org"];
+            emailRecipients = ["team@rakantutor.org", "ashvin.praveen@rakantutor.org"];
             emailSubject = `Rakan Tutor Contact: ${purposeLabels[contactData.purposeOfContact] || contactData.purposeOfContact}`;
             emailHtml = `
                 <!DOCTYPE html>
@@ -122,7 +127,7 @@ serve(async (req) => {
                 throw new Error(`Failed to save to database: ${dbInsertResult.error.message}`);
             }
 
-            emailRecipients = ["mingjackt@sunway.edu.my", "clement@sunway.edu.my"];
+            emailRecipients = ["mingjackt@sunway.edu.my", "clement@sunway.edu.my", "team@rakantutor.org", "ashvin.praveen@rakantutor.org"];
             emailSubject = `NAIC Contact Form: ${contactData.subject}`;
             emailHtml = `
                 <!DOCTYPE html>

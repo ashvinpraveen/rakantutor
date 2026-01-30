@@ -43,7 +43,10 @@ export default function Contact() {
         try {
             setIsSubmitting(true);
             const { error } = await supabase.functions.invoke("handle-contact", {
-                body: values,
+                body: {
+                    ...values,
+                    source: "naic",
+                },
             });
 
             if (error) throw error;
