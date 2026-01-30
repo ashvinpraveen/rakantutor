@@ -12,7 +12,7 @@ const RakanTutorHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center py-12 lg:py-16 px-4 md:px-8 bg-background overflow-hidden">
+    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-24 pb-16 lg:pt-32 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
       <div className="container relative z-10 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -66,7 +66,7 @@ const RakanTutorHero = () => {
 
 const OurValue = () => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-background">
+    <section className="py-16 md:py-20 px-4 md:px-8 bg-background">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <BlurFade delay={0.1}>
@@ -103,7 +103,7 @@ const OurValue = () => {
 
 const ProblemStatement = () => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-muted/30">
+    <section className="py-16 md:py-20 px-4 md:px-8 bg-muted/30">
       <div className="container max-w-7xl mx-auto">
         <div className="space-y-12">
           <BlurFade delay={0.1}>
@@ -144,7 +144,7 @@ const HybridApproach = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-background">
+    <section className="py-16 md:py-20 px-4 md:px-8 bg-background">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <BlurFade delay={0.1}>
@@ -229,7 +229,7 @@ const CallToAction = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-muted/30">
+    <section className="py-16 md:py-20 px-4 md:px-8 bg-muted/30">
       <div className="container max-w-4xl mx-auto text-center">
         <BlurFade delay={0.1}>
           <div className="space-y-8">
