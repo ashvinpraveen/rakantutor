@@ -139,7 +139,7 @@ const TracksPage = () => {
                             </p>
                             <div className="mt-8">
                                 <Button asChild size="lg" className="rounded-full">
-                                    <Link to="/register">
+                                    <Link to="/naic/register">
                                         Register Now
                                         <ArrowRight className="ml-2 h-5 w-5" />
                                     </Link>
@@ -248,7 +248,7 @@ const TracksPage = () => {
                                                     )}
                                                 </div>
                                                 <Button asChild className="w-full bg-background text-foreground hover:bg-background/90 rounded-full py-6 text-lg font-bold uppercase transition-transform hover:scale-[1.02]">
-                                                    <Link to="/register">
+                                                    <Link to="/naic/register">
                                                         {t("nav.registerNow")} <ArrowRight className="ml-2 w-5 h-5" />
                                                     </Link>
                                                 </Button>
@@ -271,7 +271,7 @@ const TracksPage = () => {
                                 {t("tracksDetail.cta.join")}
                             </p>
                             <Button asChild size="lg" className="rounded-full px-12 py-8 text-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-                                <Link to="/register">{t("tracksDetail.cta.registerTeam")}</Link>
+                                <Link to="/naic/register">{t("tracksDetail.cta.registerTeam")}</Link>
                             </Button>
                         </div>
                     </BlurFade>

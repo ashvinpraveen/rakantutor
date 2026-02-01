@@ -35,12 +35,19 @@ const RakanTutorHero = () => {
             <BlurFade delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
+                  asChild
                   size="lg"
                   className="text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-7 py-4 sm:py-5 lg:py-5 h-auto rounded-xl"
-                  onClick={() => navigate("/contact")}
                 >
-                  Join us now
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <a
+                    href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    Join Us
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
               </div>
             </BlurFade>
@@ -175,7 +182,7 @@ const HybridApproach = () => {
                 <Button
                   size="lg"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 h-auto rounded-xl"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/naic")}
                 >
                   Learn More About NAIC
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -238,12 +245,19 @@ const CallToAction = () => {
               Please fill in the form at contact page or click the button below and we will contact you very soon.
             </p>
             <Button
+              asChild
               size="lg"
               className="text-base lg:text-lg px-8 py-6 h-auto rounded-xl"
-              onClick={() => navigate("/contact")}
             >
-              Join us now
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a
+                href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                Join Us
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
         </BlurFade>

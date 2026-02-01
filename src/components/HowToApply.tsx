@@ -17,7 +17,7 @@ const HowToApply = () => {
       title: t("howToApply.steps.registerTeam.title"),
       items: [
         t("howToApply.steps.registerTeam.item1"),
-        { text: t("howToApply.steps.registerTeam.item2"), link: "/register" },
+        { text: t("howToApply.steps.registerTeam.item2"), link: "/naic/register" },
         t("howToApply.steps.registerTeam.item3"),
       ],
     },
