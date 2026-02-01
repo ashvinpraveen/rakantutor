@@ -96,15 +96,6 @@ const NewHero = () => {
                 </p>
                 <div className="flex justify-center items-center gap-8 flex-wrap">
                   <a
-                    href="https://rakantutor.org"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Rakan Tutor website"
-                    className="bg-white rounded-2xl px-6 py-4 shadow-sm border border-border hover:shadow-md transition-shadow"
-                  >
-                    <img src={rakanTutorLogo} alt="Rakan Tutor" className="h-16 md:h-20 w-auto object-contain" />
-                  </a>
-                  <a
                     href="https://sunwayuniversity.edu.my/"
                     target="_blank"
                     rel="noreferrer"
@@ -112,6 +103,15 @@ const NewHero = () => {
                     className="bg-white rounded-2xl px-6 py-4 shadow-sm border border-border hover:shadow-md transition-shadow"
                   >
                     <img src={sunwayLogo} alt="Sunway University" className="h-16 md:h-20 w-auto object-contain" />
+                  </a>
+                  <a
+                    href="https://rakantutor.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Rakan Tutor website"
+                    className="bg-white rounded-2xl px-6 py-4 shadow-sm border border-border hover:shadow-md transition-shadow"
+                  >
+                    <img src={rakanTutorLogo} alt="Rakan Tutor" className="h-16 md:h-20 w-auto object-contain" />
                   </a>
                 </div>
               </div>

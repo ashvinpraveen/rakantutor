@@ -7,12 +7,13 @@ import { ArrowRight } from "lucide-react";
 import rakanTutorHero from "/rakan_tutor_hero.png";
 import naicPhoto from "/naic2025photo.jpg";
 import naicLogo from "/naic_ai_logo_transparent.png";
+import DitheredBackground from "@/components/DitheredBackground";
 
 const RakanTutorHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-24 pb-16 lg:pt-28 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
+    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-32 pb-16 lg:pt-28 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
       <div className="container relative z-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -164,16 +165,16 @@ const HybridApproach = () => {
 
         {/* Flagship Event - NAIC */}
         <BlurFade delay={0.25}>
-          <div className="mb-12 bg-gradient-to-br from-cyan-500/10 via-background to-blue-500/10 rounded-2xl p-8 md:p-12 border-2 border-cyan-500/20 shadow-xl">
+          <div className="mb-12 bg-gradient-to-br from-cyan-500/10 via-background to-blue-500/10 rounded-2xl p-6 md:p-12 border-2 border-cyan-500/20 shadow-xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <img src={naicLogo} alt="NAIC Logo" className="h-16 w-16 object-contain" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <img src={naicLogo} alt="NAIC Logo" className="h-14 w-14 sm:h-16 sm:w-16 object-contain" />
                   <div>
                     <div className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold mb-2">
                       Flagship Event
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold">National AI Competition</h3>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">National AI Competition</h3>
                   </div>
                 </div>
                 <p className="text-lg text-muted-foreground">
@@ -181,10 +182,10 @@ const HybridApproach = () => {
                 </p>
                 <Button
                   size="lg"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 h-auto rounded-xl"
+                  className="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-5 h-auto rounded-xl"
                   onClick={() => navigate("/naic")}
                 >
-                  Learn More About NAIC
+                  Learn more
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -233,33 +234,34 @@ const HybridApproach = () => {
 };
 
 const CallToAction = () => {
-  const navigate = useNavigate();
-
   return (
-    <section className="py-16 md:py-20 px-4 md:px-8 bg-muted/30">
-      <div className="container max-w-4xl mx-auto text-center">
-        <BlurFade delay={0.1}>
-          <div className="space-y-8">
-            <h2 className="text-3xl md:text-5xl font-bold">Be Part of the Solution</h2>
-            <p className="text-lg text-muted-foreground">
-              Please fill in the form at contact page or click the button below and we will contact you very soon.
+    <section className="relative py-32 bg-[linear-gradient(135deg,hsl(var(--hero-bg-from))_0%,hsl(var(--hero-bg-via))_45%,hsl(var(--hero-bg-to))_100%)] overflow-hidden px-4 md:px-8">
+      <DitheredBackground className="z-0" />
+      <div className="container relative z-10 mx-auto text-center">
+        <BlurFade inView>
+          <div className="space-y-6 mb-12">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
+              Be Part of the Solution
+            </h2>
+            <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Ready to make an impact? Join us in shaping the future of AI education.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="text-base lg:text-lg px-8 py-6 h-auto rounded-xl"
-            >
-              <a
-                href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center"
-              >
-                Join Us
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
           </div>
+        </BlurFade>
+        <BlurFade inView delay={0.2}>
+          <Button
+            asChild
+            className="h-16 px-12 rounded-full text-xl font-semibold bg-cyan-500 text-white hover:bg-cyan-600 hover:scale-105 transition-all duration-300 shadow-xl"
+          >
+            <a
+              href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              Join Us
+            </a>
+          </Button>
         </BlurFade>
       </div>
     </section>

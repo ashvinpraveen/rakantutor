@@ -3,9 +3,11 @@ import Footer from "@/components/Footer";
 import BlurFade from "@/components/ui/blur-fade";
 import DitheredBackground from "@/components/DitheredBackground";
 import { Construction } from "lucide-react";
+import { ReactNode } from "react";
 
 interface MeetTheTeamTemplateProps {
     title: string;
+    children?: ReactNode;
 }
 
 const MeetTheTeamHero = ({ title }: { title: string }) => {
@@ -45,13 +47,13 @@ const WorkInProgress = () => {
     );
 };
 
-const MeetTheTeamTemplate = ({ title }: MeetTheTeamTemplateProps) => {
+const MeetTheTeamTemplate = ({ title, children }: MeetTheTeamTemplateProps) => {
     return (
         <div className="min-h-screen bg-background">
             <Header />
             <main>
                 <MeetTheTeamHero title={title} />
-                <WorkInProgress />
+                {children ? children : <WorkInProgress />}
             </main>
             <Footer />
         </div>

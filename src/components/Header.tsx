@@ -29,7 +29,7 @@ const Header = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsNaicOpen(false);
-    }, 150);
+    }, 300);
   };
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const Header = () => {
                   className="w-8 h-8 object-contain"
                 />
                 <span className={cn(
-                  "font-display font-bold text-xl tracking-tight text-foreground",
+                  "font-display font-bold text-xl tracking-tight text-foreground whitespace-nowrap",
                   isV2 && "text-white neon-text-cyan"
                 )}>Rakan Tutor</span>
               </Link>
@@ -99,11 +99,11 @@ const Header = () => {
               {navLinks.map((link) => {
                 if (link.label === "NAIC 2026") {
                   return (
-                    <DropdownMenu key={link.label} open={isNaicOpen} onOpenChange={setIsNaicOpen}>
+                    <DropdownMenu key={link.label} open={isNaicOpen} onOpenChange={setIsNaicOpen} modal={false}>
                       <div
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className="flex items-center"
+                        className="flex items-center h-full"
                       >
                         <DropdownMenuTrigger
                           className={cn(
@@ -114,7 +114,7 @@ const Header = () => {
                           )}
                           asChild
                         >
-                          <Link to={link.href} className="flex items-center gap-1">
+                          <Link to={link.href} className="flex items-center gap-1 py-2">
                             {link.label}
                             <ChevronDown className="h-4 w-4" />
                           </Link>
@@ -122,7 +122,8 @@ const Header = () => {
                       </div>
                       <DropdownMenuContent
                         align="center"
-                        className="bg-background/95 backdrop-blur-md border-border/50 rounded-2xl p-1 w-36 shadow-2xl"
+                        sideOffset={0}
+                        className="bg-background/95 backdrop-blur-md border-border/50 rounded-sm p-1 w-48 shadow-2xl"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -144,7 +145,7 @@ const Header = () => {
                         <DropdownMenuItem asChild>
                           <Link to="/naic/contact" className="cursor-pointer">{t("nav.contact")}</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem asChild className="bg-cyan-500 text-white focus:bg-cyan-600 focus:text-white mt-2 font-bold rounded-xl py-2.5">
+                        <DropdownMenuItem asChild className="bg-cyan-500 text-white focus:bg-cyan-600 focus:text-white hover:bg-cyan-600 hover:text-white mt-2 font-bold rounded-sm py-2.5">
                           <Link to="/naic/register" className="cursor-pointer">Register</Link>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
