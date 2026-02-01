@@ -22,9 +22,9 @@ const NewHero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-20 lg:pt-32 lg:pb-24 px-4 md:px-8 bg-background overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-16 pb-20 lg:pt-24 lg:pb-24 px-4 md:px-8 bg-background overflow-hidden">
       <div className="container relative z-10 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8 lg:space-y-10">
             {/* Logo */}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,23 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isV2 = location.pathname === "/v2";
+  const [isNaicOpen, setIsNaicOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsNaicOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsNaicOpen(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    setIsNaicOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -25,6 +42,17 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   const isNaicPage = location.pathname.startsWith("/naic");
 
@@ -38,96 +66,113 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 pt-0 px-0 translate-y-0 transition-transform duration-300">
-      <header
-        className={cn(
-          "w-full transition-all duration-500 py-3 px-8 border-b",
-          scrolled
-            ? isV2
-              ? "bg-black/80 backdrop-blur-md border-cyan-500/20 py-2"
-              : "bg-transparent backdrop-blur-md border-border/10 py-2"
-            : "bg-transparent border-transparent py-4"
-        )}
-      >
-        <div className="max-w-[1400px] mx-auto flex items-center">
-          {/* Left: Logo Container */}
-          <div className="flex-1 flex justify-start">
-            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img
-                src={rakanTutorIcon}
-                alt="Rakan Tutor Logo"
-                className="w-8 h-8 object-contain"
-              />
-              <span className={cn(
-                "font-display font-bold text-xl tracking-tight text-foreground",
-                isV2 && "text-white neon-text-cyan"
-              )}>Rakan Tutor</span>
-            </Link>
-          </div>
+    <>
+      <div className="fixed top-0 left-0 right-0 z-50 pt-0 px-0 translate-y-0 transition-transform duration-300">
+        <header
+          className={cn(
+            "w-full transition-all duration-500 py-3 px-8 border-b",
+            scrolled
+              ? isV2
+                ? "bg-black/80 backdrop-blur-md border-cyan-500/20 py-2"
+                : "bg-transparent backdrop-blur-md border-border/10 py-2"
+              : "bg-transparent border-transparent py-4"
+          )}
+        >
+          <div className="max-w-[1400px] mx-auto flex items-center">
+            {/* Left: Logo Container */}
+            <div className="flex-1 flex justify-start">
+              <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <img
+                  src={rakanTutorIcon}
+                  alt="Rakan Tutor Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <span className={cn(
+                  "font-display font-bold text-xl tracking-tight text-foreground",
+                  isV2 && "text-white neon-text-cyan"
+                )}>Rakan Tutor</span>
+              </Link>
+            </div>
 
-          {/* Center: Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => {
-              if (link.label === "NAIC 2026") {
+            {/* Center: Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-10">
+              {navLinks.map((link) => {
+                if (link.label === "NAIC 2026") {
+                  return (
+                    <DropdownMenu key={link.label} open={isNaicOpen} onOpenChange={setIsNaicOpen}>
+                      <div
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className="flex items-center"
+                      >
+                        <DropdownMenuTrigger
+                          className={cn(
+                            "flex items-center gap-1 text-base font-medium font-display transition-all tracking-wide outline-none",
+                            isV2
+                              ? "text-zinc-400 hover:text-cyan-400 uppercase font-black italic text-sm"
+                              : "text-foreground/70 hover:text-foreground"
+                          )}
+                          asChild
+                        >
+                          <Link to={link.href} className="flex items-center gap-1">
+                            {link.label}
+                            <ChevronDown className="h-4 w-4" />
+                          </Link>
+                        </DropdownMenuTrigger>
+                      </div>
+                      <DropdownMenuContent
+                        align="center"
+                        className="bg-background/95 backdrop-blur-md border-border/50 rounded-2xl p-1 w-36 shadow-2xl"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic" className="cursor-pointer">NAIC Home</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic/tracks" className="cursor-pointer">{t("nav.tracks")}</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic#prizes" className="cursor-pointer">{t("nav.prizes")}</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic#timeline" className="cursor-pointer">{t("nav.timeline")}</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic/faq" className="cursor-pointer">{t("nav.faq")}</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/naic/contact" className="cursor-pointer">{t("nav.contact")}</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild className="bg-cyan-500 text-white focus:bg-cyan-600 focus:text-white mt-2 font-bold rounded-xl py-2.5">
+                          <Link to="/naic/register" className="cursor-pointer">Register</Link>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  );
+                }
+
                 return (
-                  <DropdownMenu key={link.label}>
-                    <DropdownMenuTrigger className={cn(
-                      "flex items-center gap-1 text-base font-medium font-display transition-all tracking-wide outline-none",
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className={cn(
+                      "text-base font-medium font-display transition-all tracking-wide",
                       isV2
                         ? "text-zinc-400 hover:text-cyan-400 uppercase font-black italic text-sm"
                         : "text-foreground/70 hover:text-foreground"
-                    )}>
-                      {link.label}
-                      <ChevronDown className="h-4 w-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="center" className="bg-background/95 backdrop-blur-md border-border/50 rounded-2xl p-1 w-36 shadow-2xl">
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic" className="cursor-pointer">NAIC Home</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic/tracks" className="cursor-pointer">{t("nav.tracks")}</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic#prizes" className="cursor-pointer">{t("nav.prizes")}</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic#timeline" className="cursor-pointer">{t("nav.timeline")}</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic/faq" className="cursor-pointer">{t("nav.faq")}</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link to="/naic/contact" className="cursor-pointer">{t("nav.contact")}</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild className="bg-cyan-500 text-white focus:bg-cyan-600 focus:text-white mt-2 font-bold rounded-xl py-2.5">
-                        <Link to="/naic/register" className="cursor-pointer">Register</Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                    )}
+                  >
+                    {link.label}
+                  </Link>
                 );
-              }
+              })}
+            </nav>
 
-              return (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className={cn(
-                    "text-base font-medium font-display transition-all tracking-wide",
-                    isV2
-                      ? "text-zinc-400 hover:text-cyan-400 uppercase font-black italic text-sm"
-                      : "text-foreground/70 hover:text-foreground"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right: Actions Container */}
-          <div className="flex-1 flex justify-end gap-6 items-center">
-            {/* Language Switcher - Hidden */}
-            {/* <Button
+            {/* Right: Actions Container */}
+            <div className="flex-1 flex justify-end gap-6 items-center">
+              {/* Language Switcher - Hidden */}
+              {/* <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
@@ -140,34 +185,34 @@ const Header = () => {
               {i18n.language.startsWith("en") ? "EN" : "BM"}
             </Button> */}
 
-            <div className="hidden md:block">
-              <Button
-                asChild
-                className={cn(
-                  "h-10 rounded-full px-6 text-base font-semibold shadow-md transition-all hover:scale-105",
-                  isV2
-                    ? "bg-black border border-cyan-500 text-cyan-400 rounded-none italic font-black uppercase tracking-tighter hover:bg-cyan-950 shadow-[0_0_15px_rgba(6,182,212,0.3)]"
-                    : "bg-cyan-500 text-white border-none hover:bg-cyan-600"
-                )}
-              >
-                {isNaicPage ? (
-                  <Link to="/naic/register">Register Now</Link>
-                ) : (
-                  <a
-                    href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Join Us
-                  </a>
-                )}
-              </Button>
-            </div>
+              <div className="hidden lg:block">
+                <Button
+                  asChild
+                  className={cn(
+                    "h-10 rounded-full px-6 text-base font-semibold shadow-md transition-all hover:scale-105",
+                    isV2
+                      ? "bg-black border border-cyan-500 text-cyan-400 rounded-none italic font-black uppercase tracking-tighter hover:bg-cyan-950 shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                      : "bg-cyan-500 text-white border-none hover:bg-cyan-600"
+                  )}
+                >
+                  {isNaicPage ? (
+                    <Link to="/naic/register">Register Now</Link>
+                  ) : (
+                    <a
+                      href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Join Us
+                    </a>
+                  )}
+                </Button>
+              </div>
 
-            {/* Mobile Menu Button - now integrated into the right container */}
-            <div className="flex items-center gap-4 md:hidden">
-              {/* Language Switcher - Hidden */}
-              {/* <Button
+              {/* Mobile Menu Button - now integrated into the right container */}
+              <div className="flex items-center gap-4 lg:hidden">
+                {/* Language Switcher - Hidden */}
+                {/* <Button
                 variant="ghost"
                 size="sm"
                 onClick={toggleLanguage}
@@ -178,92 +223,118 @@ const Header = () => {
               >
                 {i18n.language.startsWith("en") ? "EN" : "BM"}
               </Button> */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn("text-foreground", isV2 && "text-cyan-400")}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
+              </div>
+            </div>
+          </div>
+
+        </header>
+      </div>
+
+      {/* Mobile Navigation Overlay */}
+      {
+        isMenuOpen && (
+          <div className="fixed inset-0 z-[100] bg-background lg:hidden flex flex-col animate-in fade-in slide-in-from-top duration-300">
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between py-5 px-8 border-b border-border/10">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
+                <img
+                  src={rakanTutorIcon}
+                  alt="Rakan Tutor Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <span className={cn(
+                  "font-display font-bold text-xl tracking-tight text-foreground",
+                  isV2 && "text-white neon-text-cyan"
+                )}>Rakan Tutor</span>
+              </Link>
               <Button
                 variant="ghost"
                 size="icon"
                 className={cn("text-foreground", isV2 && "text-cyan-400")}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => setIsMenuOpen(false)}
               >
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                <X className="h-6 w-6" />
               </Button>
             </div>
-          </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className={cn(
-            "md:hidden pt-4 pb-8 px-6 border-t animate-fade-in flex flex-col gap-4 backdrop-blur-lg",
-            isV2
-              ? "bg-black/95 border-cyan-500/20"
-              : "border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5"
-          )}>
-            {navLinks.map((link) => {
-              if (link.label === "NAIC 2026") {
-                return (
-                  <div key={link.label} className="flex flex-col gap-3">
-                    <span className={cn(
-                      "text-lg font-medium font-display transition-colors",
-                      isV2
-                        ? "text-zinc-400 uppercase font-black italic tracking-tighter"
-                        : "text-muted-foreground"
-                    )}>
-                      {link.label}
-                    </span>
-                    <div className="flex flex-col gap-2 pl-4 border-l border-border/20">
-                      <Link to="/naic" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">NAIC Home</Link>
-                      <Link to="/naic/tracks" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">{t("nav.tracks")}</Link>
-                      <Link to="/naic#prizes" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">{t("nav.prizes")}</Link>
-                      <Link to="/naic#timeline" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">{t("nav.timeline")}</Link>
-                      <Link to="/naic/faq" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">{t("nav.faq")}</Link>
-                      <Link to="/naic/contact" onClick={() => setIsMenuOpen(false)} className="text-base text-muted-foreground hover:text-foreground">{t("nav.contact")}</Link>
-                      <Link to="/naic/register" onClick={() => setIsMenuOpen(false)} className="text-base text-cyan-500 font-bold hover:text-cyan-600 mt-1">Register</Link>
+            {/* Mobile Menu Content */}
+            <nav className="flex-1 overflow-y-auto py-10 px-8 flex flex-col gap-8">
+              {navLinks.map((link, index) => {
+                if (link.label === "NAIC 2026") {
+                  return (
+                    <div key={link.label} className="flex flex-col gap-4">
+                      <span className={cn(
+                        "text-2xl font-bold font-display tracking-tight text-primary",
+                        isV2 && "text-cyan-400 uppercase italic font-black"
+                      )}>
+                        {link.label}
+                      </span>
+                      <div className="flex flex-col gap-3 pl-4 border-l-2 border-primary/20">
+                        <Link to="/naic" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">NAIC Home</Link>
+                        <Link to="/naic/tracks" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.tracks")}</Link>
+                        <Link to="/naic#prizes" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.prizes")}</Link>
+                        <Link to="/naic#timeline" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.timeline")}</Link>
+                        <Link to="/naic/faq" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.faq")}</Link>
+                        <Link to="/naic/contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.contact")}</Link>
+                        <Link to="/naic/register" onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-cyan-500 hover:text-cyan-600 mt-2">Register</Link>
+                      </div>
                     </div>
-                  </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className={cn(
+                      "text-3xl font-bold font-display tracking-tight transition-colors",
+                      isV2
+                        ? "text-zinc-400 hover:text-cyan-400 uppercase font-black italic"
+                        : "text-foreground hover:text-primary"
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 );
-              }
-              return (
-                <Link
-                  key={link.label}
-                  to={link.href}
+              })}
+
+              <div className="mt-auto pt-10">
+                <Button
+                  asChild
                   className={cn(
-                    "text-lg font-medium font-display transition-colors",
+                    "w-full h-14 text-xl font-bold shadow-lg",
                     isV2
-                      ? "text-zinc-400 hover:text-cyan-400 uppercase font-black italic tracking-tighter"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "bg-black border border-cyan-500 text-cyan-400 rounded-none italic font-black uppercase tracking-tighter"
+                      : "rounded-full bg-cyan-500 hover:bg-cyan-600 text-white"
                   )}
-                  onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
-                </Link>
-              );
-            })}
-            <Button
-              asChild
-              className={cn(
-                "w-full mt-2",
-                isV2
-                  ? "bg-black border border-cyan-500 text-cyan-400 rounded-none italic font-black uppercase"
-                  : "rounded-full bg-cyan-500 hover:bg-cyan-600 text-white"
-              )}
-            >
-              {isNaicPage ? (
-                <Link to="/naic/register" onClick={() => setIsMenuOpen(false)}>Register Now</Link>
-              ) : (
-                <a
-                  href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Join Us
-                </a>
-              )}
-            </Button>
-          </nav>
-        )}
-      </header>
-    </div>
+                  {isNaicPage ? (
+                    <Link to="/naic/register" onClick={() => setIsMenuOpen(false)}>Register Now</Link>
+                  ) : (
+                    <a
+                      href="https://www.notion.so/Rakan-Tutor-is-Recruiting-2ec310a98cfb813e84fcdf0937868586?source=copy_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Join Us
+                    </a>
+                  )}
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )
+      }
+    </>
   );
 };
 

@@ -34,7 +34,7 @@ const Hero = () => {
   const titleWords = "The National AI Competition".split(" ");
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center pt-32 pb-20 px-4 md:px-8 bg-[linear-gradient(135deg,hsl(var(--hero-bg-from))_0%,hsl(var(--hero-bg-via))_45%,hsl(var(--hero-bg-to))_100%)] overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center justify-center pt-16 pb-20 lg:pt-24 px-4 md:px-8 bg-[linear-gradient(135deg,hsl(var(--hero-bg-from))_0%,hsl(var(--hero-bg-via))_45%,hsl(var(--hero-bg-to))_100%)] overflow-hidden">
       <DitheredBackground className="z-0" />
       <div className="container relative z-10 max-w-5xl mx-auto">
         {/* Centered Content */}
