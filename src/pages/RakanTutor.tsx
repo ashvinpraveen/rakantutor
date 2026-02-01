@@ -12,7 +12,7 @@ const RakanTutorHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-24 pb-16 lg:pt-32 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
+    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-32 pb-16 lg:pt-40 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
       <div className="container relative z-10 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
