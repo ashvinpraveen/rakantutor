@@ -10,65 +10,67 @@ interface TeamMember {
 }
 
 const founders: TeamMember[] = [
-    { name: "Kai Song", role: "Co-Founder" },
-    { name: "Kaveen", role: "Co-Founder" },
+    { name: "Kai Song", role: "Co-Founder", image: "/meet-the-team-2025-2026/Kai-Song.png" },
+    { name: "Kaveen", role: "Co-Founder", image: "/meet-the-team-2025-2026/Kaveen.png" },
 ];
 
 const directors: TeamMember[] = [
-    { name: "Ee Vi", role: "Impact Director" },
-    { name: "Angie", role: "Marketing Co-Director" },
-    { name: "Hong Zhe", role: "Marketing Co-Director" },
-    { name: "Ben", role: "Outreach Director" },
-    { name: "Hong Liang", role: "Tech Director" },
-    { name: "Jacklyn", role: "Content Director" },
-    { name: "Emily", role: "Product Director" },
-    { name: "Jay Yen Lim", role: "Finance Director" },
-    { name: "Jie Yi Ng", role: "Secretary" },
+    { name: "Ee Vi", role: "Impact Director", image: "/meet-the-team-2025-2026/Ee-Vi.png" },
+    { name: "Angie", role: "Marketing Co-Director", image: "/meet-the-team-2025-2026/Angie.png" },
+    { name: "Hong Zhe", role: "Marketing Co-Director", image: "/meet-the-team-2025-2026/Hong Zhe.png" },
+    { name: "Ben", role: "Outreach Director", image: "/meet-the-team-2025-2026/Ben.png" },
+    { name: "Hong Liang", role: "Tech Director", image: "/meet-the-team-2025-2026/Hong-Liang.png" },
+    { name: "Jacklyn", role: "Content Director", image: "/meet-the-team-2025-2026/Jacklyn.png" },
+    { name: "Emily", role: "Product Director", image: "/meet-the-team-2025-2026/Emily.png" },
+    { name: "Jay Yen Lim", role: "Finance Director", image: "/meet-the-team-2025-2026/Jay-Yen-Lim.jpeg" },
+    { name: "Jie Yi Ng", role: "Secretary", image: "/meet-the-team-2025-2026/Jie-Yi.jpeg" },
 ];
 
 const associates: Record<string, TeamMember[]> = {
     "Strategic Projects": [
-        { name: "Xu Qian", role: "Strategic Project Associate" }
+        { name: "Xu Qian", role: "Strategic Project Associate", image: "/meet-the-team-2025-2026/Xu-Qian.png" }
     ],
     "Impact": [
-        { name: "Afifah", role: "Impact Associate" },
-        { name: "Aizat Lee", role: "Impact Associate" },
-        { name: "Hsien Wen", role: "Impact Associate" },
-        { name: "Ven Vai", role: "Impact Associate" },
-        { name: "Yi Ran", role: "Impact Associate" },
-        { name: "Ze Pin", role: "Impact Associate" },
+        { name: "Afifah", role: "Impact Associate", image: "/meet-the-team-2025-2026/Afifah.png" },
+        { name: "Aizat Lee", role: "Impact Associate", image: "/meet-the-team-2025-2026/Aizat-Lee.jpg.jpeg" },
+        { name: "Hsien Wen", role: "Impact Associate", image: "/meet-the-team-2025-2026/Hsien-wen.png" },
+        { name: "Ven Vai", role: "Impact Associate", image: "/meet-the-team-2025-2026/Ven-Vai.png" },
+        { name: "Yi Ran", role: "Impact Associate", image: "/meet-the-team-2025-2026/Yi-Ran.png" },
+        { name: "Ze Pin", role: "Impact Associate", image: "/meet-the-team-2025-2026/Ze-Pin.png" },
     ],
     "Marketing": [
-        { name: "Adlina", role: "Marketing Associate" },
-        { name: "Alyssa Hum", role: "Marketing Associate" },
-        { name: "Hasviniy Ganasan", role: "Marketing Associate" },
-        { name: "Lynly", role: "Marketing Associate" },
-        { name: "Vincent", role: "Marketing Associate" },
+        { name: "Adlina", role: "Marketing Associate", image: "/meet-the-team-2025-2026/Adlina.png" },
+        { name: "Alyssa Hum", role: "Marketing Associate", image: "/meet-the-team-2025-2026/Alyssa-Hum.jpeg" },
+        { name: "Hasviniy Ganasan", role: "Marketing Associate", image: "/meet-the-team-2025-2026/Hasviniy-Ganasan.jpeg" },
+        { name: "Lynly", role: "Marketing Associate", image: "/meet-the-team-2025-2026/Lynly.png" },
+        { name: "Vincent", role: "Marketing Associate", image: "/meet-the-team-2025-2026/Vincent.png" },
     ],
     "Outreach": [
-        { name: "Amirul", role: "Outreach Associate" },
-        { name: "Helena Chan", role: "Outreach Associate" },
-        { name: "Jocelyn", role: "Outreach Associate" },
-        { name: "Khor Wan Yan", role: "Outreach Associate" },
-        { name: "Nur Farah Hidayah", role: "Outreach Associate" },
-        { name: "Zoe Yee", role: "Outreach Associate" },
+        { name: "Amirul", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Amirul.png" },
+        { name: "Helena Chan", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Helena-Chan.jpeg" },
+        { name: "Jocelyn", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Jocelyn.png" },
+        { name: "Khor Wan Yan", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Khor-Wan-Yan.jpeg" },
+        { name: "Nur Farah Hidayah", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Nur-Farah-Hidayah.jpeg" },
+        { name: "Zoe Yee", role: "Outreach Associate", image: "/meet-the-team-2025-2026/Zoe Yee.png" },
     ],
     "Tech": [
-        { name: "Aiden", role: "Tech Associate" },
-        { name: "Amzar", role: "Tech Associate" },
-        { name: "Sharifah", role: "Tech Associate" },
-        { name: "Shaun", role: "Tech Associate" },
+        { name: "Aiden", role: "Tech Associate", image: "/meet-the-team-2025-2026/Aiden.png" },
+        { name: "Amzar", role: "Tech Associate", image: "/meet-the-team-2025-2026/Amzar.png" },
+        { name: "Sharifah", role: "Tech Associate", image: "/meet-the-team-2025-2026/Sharifah.png" },
+        { name: "Shaun", role: "Tech Associate", image: "/meet-the-team-2025-2026/Shaun.png" },
     ],
     "Content": [
-        { name: "Alma", role: "Content Associate" },
-        { name: "Jun Qi Liew", role: "Content Associate" },
-        { name: "Lillian", role: "Content Associate" },
-        { name: "Pei Jhen", role: "Content Associate" },
-        { name: "Swetha Jayaprasad", role: "Content Associate" },
+        { name: "Alma", role: "Content Associate", image: "/meet-the-team-2025-2026/Alma.png" },
+        { name: "Jun Qi Liew", role: "Content Associate", image: "/meet-the-team-2025-2026/Jun-Qi-Liew.jpeg" },
+        { name: "Lillian", role: "Content Associate", image: "/meet-the-team-2025-2026/Lillian.png" },
+        { name: "Pei Jhen", role: "Content Associate", image: "/meet-the-team-2025-2026/Pei Jhen.png" },
+        { name: "Swetha Jayaprasad", role: "Content Associate", image: "/meet-the-team-2025-2026/Swetha-Jayaprasad-Rao.jpeg" },
     ],
     "Product": [
-        { name: "Liang Yin Xian", role: "Product Associate" },
-        { name: "Kai Qian", role: "Product Associate" },
+        { name: "Liang Yin Xian", role: "Product Associate", image: "/meet-the-team-2025-2026/Liang-Yin-Xian.jpeg" },
+        { name: "Kai Qian", role: "Product Associate", image: "/meet-the-team-2025-2026/Kai Qian.png" },
+        { name: "Chan Zhen Yen", role: "Product Associate", image: "/meet-the-team-2025-2026/Chan-Zhen_Yen.jpeg" },
+        { name: "Nana", role: "Product Associate", image: "/meet-the-team-2025-2026/Nana.png" },
     ]
 };
 
@@ -124,7 +126,7 @@ const MeetTheTeam = () => {
                 </div>
 
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-center">
                         {teamMembers.map((member, idx) => (
                             <BlurFade key={member.name} delay={0.05 * idx} inView>
                                 <MemberCard member={member} />
