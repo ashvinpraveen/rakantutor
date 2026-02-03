@@ -25,7 +25,6 @@ import RakanTutorPrivacy from "./pages/rakantutor/Privacy";
 
 // Team Pages
 import MeetTheTeam from "./pages/rakantutor/team/Current";
-import MeetTheTeam2024 from "./pages/rakantutor/team/Year2024";
 import MeetTheTeam2023 from "./pages/rakantutor/team/Year2023";
 import MeetTheTeam2022 from "./pages/rakantutor/team/Year2022";
 import MeetTheTeam2021 from "./pages/rakantutor/team/Year2021";
@@ -113,7 +112,6 @@ const App = () => {
             <Route path="/terms" element={<RakanTutorTerms />} />
             <Route path="/privacy" element={<RakanTutorPrivacy />} />
             <Route path="/meet-the-team" element={<MeetTheTeam />} />
-            <Route path="/meet-the-team-2024-2025" element={<MeetTheTeam2024 />} />
             <Route path="/meet-the-team-2023-2024" element={<MeetTheTeam2023 />} />
             <Route path="/meet-the-team-2022-2023" element={<MeetTheTeam2022 />} />
             <Route path="/meet-the-team-2021-2022" element={<MeetTheTeam2021 />} />

@@ -147,9 +147,6 @@ const Header = () => {
                           <Link to="/meet-the-team" className="cursor-pointer">Team 2025/26</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link to="/meet-the-team-2024-2025" className="cursor-pointer">Team 2024/25</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
                           <Link to="/meet-the-team-2023-2024" className="cursor-pointer">Team 2023/24</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
@@ -350,7 +347,6 @@ const Header = () => {
                       <div className="flex flex-col gap-3 pl-4 border-l-2 border-primary/20">
                         <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">About Us</Link>
                         <Link to="/meet-the-team" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Team 2025/26</Link>
-                        <Link to="/meet-the-team-2024-2025" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Team 2024/25</Link>
                         <Link to="/meet-the-team-2023-2024" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Team 2023/24</Link>
                         <Link to="/meet-the-team-2022-2023" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Team 2022/23</Link>
                         <Link to="/meet-the-team-2021-2022" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Team 2021/22</Link>

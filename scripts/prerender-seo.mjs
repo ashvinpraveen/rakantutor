@@ -73,11 +73,6 @@ const ROUTE_OVERRIDES = {
     description:
       "Meet the team (2025-2026). Students and professionals driving education impact.",
   },
-  "/meet-the-team-2024-2025": {
-    title: "Meet the Team (2024-2025) | Rakan Tutor",
-    description:
-      "Meet the team (2024-2025). Students and professionals driving education impact.",
-  },
   "/meet-the-team-2023-2024": {
     title: "Meet the Team (2023-2024) | Rakan Tutor",
     description:
