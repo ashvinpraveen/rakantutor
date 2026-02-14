@@ -7,7 +7,7 @@ const fallbackTokenize = (value: string) => value.match(/\s+|[^\s]+/g) ?? [];
 const chapter = {
   number: "01",
   title: "Token Foundations",
-  summary: "Why models split text into pieces and how whitespace changes the story.",
+  summary: "Why models split text into pieces and how models perceive the world.",
 };
 
 const tokenSteps = [
@@ -46,6 +46,7 @@ const confettiPieces = [
 ];
 
 export default function LlensChapter1() {
+  const [isTopBarHidden, setIsTopBarHidden] = useState(false);
   const [text, setText] = useState("");
   const [tokens, setTokens] = useState<string[]>(fallbackTokenize(text));
   const [tokenIds, setTokenIds] = useState<number[]>([]);
@@ -59,6 +60,14 @@ export default function LlensChapter1() {
   const workerRef = useRef<Worker | null>(null);
 
   const tokensMemo = useMemo(() => tokens, [tokens]);
+
+  useEffect(() => {
+    const hideTimeout = window.setTimeout(() => {
+      setIsTopBarHidden(true);
+    }, 1200);
+
+    return () => window.clearTimeout(hideTimeout);
+  }, []);
 
   const createWorker = () => {
     const worker = new Worker(new URL("../../workers/llens.worker.ts", import.meta.url), {
@@ -211,9 +220,14 @@ export default function LlensChapter1() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="fixed top-0 left-0 right-0 z-30">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+    <div className="h-screen overflow-hidden bg-background text-foreground">
+      <div className="fixed top-0 left-0 right-0 z-30 h-14 group">
+        <div
+          className={`absolute top-0 left-0 right-0 transition-transform duration-700 ${
+            isTopBarHidden ? "-translate-y-full" : "translate-y-0"
+          } group-hover:translate-y-0`}
+        >
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
           <Link
             to="/"
             className="text-base font-semibold uppercase tracking-[0.35em] text-muted-foreground"
@@ -221,12 +235,14 @@ export default function LlensChapter1() {
             Rakan Tutor
           </Link>
           <div className="flex items-center gap-6">
-            <Link
-              to="/llens/chapter-2"
-              className="text-sm uppercase tracking-[0.4em] text-muted-foreground hover:text-foreground transition"
-            >
-              Next Chapter
-            </Link>
+            {isTaskComplete && (
+              <Link
+                to="/llens/chapter-2"
+                className="text-sm uppercase tracking-[0.4em] text-muted-foreground hover:text-foreground transition"
+              >
+                Next Chapter
+              </Link>
+            )}
             <Link
               to="/llens"
               className="text-sm uppercase tracking-[0.4em] text-muted-foreground hover:text-foreground transition"
@@ -234,12 +250,13 @@ export default function LlensChapter1() {
               Skip to Playground
             </Link>
           </div>
+          </div>
+          <div className="h-px w-full bg-border" />
         </div>
-        <div className="h-px w-full bg-border" />
       </div>
 
-      <div className="pt-24">
-        <section className="relative min-h-[calc(100vh-96px)] flex items-center">
+      <div className="h-full">
+        <section className="relative h-screen flex items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-background to-transparent" />
           {showConfetti && (
             <div className="pointer-events-none fixed inset-0 z-50">
@@ -313,6 +330,8 @@ export default function LlensChapter1() {
                           <p className="text-base text-white/80 leading-relaxed">
                             Notice how the dog with a space and without a space are two
                             different tokens?
+
+                            Look at the Integer representations, THAT's what the model 'sees'!
                           </p>
                           <p className="text-base text-white/80 leading-relaxed">
                             Continue playing around with the tokenizer to see how words
@@ -428,11 +447,13 @@ export default function LlensChapter1() {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-center">
-              <Button size="lg" className="rounded-full px-10" asChild>
-                <Link to="/llens/chapter-2">Continue to Chapter 2</Link>
-              </Button>
-            </div>
+            {isTaskComplete && (
+              <div className="mt-10 flex justify-center">
+                <Button size="lg" className="rounded-full px-10" asChild>
+                  <Link to="/llens/chapter-2">Continue to Chapter 2</Link>
+                </Button>
+              </div>
+            )}
           </div>
         </section>
       </div>

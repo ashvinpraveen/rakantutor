@@ -46,7 +46,9 @@ const loadModel = async (modelId = MODEL_ID) => {
 const tokenizeText = async (text: string) => {
   if (!tokenizer) return;
   const tokenIds = tokenizer.encode(text);
-  const tokens = tokenIds.map((id) => tokenizer!.decode([id]));
+  const tokens = tokenIds.map((id) =>
+    tokenizer!.decode([id], { clean_up_tokenization_spaces: false })
+  );
   post({ type: "tokenized", tokens, tokenIds });
 };
 
@@ -80,7 +82,7 @@ const getTopK = (probs: Float32Array, k: number) => {
 const predictNextToken = async (tokenIds: number[], k: number) => {
   if (!tokenizer || !model) return;
 
-  const inputText = tokenizer.decode(tokenIds);
+  const inputText = tokenizer.decode(tokenIds, { clean_up_tokenization_spaces: false });
   const inputs = await tokenizer(inputText, { return_tensors: "np" });
   const outputs = await model.forward(inputs);
   const logits = outputs.logits;
@@ -93,7 +95,7 @@ const predictNextToken = async (tokenIds: number[], k: number) => {
   const probs = softmax(lastLogits);
   const top = getTopK(probs, k).map(({ id, prob }) => ({
     tokenId: id,
-    token: tokenizer!.decode([id]),
+    token: tokenizer!.decode([id], { clean_up_tokenization_spaces: false }),
     prob,
   }));
 
@@ -134,7 +136,10 @@ const generateText = async (text: string, maxNewTokens: number, temperature: num
   const tokenIds: number[] = Array.from(inputIds.data as Int32Array);
 
   for (let step = 0; step < maxNewTokens; step += 1) {
-    const stepInputs = await tokenizer(tokenizer.decode(tokenIds), { return_tensors: "np" });
+    const stepInputs = await tokenizer(
+      tokenizer.decode(tokenIds, { clean_up_tokenization_spaces: false }),
+      { return_tensors: "np" }
+    );
     const outputs = await model.forward(stepInputs);
     const logits = outputs.logits;
 
@@ -166,8 +171,13 @@ const generateText = async (text: string, maxNewTokens: number, temperature: num
     tokenIds.push(nextId);
   }
 
-  const fullText = tokenizer.decode(tokenIds, { skip_special_tokens: true });
-  const tokens = tokenIds.map((id) => tokenizer!.decode([id]));
+  const fullText = tokenizer.decode(tokenIds, {
+    skip_special_tokens: true,
+    clean_up_tokenization_spaces: false,
+  });
+  const tokens = tokenIds.map((id) =>
+    tokenizer!.decode([id], { clean_up_tokenization_spaces: false })
+  );
 
   post({ type: "generated", text: fullText, tokens, tokenIds });
 };

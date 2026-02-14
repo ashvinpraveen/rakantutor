@@ -20,7 +20,7 @@ export default function LlensStart() {
           LLens
         </p>
         <h1 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">
-          Ready to explore tokens?
+          What's happening inside ChatGPT?
         </h1>
         <Button
           size="lg"
