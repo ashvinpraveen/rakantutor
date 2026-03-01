@@ -1,4 +1,3 @@
-// @ts-nocheck — file rebuilt; remove this after verifying
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { ChapterShell } from "@/components/llens/ChapterShell";
 import { ChapterTopBar } from "@/components/llens/ChapterTopBar";
 import { ChapterTwoPanel } from "@/components/llens/ChapterTwoPanel";
 import { TokenChip } from "@/components/llens/TokenChip";
+import { getLlensWorker, isLlensModelReady, preloadLlensModel } from "@/workers/llensWorkerSingleton";
 
 const fallbackTokenize = (value: string) => value.match(/\s+|[^\s]+/g) ?? [];
 
@@ -55,12 +55,20 @@ export default function LlensChapter1() {
 
   const isTaskComplete = hasCompletedTask || text === "dog\n dog";
 
-  const createWorker = () => {
-    const worker = new Worker(new URL("../../workers/llens.worker.ts", import.meta.url), {
-      type: "module",
-    });
+  useEffect(() => {
+    preloadLlensModel();
+    const worker = getLlensWorker();
+    workerRef.current = worker;
 
-    worker.onmessage = (event) => {
+    if (isLlensModelReady()) {
+      setIsModelReady(true);
+      setIsModelLoading(false);
+      worker.postMessage({ type: "tokenize", text: "" });
+    } else {
+      setIsModelLoading(true);
+    }
+
+    const handler = (event: MessageEvent) => {
       const message = event.data as
         | { type: "ready" }
         | { type: "tokenized"; tokens: string[]; tokenIds: number[] }
@@ -70,7 +78,7 @@ export default function LlensChapter1() {
         setIsModelReady(true);
         setIsModelLoading(false);
         setErrorMessage(null);
-        worker.postMessage({ type: "tokenize", text });
+        worker.postMessage({ type: "tokenize", text: "" });
         return;
       }
 
@@ -86,17 +94,9 @@ export default function LlensChapter1() {
       }
     };
 
-    workerRef.current = worker;
-    return worker;
-  };
-
-  useEffect(() => {
-    const worker = createWorker();
-    setIsModelLoading(true);
-    worker.postMessage({ type: "load" });
-
+    worker.addEventListener("message", handler);
     return () => {
-      worker.terminate();
+      worker.removeEventListener("message", handler);
       workerRef.current = null;
     };
   }, []);
@@ -239,7 +239,7 @@ export default function LlensChapter1() {
           <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Token Visualiser</p>
           {!isModelReady && (
             <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              {isModelLoading ? "Loading tokenizer" : "Fallback mode"}
+              {isModelLoading ? "Loading tokenizer... This may take a couple of minutes" : "Fallback mode"}
             </span>
           )}
         </div>

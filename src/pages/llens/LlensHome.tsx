@@ -179,7 +179,7 @@ export default function LlensHome() {
       worker.postMessage({ type: "predict", tokenIds: nextTokenIds, k: 5 });
     };
 
-    worker.onmessage = (event) => {
+    const handler = (event: MessageEvent) => {
       const message = event.data as
         | { type: "ready" }
         | { type: "tokenized"; tokens: string[]; tokenIds: number[] }
@@ -247,8 +247,9 @@ export default function LlensHome() {
       }
     };
 
+    worker.addEventListener("message", handler);
     workerRef.current = worker;
-    return worker;
+    return { worker, handler };
   };
 
   useEffect(() => {
@@ -263,7 +264,7 @@ export default function LlensHome() {
       setIsTopBarHidden(true);
     }, 1200);
 
-    const worker = createWorker();
+    const { worker, handler } = createWorker();
 
     if (isLlensModelReady()) {
       // Model already loaded while on the start screen — skip the wait
@@ -278,7 +279,8 @@ export default function LlensHome() {
     return () => {
       window.removeEventListener("resize", syncWindowSize);
       window.clearTimeout(hideTimeout);
-      // Don't terminate — worker is shared; just detach
+      // Don't terminate — worker is shared; just detach our listener
+      worker.removeEventListener("message", handler);
       workerRef.current = null;
     };
   }, []);
