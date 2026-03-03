@@ -260,4 +260,15 @@
   .react-pdf__Page__annotations {
     @apply pointer-events-auto;
   }
+
+  /* ── Guiding flash highlight ─────────────────────────────────────────────── */
+  @keyframes guide-flash {
+    0%   { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.75); opacity: 1; }
+    40%  { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.30); opacity: 1; }
+    100% { box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.00); opacity: 0; }
+  }
+
+  .animate-guide-flash {
+    animation: guide-flash 1.2s ease-out forwards;
+  }
 }
