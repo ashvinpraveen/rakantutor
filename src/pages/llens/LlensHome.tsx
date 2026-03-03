@@ -126,6 +126,8 @@ export default function LlensHome() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [maxNewTokens, setMaxNewTokens] = useState(1);
   const [temperature, setTemperature] = useState(0.0);
+  const [tokensError, setTokensError] = useState<string | null>(null);
+  const [tempError, setTempError] = useState<string | null>(null);
   const [activeQuestId, setActiveQuestId] = useState<string>(quests[0].id);
   const [completedQuestIds, setCompletedQuestIds] = useState<string[]>([]);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -491,7 +493,8 @@ export default function LlensHome() {
       questId: activeQuestId,
       temperatureAtRun: temperature,
     };
-    workerRef.current.postMessage({ type: "generate", text, maxNewTokens, temperature });
+    const clampedTokens = Math.max(1, Math.min(20, maxNewTokens || 1));
+    workerRef.current.postMessage({ type: "generate", text, maxNewTokens: clampedTokens, temperature });
   };
 
   const handleActivateQuest = (quest: Quest) => {
@@ -631,6 +634,15 @@ export default function LlensHome() {
             >
               Rakan Tutor
             </Link>
+            {isGuideOpen && (
+              <button
+                type="button"
+                className="text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => { setGuideStepIndex(guideSteps.length - 1); }}
+              >
+                Skip Guide
+              </button>
+            )}
           </div>
           <div className="h-px w-full bg-border" />
         </div>
@@ -723,42 +735,58 @@ export default function LlensHome() {
                         ref={tokensGuideTargetRef}
                         className={isTokensGuideStepActive ? "rounded-lg ring-2 ring-primary/80 ring-offset-2 ring-offset-background" : ""}
                       >
-                        <div className="flex items-center gap-2">
-                        <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Tokens</span>
-                        <Input
-                          type="number"
-                          min={1}
-                          max={50}
-                          value={maxNewTokens}
-                          onChange={(event) => setMaxNewTokens(Number(event.target.value) || 1)}
-                          disabled={isGuideLocked}
-                          className="w-20 text-center"
-                        />
+                        <div className="flex flex-col gap-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Tokens</span>
+                            <Input
+                              type="number"
+                              min={1}
+                              max={20}
+                              value={maxNewTokens === 0 ? "" : maxNewTokens}
+                              onChange={(event) => {
+                                const raw = event.target.value;
+                                const val = raw === "" ? 0 : Number(raw);
+                                setMaxNewTokens(val);
+                                if (raw === "" || val < 1) setTokensError("Enter a value between 1 and 20");
+                                else if (val > 20) setTokensError("Max is 20 tokens");
+                                else setTokensError(null);
+                              }}
+                              disabled={isGuideLocked}
+                              className={`w-20 text-center ${tokensError ? "border-destructive focus-visible:ring-destructive" : ""}`}
+                            />
+                          </div>
+                          {tokensError && <p className="text-[11px] text-destructive">{tokensError}</p>}
                         </div>
                       </div>
                       <div
                         ref={temperatureGuideTargetRef}
                         className={isTemperatureGuideStepActive ? "rounded-lg ring-2 ring-primary/80 ring-offset-2 ring-offset-background" : ""}
                       >
-                        <div className="flex items-center gap-2">
-                        <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Temp</span>
-                        <Input
-                          type="number"
-                          min={0}
-                          max={1}
-                          step={0.05}
-                          value={temperature}
-                          disabled={isGuideLocked}
-                          onChange={(event) => {
-                            const next = Number(event.target.value);
-                            if (Number.isNaN(next)) {
-                              setTemperature(0);
-                              return;
-                            }
-                            setTemperature(Math.min(1, Math.max(0, next)));
-                          }}
-                          className="w-20 text-center"
-                        />
+                        <div className="flex flex-col gap-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Temp</span>
+                            <Input
+                              type="number"
+                              min={0}
+                              max={1}
+                              step={0.05}
+                              value={temperature}
+                              disabled={isGuideLocked}
+                              onChange={(event) => {
+                                const next = Number(event.target.value);
+                                if (Number.isNaN(next)) {
+                                  setTemperature(0);
+                                  setTempError(null);
+                                  return;
+                                }
+                                setTemperature(next);
+                                if (next < 0 || next > 1) setTempError("Must be between 0 and 1");
+                                else setTempError(null);
+                              }}
+                              className={`w-20 text-center ${tempError ? "border-destructive focus-visible:ring-destructive" : ""}`}
+                            />
+                          </div>
+                          {tempError && <p className="text-[11px] text-destructive">{tempError}</p>}
                         </div>
                       </div>
                       <div
@@ -767,7 +795,7 @@ export default function LlensHome() {
                       >
                         <Button
                           onClick={handleGenerate}
-                          disabled={!isModelReady || isWorking || (isGuideOpen && !isGuideGenerateStep)}
+                          disabled={!isModelReady || isWorking || (isGuideOpen && !isGuideGenerateStep) || !!tokensError || !!tempError}
                         >
                           {isWorking ? "Working..." : "Generate"}
                         </Button>
@@ -926,14 +954,7 @@ export default function LlensHome() {
             )}
 
             {currentGuideStep.id === "guide-mismatch-found" && (
-              <div className="mt-3 flex items-center justify-between">
-                <button
-                  type="button"
-                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setGuideStepIndex(guideSteps.length - 1)}
-                >
-                  Skip
-                </button>
+              <div className="mt-3 flex items-center justify-end">
                 <Button type="button" size="sm" onClick={() => setGuideStepIndex(6)}>
                   Next
                 </Button>
@@ -945,18 +966,6 @@ export default function LlensHome() {
                 <Button type="button" size="sm" onClick={() => setIsGuideOpen(false)}>
                   Complete
                 </Button>
-              </div>
-            )}
-
-            {currentGuideStep.id !== "guide-mismatch-found" && currentGuideStep.id !== "guide-examples" && (
-              <div className="mt-3 flex items-center justify-end">
-                <button
-                  type="button"
-                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setGuideStepIndex(guideSteps.length - 1)}
-                >
-                  Skip
-                </button>
               </div>
             )}
 

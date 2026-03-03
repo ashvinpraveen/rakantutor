@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ChapterShell } from "@/components/llens/ChapterShell";
 import { ChapterTopBar } from "@/components/llens/ChapterTopBar";
 import { ChapterTwoPanel } from "@/components/llens/ChapterTwoPanel";
+import { GuidedFlash } from "@/components/llens/GuidedFlash";
 import { TokenChip } from "@/components/llens/TokenChip";
 import { getLlensWorker, isLlensModelReady, preloadLlensModel } from "@/workers/llensWorkerSingleton";
+import { useGuideFlash } from "@/hooks/useGuideFlash";
 
 const fallbackTokenize = (value: string) => value.match(/\s+|[^\s]+/g) ?? [];
 
@@ -49,11 +51,15 @@ export default function LlensChapter1() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiActive, setConfettiActive] = useState(false);
   const [hasCompletedTask, setHasCompletedTask] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const workerRef = useRef<Worker | null>(null);
+  const helpTimerRef = useRef<number | null>(null);
 
   const tokensMemo = useMemo(() => tokens, [tokens]);
 
-  const isTaskComplete = hasCompletedTask || text === "dog\n dog";
+  const { flash, registerRef, activeId } = useGuideFlash();
+
+  const isTaskComplete = hasCompletedTask || text.toLowerCase() === "dog\n dog";
 
   useEffect(() => {
     preloadLlensModel();
@@ -116,10 +122,27 @@ export default function LlensChapter1() {
   }, [text, isModelReady]);
 
   useEffect(() => {
-    if (!hasCompletedTask && text === "dog\n dog") {
+    if (!hasCompletedTask && text.toLowerCase() === "dog\n dog") {
       setHasCompletedTask(true);
     }
   }, [hasCompletedTask, text]);
+
+  // Start 30-second help timer once the user begins typing on step 1
+  useEffect(() => {
+    if (stepIndex !== 1 || isTaskComplete || showHelp) {
+      if (helpTimerRef.current !== null) {
+        window.clearTimeout(helpTimerRef.current);
+        helpTimerRef.current = null;
+      }
+      return;
+    }
+    if (text.length > 0 && helpTimerRef.current === null) {
+      helpTimerRef.current = window.setTimeout(() => {
+        helpTimerRef.current = null;
+        setShowHelp(true);
+      }, 30000);
+    }
+  }, [stepIndex, isTaskComplete, showHelp, text]);
 
   useEffect(() => {
     if (!isTaskComplete) {
@@ -179,7 +202,16 @@ export default function LlensChapter1() {
               (This is why it may not be so surprising that some models struggle to tell how many
               R&apos;s there are in Strawberry)
             </p>
-            <Button size="lg" className="rounded-full px-8" onClick={() => setStepIndex(1)}>
+            <Button
+              size="lg"
+              className="rounded-full px-8"
+              onClick={() => {
+                setStepIndex(1);
+                // Flash the task card first, then draw eyes to the input
+                window.setTimeout(() => flash("task-box"), 500);
+                window.setTimeout(() => flash("input-box"), 1900);
+              }}
+            >
               Next
             </Button>
           </div>
@@ -191,6 +223,11 @@ export default function LlensChapter1() {
             stepIndex === 1 ? "relative opacity-100 translate-x-0" : "absolute inset-0 opacity-0 translate-x-8 pointer-events-none"
           }`}
         >
+          <GuidedFlash
+            ref={registerRef("task-box")}
+            isActive={activeId === "task-box"}
+            className="rounded-2xl"
+          >
           <div className="rounded-2xl bg-black/90 p-6 text-white shadow-sm space-y-4">
             {isTaskComplete ? (
               <div className="space-y-3">
@@ -210,12 +247,68 @@ export default function LlensChapter1() {
                 <div className="flex flex-wrap items-center gap-2 text-xl font-semibold">
                   <span>Type</span>
                   <span className="rounded-md bg-white/10 px-2 py-1 font-mono text-lg">dog</span>
-                  <span>(enter)</span>
-                  <span className="rounded-md bg-white/10 px-2 py-1 font-mono text-lg">(space) dog</span>
+                  <span
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-white"
+                    aria-label="newline"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-4 w-4">
+                      <path
+                        d="M6 8h8a4 4 0 0 1 0 8H9m0 0 3-3m-3 3 3 3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span className="rounded-md bg-white/10 px-2 py-1 font-mono text-lg flex items-center gap-1">
+                    <span
+                      className="inline-block h-2.5 w-2.5 rounded-full bg-orange-300 ring-1 ring-orange-400/70"
+                      aria-label="space"
+                    />
+                    dog
+                  </span>
                 </div>
+                {/* Legend */}
+                <div className="flex items-center gap-4 pt-1">
+                  <p className="text-xs text-white/50 uppercase tracking-[0.3em]">Legend</p>
+                  <span className="flex items-center gap-1.5 text-xs text-white/60">
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-orange-300 ring-1 ring-orange-400/70" />
+                    space
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs text-white/60">
+                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10">
+                      <svg viewBox="0 0 24 24" className="h-3 w-3">
+                        <path
+                          d="M6 8h8a4 4 0 0 1 0 8H9m0 0 3-3m-3 3 3 3"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    newline
+                  </span>
+                </div>
+                {showHelp && (
+                  <div className="flex items-center gap-3 pt-1">
+                    <button
+                      type="button"
+                      className="text-xs uppercase tracking-[0.35em] text-white/50 underline underline-offset-2 hover:text-white/80 transition-colors"
+                      onClick={() => setText("dog\n dog")}
+                    >
+                      Help me
+                    </button>
+                    <span className="text-xs text-white/30">— fill in the answer for me</span>
+                  </div>
+                )}
               </>
             )}
           </div>
+          </GuidedFlash>
         </div>
       </div>
     </div>
@@ -224,6 +317,11 @@ export default function LlensChapter1() {
   const rightPanel = (
     <div className="rounded-3xl border border-border/60 bg-card/90 p-6 md:p-8 shadow-sm space-y-5">
       {/* Input */}
+      <GuidedFlash
+        ref={registerRef("input-box")}
+        isActive={activeId === "input-box"}
+        className="rounded-2xl"
+      >
       <div className="space-y-2">
         <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Interactive Input</p>
         <textarea
@@ -232,6 +330,7 @@ export default function LlensChapter1() {
           onChange={(e) => setText(e.target.value)}
         />
       </div>
+      </GuidedFlash>
 
       {/* Token visualiser */}
       <div className="space-y-3">
