@@ -24,9 +24,15 @@ type UnfurledResource = {
 const LEARN_RESOURCES: LearnResource[] = [
   {
     url: "https://llens.space/",
-    fallbackTitle: "Llens: The lens to see inside AI",
+    fallbackTitle: "LLens — The lens to see inside AI",
     fallbackDescription:
-      "LLens is an interactive, browser-based tool that lets you see exactly how a language model tokenizes text, predicts next tokens, and generates text",
+      "LLens is an interactive, browser-based tool that lets you see exactly how a language model tokenizes text, predicts next tokens, and generates text.",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi/",
+    fallbackTitle: "3Blue1Brown — Neural Networks",
+    fallbackDescription:
+      "An acclaimed video series by 3Blue1Brown that visually explains neural networks from the ground up.",
   },
 ];
 
@@ -77,13 +83,13 @@ const Learn = () => {
             const data = payload?.data;
 
             return {
-              url: data?.url || resource.url,
+              url: resource.url,
               title: data?.title || resource.fallbackTitle,
               description: data?.description || resource.fallbackDescription,
               siteName:
                 data?.publisher ||
                 data?.author ||
-                getHostname(data?.url || resource.url),
+                getHostname(resource.url),
               image: data?.image?.url,
             } satisfies UnfurledResource;
           } catch {
@@ -136,9 +142,15 @@ const Learn = () => {
 
         <section className="py-16 md:py-20 px-4 md:px-8 bg-background">
           <div className="container max-w-7xl mx-auto">
+            <BlurFade delay={0.15}>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-10">
+                Here are some places to dig deeper into AI:
+              </h2>
+            </BlurFade>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {resources.map((resource, index) => (
-                <BlurFade key={resource.url} delay={0.05 + index * 0.04}>
+                <BlurFade key={resource.url} delay={0.2 + index * 0.06}>
                   <Card className="h-full overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
                     <div className="h-44 bg-muted/40 flex items-center justify-center overflow-hidden">
                       {resource.image ? (
