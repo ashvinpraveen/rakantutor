@@ -17,8 +17,9 @@ BEGIN
   -- Hardcode the Supabase URL
   function_url := 'https://barsjbjrgzubewjodzdd.supabase.co/functions/v1/handle-registration';
 
-  -- Hardcode the service role key here
-  service_role_key := 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhcnNqYmpyZ3p1YmV3am9kemRkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2ODY3NjQzMiwiZXhwIjoyMDg0MjUyNDMyfQ.7bRQwS7lqvbV3CYe-wLmuE3MxxEMgt0T4OWBPzSyKhQ';
+  -- Set service role key via database setting (do not hardcode here)
+  -- Run: ALTER DATABASE postgres SET app.settings.service_role_key = 'your-service-role-key';
+  service_role_key := current_setting('app.settings.service_role_key', true);
 
   -- Prepare the payload
   payload := jsonb_build_object(
