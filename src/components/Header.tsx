@@ -75,7 +75,6 @@ const Header = () => {
     { label: "About", href: "/about", isDropdown: true },
     { label: "Impact", href: "/impact" },
     { label: "News", href: "/news" },
-    { label: "Learn", href: "/learn" },
     { label: "NAIC 2026", href: "/naic" },
     { label: "Contact", href: "/contact" },
   ];

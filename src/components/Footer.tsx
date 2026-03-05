@@ -104,6 +104,9 @@ const Footer = () => {
                   >
                     Join Us
                   </a>
+                  <Link to="/learn" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
+                    Learn
+                  </Link>
                   <Link to="/news" className="text-lg transition-colors font-light text-foreground/70 hover:text-foreground">
                     News
                   </Link>
