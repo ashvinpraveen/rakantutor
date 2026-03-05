@@ -75,6 +75,7 @@ const Header = () => {
     { label: "About", href: "/about", isDropdown: true },
     { label: "Impact", href: "/impact" },
     { label: "News", href: "/news" },
+    { label: "Learn", href: "/learn" },
     { label: "NAIC 2026", href: "/naic" },
     { label: "Contact", href: "/contact" },
   ];
@@ -253,23 +254,6 @@ const Header = () => {
               {i18n.language.startsWith("en") ? "EN" : "BM"}
             </Button> */}
 
-              {isHome && !isNaicPage && (
-                <div className="hidden lg:block">
-                  <Button
-                    asChild
-                    size="sm"
-                    variant="outline"
-                    className={cn(
-                      "h-10 rounded-full px-5 text-sm font-semibold",
-                      isV2
-                        ? "border-cyan-500 text-cyan-400 hover:bg-cyan-950"
-                        : "border-border text-foreground hover:bg-muted"
-                    )}
-                  >
-                    <Link to="/llens/start">LLens</Link>
-                  </Button>
-                </div>
-              )}
               <div className="hidden lg:block">
                 <Button
                   asChild

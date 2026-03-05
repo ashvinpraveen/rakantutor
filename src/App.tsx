@@ -30,12 +30,8 @@ import MeetTheTeam2023 from "./pages/rakantutor/team/Year2023";
 import MeetTheTeam2022 from "./pages/rakantutor/team/Year2022";
 import MeetTheTeam2021 from "./pages/rakantutor/team/Year2021";
 
-// LLens Pages
-import LlensHome from "./pages/llens/LlensHome";
-import LlensStart from "./pages/llens/LlensStart";
-import LlensChapter1 from "./pages/llens/LlensChapter1";
-import LlensChapter2 from "./pages/llens/LlensChapter2";
-import LlensChapter2Game from "./pages/llens/LlensChapter2Game";
+// Learn Page
+import Learn from "./pages/rakantutor/Learn";
 
 // Other
 import NotFound from "./pages/NotFound";
@@ -130,12 +126,7 @@ const App = () => {
             <Route path="/naic/contact" element={<NaicContact />} />
             <Route path="/naic/privacy" element={<NaicPrivacy />} />
             <Route path="/naic/terms" element={<NaicTerms />} />
-            <Route path="/llens/start" element={<LlensStart />} />
-            <Route path="/llens/chapter-1" element={<LlensChapter1 />} />
-            <Route path="/llens/chapter-2" element={<LlensChapter2 />} />
-            <Route path="/llens/chapter-2/game" element={<LlensChapter2Game />} />
-            <Route path="/llens/guide" element={<LlensChapter1 />} />
-            <Route path="/llens" element={<LlensHome />} />
+            <Route path="/learn" element={<Learn />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
