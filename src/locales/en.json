@@ -29,7 +29,7 @@
     },
     "tracks": {
         "title": "2026 Competition Tracks",
-        "subtitle": "Explore our five distinct paths. Each designed to challenge different skills and passions. Specific competition topics will be announced to registered teams on March 19, 2026.",
+        "subtitle": "Explore our five distinct paths. Each designed to challenge different skills and passions. Specific competition topics will be announced to registered teams on March 24, 2026.",
         "cta": "View All Track Details",
         "innovation": {
             "title": "Innovation",
@@ -91,7 +91,7 @@
             "subtitle": "National AI Competition 2026",
             "title": "Tracks",
             "titleHighlight": "Overview",
-            "desc": "Explore our five distinct competition tracks for 2026. Find the path that best matches your passion and skills. Specific competition topics will be announced to registered teams on March 19, 2026."
+            "desc": "Explore our five distinct competition tracks for 2026. Find the path that best matches your passion and skills. Specific competition topics will be announced to registered teams on March 24, 2026."
         },
         "headers": {
             "challengeOverview": "Challenge Overview",
@@ -101,7 +101,7 @@
             "judgingCriteria": "Judging Criteria",
             "trackTheme": "Track Theme",
             "defaultTheme": "Theme for 2026",
-            "exclusiveAnnouncement": "The specific competition topic will be announced exclusively to registered teams on March 19, 2026."
+            "exclusiveAnnouncement": "The specific competition topic will be announced exclusively to registered teams on March 24, 2026."
         },
         "cta": {
             "ready": "Ready to make your mark?",
@@ -110,7 +110,7 @@
         },
         "innovation": {
             "title": "Innovation",
-            "overview": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas. Specific SDG areas and detailed requirements will be announced on March 19, 2026.",
+            "overview": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas. Specific SDG areas and detailed requirements will be announced on March 24, 2026.",
             "theme": "UN Sustainable Development Goals",
             "whoIsThisFor": "Students passionate about using AI to solve real-world problems aligned with UN Sustainable Development Goals.",
             "deliverables": "A functional app or solution, a project proposal, and a presentation pitch.",
@@ -131,7 +131,7 @@
         },
         "computing": {
             "title": "Computing",
-            "overview": "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from medical images. The solution must handle realistic settings where data variability and real-world noise are common. Dataset details and technical specifications will be announced on March 19, 2026.",
+            "overview": "Prepare a high-quality pipeline and train an AI model that can make reliable predictions from medical images. The solution must handle realistic settings where data variability and real-world noise are common. Dataset details and technical specifications will be announced on March 24, 2026.",
             "theme": "AI for Healthcare Screening",
             "whoIsThisFor": "Enthusiastic participants who want to get hands-on with real-world medical data and push the limits of AI technologies.",
             "deliverables": "Inference/Testing Script, Model Weights/Saved Model, and a Short Technical Write-Up.",
@@ -152,7 +152,7 @@
         },
         "engineering": {
             "title": "Engineering",
-            "overview": "Design AI-powered engineering solutions that enhance efficiency and sustainability in our communities. Use technology to solve real-world physical challenges. Specific challenge details will be announced on March 19, 2026.",
+            "overview": "Design AI-powered engineering solutions that enhance efficiency and sustainability in our communities. Use technology to solve real-world physical challenges. Specific challenge details will be announced on March 24, 2026.",
             "theme": "Sustainable Engineering Solutions",
             "whoIsThisFor": "Problem-solvers interested in AI-powered intelligent systems integrating hardware and software for problems involving robotics, automation, processes, and infrastructure.",
             "deliverables": "Proposal report, system design workflow, and a proof-of-concept prototype (hardware or software simulation).",
@@ -173,7 +173,7 @@
         },
         "genai": {
             "title": "Gen Art",
-            "overview": "Create a compelling 1-3 minute video leveraging AI images to tell a local story in a meaningful way. Specific story themes and submission guidelines will be announced on March 19, 2026.",
+            "overview": "Create a compelling 1-3 minute video leveraging AI images to tell a local story in a meaningful way. Specific story themes and submission guidelines will be announced on March 24, 2026.",
             "theme": "Local Storytelling with AI",
             "whoIsThisFor": "Creative storytellers and AI enthusiasts looking to master short-form video content and AI-assisted visualization.",
             "deliverables": "A 1-3 minute TikTok-style video, a prompt log for AI visuals, and a creative story statement.",
@@ -194,7 +194,7 @@
         },
         "architecture": {
             "title": "Architecture",
-            "overview": "Reimagine spaces for learning that prioritise flexibility, technology, and human comfort. Detailed design briefs and requirements will be announced on March 19, 2026.",
+            "overview": "Reimagine spaces for learning that prioritise flexibility, technology, and human comfort. Detailed design briefs and requirements will be announced on March 24, 2026.",
             "theme": "Spaces for Future Learning",
             "whoIsThisFor": "Visionaries interested in architecture, spatial design, and sustainable environments using AI tools.",
             "deliverables": "One A1 design board (PDF) including visuals, spatial diagrams (plan/section), and a design story.",
@@ -235,7 +235,7 @@
         },
         "q5": {
             "question": "When do I know the competition topic?",
-            "answer": "Competition topics and materials will be shared with all registered teams on March 19, 2026."
+            "answer": "Competition topics and materials will be shared with all registered teams by March 24, 2026. Teams registered before March 19 will receive their materials on March 19."
         },
         "hero": {
             "subtitle": "National AI Competition 2026",
@@ -339,7 +339,7 @@
                     },
                     {
                         "question": "I think I registered, but I'm not sure.",
-                        "answer": "If you think you registered but are not sure, check for a confirmation email. All registered teams will receive a confirmation email together with competition materials, themes, and masterclass access details on March 19, 2026 upon successful registration. If these updates have not been received by then, please email us at mingjackt@sunway.edu.my (Jack) / clement@sunway.edu.my (Clemen) for assistance."
+                        "answer": "If you think you registered but are not sure, check for a confirmation email. All registered teams will receive a confirmation email together with competition materials, themes, and masterclass access details by March 24, 2026 upon successful registration. Teams registered before March 19 will receive their materials on March 19. If these updates have not been received by then, please email us at mingjackt@sunway.edu.my (Jack) / clement@sunway.edu.my (Clemen) for assistance."
                     },
                     {
                         "question": "Is a teacher advisor required?",
@@ -446,9 +446,9 @@
             "desc": "Final call for teams to register. Ensure your team of 4 is ready and your teacher advisor is onboarded."
         },
         "event2": {
-            "date": "March 19, 2026",
+            "date": "March 24, 2026",
             "name": "Competition Materials Sharing",
-            "desc": "Confirmation emails, competition materials (including themes), and masterclass access will be shared with all registered teams."
+            "desc": "Confirmation emails, competition materials (including themes), and masterclass access will be shared with all registered teams. Teams registered before March 19 will receive their materials on March 19, while later registrations will receive them by March 24."
         },
         "event3": {
             "date": "March 31 - April 2, 2026",

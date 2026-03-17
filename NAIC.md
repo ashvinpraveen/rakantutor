@@ -36,7 +36,7 @@
 
 ## Competition Flow
 - **20 MARCH 2026:** Registration Deadline
-- **19 MARCH 2026:** Sharing of confirmation emails, competition materials (including themes), and masterclass access details.
+- **24 MARCH 2026:** Sharing of confirmation emails, competition materials (including themes), and masterclass access details. (Teams registered before 19 March will receive materials on 19 March; later registrations by 24 March.)
 - **31 MARCH - 2 APRIL 2026:** Masterclass (by category)
 - **10 MAY 2026 (SUNDAY), 11.59PM:** Proposal Submission deadline
 - **18 MAY 2026, 5PM (MONDAY):** Announcement of finalists

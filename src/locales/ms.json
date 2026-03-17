@@ -31,7 +31,7 @@
             "judgingCriteria": "Kriteria Penilaian",
             "trackTheme": "Tema Kategori",
             "defaultTheme": "Tema untuk 2026",
-            "exclusiveAnnouncement": "Topik pertandingan khusus akan diumumkan secara eksklusif kepada pasukan yang berdaftar pada 19 Mac 2026."
+            "exclusiveAnnouncement": "Topik pertandingan khusus akan diumumkan secara eksklusif kepada pasukan yang berdaftar pada 24 Mac 2026."
         },
         "cta": {
             "ready": "Sedia untuk mencipta nama anda?",
@@ -208,9 +208,9 @@
             "desc": "Panggilan terakhir untuk pasukan mendaftar. Pastikan pasukan anda yang dianggotai 4 orang sudah bersedia dan guru penasihat anda telah didaftarkan."
         },
         "event2": {
-            "date": "19 Mac 2026",
+            "date": "24 Mac 2026",
             "name": "Perkongsian Bahan Pertandingan",
-            "desc": "E-mel pengesahan, bahan pertandingan (termasuk tema), dan akses masterclass akan dikongsi dengan semua pasukan yang berdaftar."
+            "desc": "E-mel pengesahan, bahan pertandingan (termasuk tema), dan akses masterclass akan dikongsi dengan semua pasukan yang berdaftar. Pasukan yang mendaftar sebelum 19 Mac akan menerima bahan mereka pada 19 Mac, manakala pendaftaran kemudian akan menerimanya menjelang 24 Mac."
         },
         "event3": {
             "date": "31 Mac - 2 April 2026",
@@ -254,7 +254,7 @@
         },
         "q5": {
             "question": "Bilakah saya akan tahu topik pertandingan?",
-            "answer": "Topik dan bahan pertandingan akan dikongsi dengan semua pasukan yang berdaftar pada 19 Mac 2026."
+            "answer": "Topik dan bahan pertandingan akan dikongsi dengan semua pasukan yang berdaftar menjelang 24 Mac 2026. Pasukan yang mendaftar sebelum 19 Mac akan menerima bahan mereka pada 19 Mac."
         },
         "hero": {
             "subtitle": "Pertandingan AI Kebangsaan 2026",

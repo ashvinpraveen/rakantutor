@@ -248,7 +248,7 @@ async function sendConfirmationEmail(data: RegistrationData) {
                           </ul>
 
                           <p style="font-size: 15px; margin-bottom: 24px; color: #4B5563;">
-                            Masterclass links will be sent out on the <strong>19 March 2026 (Thursday)</strong>, so keep an eye on your inbox. In the meantime, for more information please log on to <a href="https://linktr.ee/nationalAIcompetition" style="color: #2E2D2B; text-decoration: underline; font-weight: 500;">linktr.ee/nationalAIcompetition</a>.
+                            Masterclass links and competition materials will be sent out by <strong>24 March 2026</strong> (teams registered before 19 March will receive them on 19 March), so keep an eye on your inbox. In the meantime, for more information please log on to <a href="https://linktr.ee/nationalAIcompetition" style="color: #2E2D2B; text-decoration: underline; font-weight: 500;">linktr.ee/nationalAIcompetition</a>.
                           </p>
 
                           <!-- WhatsApp CTA -->
