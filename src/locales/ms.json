@@ -218,12 +218,12 @@
             "desc": "Sertai masterclass AI dalam talian secara percuma untuk menyediakan pasukan anda bagi pertandingan ini."
         },
         "event4": {
-            "date": "4 Mei 2026",
+            "date": "10 Mei 2026",
             "name": "Penghantaran Cadangan Pusingan Awal",
             "desc": "Hantar cadangan projek pasukan anda untuk pusingan awal bagi tujuan penilaian."
         },
         "event5": {
-            "date": "15 Mei 2026",
+            "date": "18 Mei 2026",
             "name": "Pengumuman Finalis",
             "desc": "Keputusan pusingan awal akan diumumkan. Pasukan yang disenarai pendek akan dijemput ke pusingan akhir."
         },
@@ -281,7 +281,7 @@
                 "items": [
                     {
                         "question": "Bagaimanakah pertandingan ini berfungsi?",
-                        "answer": "Pertandingan AI Kebangsaan terdiri daripada dua pusingan: pusingan Awal [penghantaran cadangan dalam talian] dan Pusingan Akhir di Sunway University [Bersemuka].\n\nBegini cara ianya berfungsi:\n1. Pendaftaran: Daftar pasukan anda sebelum 16 Mac 2026.\n2. Bahan Pertandingan & Masterclass AI: Terima topik pertandingan dan sertai masterclass AI percuma antara 31 Mac 2026 – 2 April 2026.\n3. Penghantaran Cadangan: Usahakan projek anda sebagai satu pasukan dan hantar cadangan anda sebelum 4 Mei 2026.\n4. Finalis akan diumumkan pada 15 Mei 2026, 4 petang dan akan bertanding di Pusingan Akhir di Sunway University pada 13 Jun 2026. Rujuk garis masa untuk tarikh dan langkah terperinci."
+                        "answer": "Pertandingan AI Kebangsaan terdiri daripada dua pusingan: pusingan Awal [penghantaran cadangan dalam talian] dan Pusingan Akhir di Sunway University [Bersemuka].\n\nBegini cara ianya berfungsi:\n1. Pendaftaran: Daftar pasukan anda sebelum 16 Mac 2026.\n2. Bahan Pertandingan & Masterclass AI: Terima topik pertandingan dan sertai masterclass AI percuma antara 31 Mac 2026 – 2 April 2026.\n3. Penghantaran Cadangan: Usahakan projek anda sebagai satu pasukan dan hantar cadangan anda sebelum 10 Mei 2026, 11.59 malam.\n4. Finalis akan diumumkan pada 18 Mei 2026, 5 petang dan akan bertanding di Pusingan Akhir di Sunway University pada 13 Jun 2026. Rujuk garis masa untuk tarikh dan langkah terperinci."
                     },
                     {
                         "question": "Berapakah bilangan pusingan yang ada?",
@@ -305,7 +305,7 @@
                     },
                     {
                         "question": "Bagaimanakah kami menyenarai pendek pasukan ke peringkat akhir?",
-                        "answer": "Finalis akan dipilih berdasarkan rubrik pemarkahan khusus untuk kategori pilihan mereka. Peserta boleh merujuk kepada buku kecil pertandingan mengenai rubrik pertandingan. Pengumuman finalis adalah pada 15 Mei 2026."
+                        "answer": "Finalis akan dipilih berdasarkan rubrik pemarkahan khusus untuk kategori pilihan mereka. Peserta boleh merujuk kepada buku kecil pertandingan mengenai rubrik pertandingan. Pengumuman finalis adalah pada 18 Mei 2026, 5 petang."
                     }
                 ]
             },

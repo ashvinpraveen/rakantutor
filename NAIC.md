@@ -38,8 +38,8 @@
 - **16 MARCH 2026:** Registration Deadline
 - **19 MARCH 2026:** Sharing of confirmation emails, competition materials (including themes), and masterclass access details.
 - **31 MARCH - 2 APRIL 2026:** Masterclass (by category)
-- **4 MAY 2026 (MONDAY):** Proposal Submission deadline
-- **15 MAY 2026, 4PM (FRIDAY):** Announcement of finalists
+- **10 MAY 2026 (SUNDAY), 11.59PM:** Proposal Submission deadline
+- **18 MAY 2026, 5PM (MONDAY):** Announcement of finalists
 - **13 JUNE 2026, 8:30AM - 2:00PM:** Grand Finals at Sunway University
 
 ## Additional Information

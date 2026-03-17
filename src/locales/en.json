@@ -80,7 +80,7 @@
             },
             "submitPitch": {
                 "title": "Submit & Pitch",
-                "item1": "Submit project proposal by 4 May 2026",
+                "item1": "Submit project proposal by 10 May 2026, 11.59pm",
                 "item2": "Grand Finals at Sunway University on 13 June",
                 "item3": "Pitch your AI solution to the judges"
             }
@@ -262,7 +262,7 @@
                 "items": [
                     {
                         "question": "How does the competition work?",
-                        "answer": "The National AI Competition consists of two rounds: an Preliminary round [online proposal submission] and Grand Finals at Sunway University [On-ground].\n\nHere's how it works:\n1. Registration: Register your team by 16 March 2026.\n2. Competition Materials & AI Masterclass: Receive the competition topics and participate in the complimentary AI masterclass between 31 March 2026 – 2 April 2026.\n3. Proposal Submission: Work on your project as a team and submit your proposal by 4 May 2026.\n4. Finalists will be announced on 15 May 2026, 4pm and will compete at the Grand Finals at Sunway University on 13 June 2026. Refer to the timeline for detailed dates and steps."
+                        "answer": "The National AI Competition consists of two rounds: an Preliminary round [online proposal submission] and Grand Finals at Sunway University [On-ground].\n\nHere's how it works:\n1. Registration: Register your team by 16 March 2026.\n2. Competition Materials & AI Masterclass: Receive the competition topics and participate in the complimentary AI masterclass between 31 March 2026 – 2 April 2026.\n3. Proposal Submission: Work on your project as a team and submit your proposal by 10 May 2026, 11.59pm.\n4. Finalists will be announced on 18 May 2026, 5pm and will compete at the Grand Finals at Sunway University on 13 June 2026. Refer to the timeline for detailed dates and steps."
                     },
                     {
                         "question": "How many rounds will there be?",
@@ -286,7 +286,7 @@
                     },
                     {
                         "question": "How do we shortlist teams for the final?",
-                        "answer": "Finalists will be selected based on the judging rubrics specific to their chosen track. Participants may refer to the competition booklet on the rubrics for the competition. The announcement of finalists will be on May 15, 2026."
+                        "answer": "Finalists will be selected based on the judging rubrics specific to their chosen track. Participants may refer to the competition booklet on the rubrics for the competition. The announcement of finalists will be on May 18, 2026, 5pm."
                     }
                 ]
             },
@@ -456,12 +456,12 @@
             "desc": "Participate in complimentary online AI masterclasses to prepare your team for the competition."
         },
         "event4": {
-            "date": "May 4, 2026",
+            "date": "May 10, 2026",
             "name": "Preliminary Proposal Submission",
             "desc": "Submit your team's project proposal for the preliminary round for judging."
         },
         "event5": {
-            "date": "May 15, 2026",
+            "date": "May 18, 2026",
             "name": "Announcement of Finalists",
             "desc": "The top 60 teams will be announced."
         },
