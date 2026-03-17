@@ -203,7 +203,7 @@
     "timeline": {
         "title": "Garis Masa",
         "event1": {
-            "date": "16 Mac 2026",
+            "date": "20 Mac 2026",
             "name": "Tarikh Tutup Pendaftaran",
             "desc": "Panggilan terakhir untuk pasukan mendaftar. Pastikan pasukan anda yang dianggotai 4 orang sudah bersedia dan guru penasihat anda telah didaftarkan."
         },
@@ -281,7 +281,7 @@
                 "items": [
                     {
                         "question": "Bagaimanakah pertandingan ini berfungsi?",
-                        "answer": "Pertandingan AI Kebangsaan terdiri daripada dua pusingan: pusingan Awal [penghantaran cadangan dalam talian] dan Pusingan Akhir di Sunway University [Bersemuka].\n\nBegini cara ianya berfungsi:\n1. Pendaftaran: Daftar pasukan anda sebelum 16 Mac 2026.\n2. Bahan Pertandingan & Masterclass AI: Terima topik pertandingan dan sertai masterclass AI percuma antara 31 Mac 2026 – 2 April 2026.\n3. Penghantaran Cadangan: Usahakan projek anda sebagai satu pasukan dan hantar cadangan anda sebelum 10 Mei 2026, 11.59 malam.\n4. Finalis akan diumumkan pada 18 Mei 2026, 5 petang dan akan bertanding di Pusingan Akhir di Sunway University pada 13 Jun 2026. Rujuk garis masa untuk tarikh dan langkah terperinci."
+                        "answer": "Pertandingan AI Kebangsaan terdiri daripada dua pusingan: pusingan Awal [penghantaran cadangan dalam talian] dan Pusingan Akhir di Sunway University [Bersemuka].\n\nBegini cara ianya berfungsi:\n1. Pendaftaran: Daftar pasukan anda sebelum 20 Mac 2026.\n2. Bahan Pertandingan & Masterclass AI: Terima topik pertandingan dan sertai masterclass AI percuma antara 31 Mac 2026 – 2 April 2026.\n3. Penghantaran Cadangan: Usahakan projek anda sebagai satu pasukan dan hantar cadangan anda sebelum 10 Mei 2026, 11.59 malam.\n4. Finalis akan diumumkan pada 18 Mei 2026, 5 petang dan akan bertanding di Pusingan Akhir di Sunway University pada 13 Jun 2026. Rujuk garis masa untuk tarikh dan langkah terperinci."
                     },
                     {
                         "question": "Berapakah bilangan pusingan yang ada?",
@@ -318,7 +318,7 @@
                     },
                     {
                         "question": "Bagaimana saya mahu menyertai?",
-                        "answer": "1. Semak kelayakan anda.\n2. Isi borang pendaftaran.\nPendaftaran ditutup pada 16 Mac 2026 23:59 MYT."
+                        "answer": "1. Semak kelayakan anda.\n2. Isi borang pendaftaran.\nPendaftaran ditutup pada 20 Mac 2026 23:59 MYT."
                     },
                     {
                         "question": "Adakah saya perlu membayar untuk mendaftar menyertai pertandingan?",

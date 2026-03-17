@@ -70,7 +70,7 @@
                 "title": "Register Team",
                 "item1": "Form a team of 4 (Category A: Secondary | Category B: Pre-U/Uni)",
                 "item2": "Register here",
-                "item3": "Deadline: 16 March 2026"
+                "item3": "Deadline: 20 March 2026"
             },
             "learnBuild": {
                 "title": "Learn & Build",
@@ -262,7 +262,7 @@
                 "items": [
                     {
                         "question": "How does the competition work?",
-                        "answer": "The National AI Competition consists of two rounds: an Preliminary round [online proposal submission] and Grand Finals at Sunway University [On-ground].\n\nHere's how it works:\n1. Registration: Register your team by 16 March 2026.\n2. Competition Materials & AI Masterclass: Receive the competition topics and participate in the complimentary AI masterclass between 31 March 2026 – 2 April 2026.\n3. Proposal Submission: Work on your project as a team and submit your proposal by 10 May 2026, 11.59pm.\n4. Finalists will be announced on 18 May 2026, 5pm and will compete at the Grand Finals at Sunway University on 13 June 2026. Refer to the timeline for detailed dates and steps."
+                        "answer": "The National AI Competition consists of two rounds: an Preliminary round [online proposal submission] and Grand Finals at Sunway University [On-ground].\n\nHere's how it works:\n1. Registration: Register your team by 20 March 2026.\n2. Competition Materials & AI Masterclass: Receive the competition topics and participate in the complimentary AI masterclass between 31 March 2026 – 2 April 2026.\n3. Proposal Submission: Work on your project as a team and submit your proposal by 10 May 2026, 11.59pm.\n4. Finalists will be announced on 18 May 2026, 5pm and will compete at the Grand Finals at Sunway University on 13 June 2026. Refer to the timeline for detailed dates and steps."
                     },
                     {
                         "question": "How many rounds will there be?",
@@ -299,7 +299,7 @@
                     },
                     {
                         "question": "How do I join?",
-                        "answer": "1. Check your eligibility.\n2. Fill up the registration form.\nRegistration closes on March 16, 2026 23:59 MYT."
+                        "answer": "1. Check your eligibility.\n2. Fill up the registration form.\nRegistration closes on March 20, 2026 23:59 MYT."
                     },
                     {
                         "question": "Do I have to pay to register to join the competition?",
@@ -441,7 +441,7 @@
     "timeline": {
         "title": "Timeline",
         "event1": {
-            "date": "March 16, 2026",
+            "date": "March 20, 2026",
             "name": "Registration Deadline",
             "desc": "Final call for teams to register. Ensure your team of 4 is ready and your teacher advisor is onboarded."
         },
