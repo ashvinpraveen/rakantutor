@@ -13,6 +13,7 @@ import NaicTerms from "./pages/naic/Terms";
 import FAQ from "./pages/naic/FAQ";
 import NaicContact from "./pages/naic/Contact";
 import Tracks from "./pages/naic/Tracks";
+import NaicResources from "./pages/naic/Resources";
 
 // Rakan Tutor Pages
 import RakanTutor from "./pages/rakantutor/Home";
@@ -123,6 +124,7 @@ const App = () => {
             <Route path="/naic/register" element={<Register />} />
             <Route path="/naic/faq" element={<FAQ />} />
             <Route path="/naic/tracks" element={<Tracks />} />
+            <Route path="/naic/resources" element={<NaicResources />} />
             <Route path="/naic/contact" element={<NaicContact />} />
             <Route path="/naic/privacy" element={<NaicPrivacy />} />
             <Route path="/naic/terms" element={<NaicTerms />} />
