@@ -207,9 +207,6 @@ const Header = () => {
                           <Link to="/naic#timeline" className="cursor-pointer">{t("nav.timeline")}</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link to="/naic/resources" className="cursor-pointer">Resources</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
                           <Link to="/naic/faq" className="cursor-pointer">{t("nav.faq")}</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
@@ -374,7 +371,6 @@ const Header = () => {
                         <Link to="/naic/tracks" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.tracks")}</Link>
                         <Link to="/naic#prizes" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.prizes")}</Link>
                         <Link to="/naic#timeline" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.timeline")}</Link>
-                        <Link to="/naic/resources" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">Resources</Link>
                         <Link to="/naic/faq" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.faq")}</Link>
                         <Link to="/naic/contact" onClick={() => setIsMenuOpen(false)} className="text-xl font-medium text-foreground/80 hover:text-foreground">{t("nav.contact")}</Link>
                         <Link to="/naic/register" onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-cyan-500 hover:text-cyan-600 mt-2">Register</Link>
