@@ -33,7 +33,7 @@
         "cta": "View All Track Details",
         "innovation": {
             "title": "Innovation",
-            "description": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas."
+            "description": "Use AI to build apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas."
         },
         "computing": {
             "title": "Computing",
@@ -110,7 +110,7 @@
         },
         "innovation": {
             "title": "Innovation",
-            "overview": "Apply generative AI and create apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas. Specific SDG areas and detailed requirements will be announced on March 24, 2026.",
+            "overview": "Use AI to build apps that offer unique solutions to key problems focusing on one of 3 selected UN SDG areas. Specific SDG areas and detailed requirements will be announced on March 24, 2026.",
             "theme": "UN Sustainable Development Goals",
             "whoIsThisFor": "Students passionate about using AI to solve real-world problems aligned with UN Sustainable Development Goals.",
             "deliverables": "A functional app or solution, a project proposal, and a presentation pitch.",
