@@ -14,6 +14,27 @@ interface NewsArticle {
 
 const newsArticles: NewsArticle[] = [
   {
+    title: "Education: Guiding students to learn AI effectively",
+    date: "11 May 2026",
+    url: "https://theedgemalaysia.com/node/802714",
+    image: "/news_and_media/theedge.webp",
+    source: "The Edge Malaysia"
+  },
+  {
+    title: "AI Empowerment Hub (Rakan AI) - YSEALI Seeds for the Future",
+    date: "30 Sep 2025",
+    url: "https://ysealiseeds.com/project/ai-empowerment-hub/",
+    image: "/news_and_media/yseali_seeds.png",
+    source: "YSEALI Seeds"
+  },
+  {
+    title: "Eer Kai Song - Gen.T Leaders of Tomorrow",
+    date: "01 Jun 2025",
+    url: "https://www.tatlerasia.com/people/eer-kai-song",
+    image: "/news_and_media/tatler_kai_song.jpg",
+    source: "Tatler Asia"
+  },
+  {
     title: "Education: Addressing gaps in online learning",
     date: "01 Nov 2021",
     url: "https://theedgemalaysia.com/article/education-addressing-gaps-online-learning",
