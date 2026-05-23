@@ -13,9 +13,9 @@ const RakanTutorHero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-32 pb-16 lg:pt-28 lg:pb-20 px-4 md:px-8 bg-background overflow-hidden">
-      <div className="container relative z-10 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <section className="relative min-h-[calc(100svh-96px)] flex items-center justify-center pt-16 pb-20 lg:pt-14 lg:pb-24 px-4 md:px-8 bg-background overflow-hidden">
+      <div className="container relative z-10 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-center">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8">
             {/* Title */}
@@ -60,7 +60,7 @@ const RakanTutorHero = () => {
               <img
                 src={rakanTutorHero}
                 alt="Rakan Tutor Community"
-                className="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto object-contain drop-shadow-2xl"
+                className="w-full max-w-[280px] sm:max-w-sm lg:max-w-[420px] max-h-[60svh] object-contain drop-shadow-2xl"
               />
             </div>
           </BlurFade>

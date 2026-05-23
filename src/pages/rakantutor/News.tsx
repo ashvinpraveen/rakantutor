@@ -73,7 +73,7 @@ const newsArticles: NewsArticle[] = [
     title: "700 Malaysians Volunteer As Tutors To Prepare B40 Students For SPM",
     date: "21 Sep 2021",
     url: "https://www.wikiimpact.com/700-malaysians-volunteer-as-tutors-to-prepare-b40-students-for-spm/",
-    image: "/news_and_media/g48X6rSH_200x200.png",
+    image: "/news_and_media/wikiimpact-700-tutors.jpg",
     source: "Wiki Impact"
   },
   {
@@ -129,7 +129,7 @@ const newsArticles: NewsArticle[] = [
     title: "The hidden cost of student's learning due to Covid-19",
     date: "1 July 2021",
     url: "https://www.wikiimpact.com/the-hidden-cost-of-students-learning-due-to-covid-19/",
-    image: "/news_and_media/g48X6rSH_200x200.png",
+    image: "/news_and_media/wikiimpact-hidden-cost.jpg",
     source: "Wiki Impact"
   },
   {
